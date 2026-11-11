@@ -18,6 +18,10 @@ on:
         description: 'Если тема уже делалась, взять старые кадры (не платить за картинки повторно)'
         type: boolean
         default: true
+      test:
+        description: 'Пробная сборка: результат только в артефакте запуска (не в релизе и не в очереди). Без ключа — картинки-заглушки'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -57,9 +61,30 @@ jobs:
           REUSE_IMAGES: ${{ inputs.reuse_images && '1' || '0' }}
           COUNT: ${{ inputs.count }}
           IDS: ${{ inputs.ids }}
-        run: python3 scripts/produce.py --count "${COUNT:-3}" --ids "$IDS"
+          TEST: ${{ inputs.test }}
+        run: |
+          prov=$(python3 -c "import json;print(json.load(open('config.json'))['images'].get('provider','gemini'))")
+          if [ "$TEST" = "true" ]; then
+            if { [ "$prov" = "gemini" ] && [ -z "$GEMINI_API_KEY" ]; } || { [ "$prov" = "openai" ] && [ -z "$OPENAI_API_KEY" ]; }; then
+              echo "::warning::Нет ключа для картинок ($prov): пробная сборка с картинками-заглушками"
+              export IMAGE_PROVIDER=placeholder
+            fi
+          fi
+          python3 scripts/produce.py --count "${COUNT:-3}" --ids "$IDS"
+
+      - name: Сохранить пробную сборку
+        if: inputs.test
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-videos
+          path: |
+            out/*/*.mp4
+            out/*/*.jpg
+            out/*/*.json
+          retention-days: 7
 
       - name: Выложить в релиз library
+        if: ${{ !inputs.test }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -75,7 +100,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Записать в library.json
-        if: hashFiles('out/produced.json') != ''
+        if: ${{ !inputs.test && hashFiles('out/produced.json') != '' }}
         run: |
           git config user.name "whatif-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
