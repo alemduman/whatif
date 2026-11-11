@@ -18,6 +18,10 @@ on:
         description: 'Если тема уже делалась, взять старые кадры (не платить за картинки повторно)'
         type: boolean
         default: true
+      langs:
+        description: 'Языки через запятую (пусто = все из config.json)'
+        type: string
+        default: ''
       test:
         description: 'Пробная сборка: результат только в артефакте запуска (не в релизе и не в очереди). Без ключа — картинки-заглушки'
         type: boolean
@@ -61,6 +65,7 @@ jobs:
           REUSE_IMAGES: ${{ inputs.reuse_images && '1' || '0' }}
           COUNT: ${{ inputs.count }}
           IDS: ${{ inputs.ids }}
+          LANGS: ${{ inputs.langs }}
           TEST: ${{ inputs.test }}
         run: |
           prov=$(python3 -c "import json;print(json.load(open('config.json'))['images'].get('provider','gemini'))")
@@ -70,7 +75,7 @@ jobs:
               export IMAGE_PROVIDER=placeholder
             fi
           fi
-          python3 scripts/produce.py --count "${COUNT:-3}" --ids "$IDS"
+          python3 scripts/produce.py --count "${COUNT:-3}" --ids "$IDS" --langs "$LANGS"
 
       - name: Сохранить пробную сборку
         if: inputs.test

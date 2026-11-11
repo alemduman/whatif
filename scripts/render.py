@@ -134,6 +134,10 @@ def _font(path, size, cache={}):
 def _text_block(words, active, font_path, size, max_w, hl=None, stroke=9, shown=None):
     """Рисует строку(и) слов: активное слово жёлтое. shown — сколько слов показать (для титра)."""
     f = _font(font_path, size)
+    # самое длинное слово должно влезать в строку: иначе уменьшаем шрифт
+    while size > 40 and max(f.getlength(w) for w in words) + 2 * stroke > max_w:
+        size -= 4
+        f = _font(font_path, size)
     space = f.getlength(" ")
     lines, cur, cw = [], [], 0
     for i, w in enumerate(words):

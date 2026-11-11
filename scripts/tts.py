@@ -102,6 +102,17 @@ async def _edge(text, voice, rate, mp3):
     return marks
 
 
+def print_voices(lang):
+    """Печатает доступные голоса для языка (диагностика, когда голос не отвечает)."""
+    try:
+        import edge_tts
+        vs = asyncio.run(edge_tts.list_voices())
+        names = [v["ShortName"] for v in vs if v["Locale"].lower().startswith(lang.lower()) or "Multilingual" in v["ShortName"]]
+        print(f"  доступные голоса ({lang} и мультиязычные): {', '.join(names)}", flush=True)
+    except Exception as e:  # noqa: BLE001
+        print(f"  список голосов получить не удалось: {e}", flush=True)
+
+
 def synth(text, voice, rate, out_wav):
     tokens = _tokens(text)
     if os.environ.get("TTS") == "fake":
@@ -116,14 +127,14 @@ def synth(text, voice, rate, out_wav):
         return {"dur": round(dur, 3), "words": _even_timing(tokens, 0.05, dur - 0.1)}
     mp3 = out_wav[:-4] + ".mp3"
     last = None
-    for attempt in range(4):
+    for attempt in range(3):
         try:
             marks = asyncio.run(_edge(text, voice, rate, mp3))
             break
         except Exception as e:  # сервис иногда рвёт соединение — повторяем
             last = e
             import time
-            time.sleep(3 + attempt * 4)
+            time.sleep(2 + attempt * 3)
     else:
         raise RuntimeError(f"Озвучка не удалась ({voice}): {last}")
     _decode_to_wav(mp3, out_wav)

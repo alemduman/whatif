@@ -64,6 +64,9 @@ def caption(t, lang, cfg):
     return (c.get("caption") or "").strip() + ("\n\n" + " ".join(tags) if tags else "")
 
 
+_VOICE_OK = {}
+
+
 def produce(t, cfg, langs, out_root):
     tid = t["id"]
     od = os.path.join(out_root, tid)
@@ -104,11 +107,29 @@ def produce(t, cfg, langs, out_root):
         v = cfg["voices"][lang]
         tmp = tempfile.mkdtemp(prefix=f"wi_{tid}_{lang}_")
         rates = [v.get("rate", "+0%")] + list(v.get("fasterRates", ["+8%", "+15%", "+22%"]))
+        voices = [v["voice"]] + [x for x in v.get("fallback", []) if x != v["voice"]]
+        voice = _VOICE_OK.get(lang)
+        if not voice:  # первый рабочий голос из списка (сервис иногда не отдаёт какой-то голос)
+            for cand in voices:
+                try:
+                    tts.synth(t["scenes"][0][lang], cand, rates[0], os.path.join(tmp, "probe.wav"))
+                    voice = cand
+                    break
+                except Exception as e:  # noqa: BLE001
+                    print(f"  {lang}: голос {cand} не отвечает ({e}), пробую следующий", flush=True)
+                    if cand == voices[0]:
+                        tts.print_voices(lang)
+            if not voice:
+                tts.print_voices(lang)
+                raise RuntimeError(f"Ни один голос для «{lang}» не ответил: {', '.join(voices)}")
+            _VOICE_OK[lang] = voice
+            if voice != v["voice"]:
+                print(f"  {lang}: использую голос {voice}", flush=True)
         for rate in rates:
             scenes = []
             for i, s in enumerate(t["scenes"]):
                 wav = os.path.join(tmp, f"s{i + 1:02d}.wav")
-                r = tts.synth(s[lang], v["voice"], rate, wav)
+                r = tts.synth(s[lang], voice, rate, wav)
                 scenes.append({"img": paths[i], "wav": wav, "dur": r["dur"], "words": r["words"],
                                "fx": s.get("fx"), "cam": s.get("cam"), "part": s.get("part")})
             est = sum(x["dur"] for x in scenes) + 0.35 + 0.28 * (len(scenes) - 1) + 1.6 + 0.1 * len(scenes)
@@ -122,7 +143,7 @@ def produce(t, cfg, langs, out_root):
         topic["_seed"] = zlib.crc32(tid.encode()) % 1000
         dur = render.render(topic, lang, scenes, mp4, jpg, cfg.get("video", {}), tmp)
         meta = {"id": tid, "lang": lang, "video": os.path.basename(mp4), "cover": os.path.basename(jpg),
-                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "rate": rate}
+                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "rate": rate, "voice": voice}
         with open(os.path.join(od, f"{tid}.{lang}.json"), "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=1)
         res["langs"][lang] = meta
