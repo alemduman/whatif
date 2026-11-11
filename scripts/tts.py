@@ -200,7 +200,10 @@ def _whisper_marks(wav, lang, text):
     name = os.environ.get("WHISPER_MODEL", "base")
     if name not in _WHISPER:
         _WHISPER[name] = WhisperModel(name, device="cpu", compute_type="int8")
-    segs, _ = _WHISPER[name].transcribe(wav, language=lang, word_timestamps=True, beam_size=1, initial_prompt=text)
+    # звук передаём массивом 16 кГц: так не нужен декодер PyAV (его версии конфликтуют с faster-whisper)
+    from scipy.signal import resample_poly
+    a16 = resample_poly(read_wav(wav), 1, SR // 16000).astype(np.float32)
+    segs, _ = _WHISPER[name].transcribe(a16, language=lang, word_timestamps=True, beam_size=1, initial_prompt=text)
     return [{"text": w.word.strip(), "s": round(w.start, 3), "e": round(w.end, 3)} for sg in segs for w in (sg.words or [])]
 
 
