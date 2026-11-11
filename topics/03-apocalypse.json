@@ -1,0 +1,146 @@
+[
+ {
+  "id": "zombies",
+  "mood": "tense",
+  "en": {"cover": "ZOMBIE APOCALYPSE TOMORROW?", "caption": "What if a zombie apocalypse started tomorrow? Scientists actually modeled it.", "tags": ["#zombies", "#apocalypse"]},
+  "ru": {"cover": "ЗОМБИ-АПОКАЛИПСИС ЗАВТРА?", "caption": "Что если завтра начнётся зомби-апокалипсис? Учёные правда это просчитали.", "tags": ["#зомби", "#апокалипсис"]},
+  "scenes": [
+   {"img": "a crowd of goofy green cartoon zombies shuffling down a city street at dusk, {hero} peeking out from behind a car in fear", "en": "What if a zombie apocalypse started tomorrow?", "ru": "Что если завтра начнётся зомби-апокалипсис?", "cam": "in", "part": "dust"},
+   {"img": "scientists at a chalkboard covered in graphs and a map of a country with red spreading zones, a cartoon zombie on a chart", "en": "Researchers at Cornell University actually modeled this. Big cities would fall within days.", "ru": "Учёные из Корнелльского университета правда это смоделировали: большие города падут за считаные дни.", "cam": "right"},
+   {"img": "a hospital entrance overwhelmed by a line of bandaged people and a few zombies, ambulances with flashing lights", "en": "Hospitals would be overwhelmed first, because that's where the bitten would go.", "ru": "Первыми падут больницы: туда побегут все укушенные.", "cam": "left"},
+   {"img": "a dark city skyline with lights going out block by block, a dead wifi icon floating in the sky", "en": "Then power and internet would fail, as workers stopped showing up.", "ru": "Потом отключатся свет и интернет: на работу просто некому будет ходить.", "cam": "down", "part": "dust"},
+   {"img": "a lonely cabin in remote snowy mountains far from any city, smoke from the chimney, safe and calm", "en": "Your best bet? Head for remote mountains or the countryside, far from people.", "ru": "Лучший шанс уйти подальше от людей: в горы или в глухую деревню.", "cam": "up", "part": "snow"},
+   {"img": "{hero} packing a backpack with water bottles, canned food, a flashlight and a first aid kit, finger on lips saying quiet", "en": "Pack water, canned food and a first aid kit, and stay quiet.", "ru": "Возьми воду, консервы и аптечку и веди себя тихо.", "cam": "in"},
+   {"img": "a close-up of an ant on a leaf with a funny mushroom growing out of its head in a jungle", "en": "Luckily, real zombie fungi exist, but they only infect insects, like ants.", "ru": "К счастью, настоящий зомби-грибок существует, но он поражает только насекомых, например, муравьёв.", "cam": "in"},
+   {"img": "{hero} holding a frying pan like a weapon in a doorway, looking at the viewer with a brave face", "en": "What would be your zombie survival weapon? Tell me in the comments.", "ru": "А чем бы ты отбивался от зомби? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "humans-vanish",
+  "mood": "wonder",
+  "en": {"cover": "ALL HUMANS DISAPPEARED?", "caption": "What if all humans disappeared tomorrow? Here's how fast nature would take over.", "tags": ["#nature", "#future"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ ЛЮДИ?", "caption": "Что если завтра исчезнут все люди? Вот как быстро природа заберёт своё.", "tags": ["#природа", "#будущее"]},
+  "scenes": [
+   {"img": "an empty modern city street with abandoned cars and coffee cups, only the hoodie of {hero} lying on a bench, birds landing", "en": "What if all humans disappeared tomorrow?", "ru": "Что если завтра все люди исчезнут?", "cam": "in"},
+   {"img": "a night view of Earth from space where city lights go out continent by continent", "en": "Within hours, most power plants would shut down, and the lights would go out.", "ru": "Уже через несколько часов большинство электростанций отключится, и мир погрузится во тьму.", "cam": "out", "part": "stars"},
+   {"img": "a subway tunnel slowly filling with water, an empty train half submerged", "en": "Within days, subway tunnels would flood, because the pumps would stop.", "ru": "Через пару дней затопит метро: насосы перестанут откачивать воду.", "cam": "down", "part": "bubbles"},
+   {"img": "a pack of friendly-looking dogs of different breeds running through an empty park, cows wandering on a highway", "en": "Pets and farm animals would have to fend for themselves. Dogs would form packs.", "ru": "Домашним животным придётся выживать самим. Собаки собьются в стаи.", "cam": "right"},
+   {"img": "plants cracking through asphalt roads and vines covering skyscrapers, deer walking through the overgrown city", "en": "In a few decades, plants would crack the roads, and forests would swallow cities.", "ru": "Через несколько десятилетий растения разломают асфальт, а леса поглотят города.", "cam": "up", "part": "dust"},
+   {"img": "a rusty collapsing steel bridge over a river and rotting wooden houses overgrown with moss", "en": "Wooden houses would rot, and steel bridges would rust and fall.", "ru": "Деревянные дома сгниют, а стальные мосты заржавеют и рухнут.", "cam": "left"},
+   {"img": "ancient stone pyramids and a stone monument in a jungle with pieces of glass and plastic in the soil", "en": "After thousands of years, only the toughest things would remain: stone monuments, glass and plastic.", "ru": "Через тысячи лет останется только самое прочное: каменные памятники, стекло и пластик.", "cam": "out"},
+   {"img": "two cute cartoon aliens with a magnifying glass examining an old plastic bottle in a jungle ruin, looking at the viewer", "en": "What would aliens think of us? Tell me in the comments.", "ru": "А что подумали бы о нас инопланетяне? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "internet-off",
+  "mood": "tense",
+  "en": {"cover": "THE INTERNET SHUT DOWN FOREVER?", "caption": "What if the internet shut down forever? Would you survive?", "tags": ["#internet", "#technology"]},
+  "ru": {"cover": "ИНТЕРНЕТ ОТКЛЮЧАТ НАВСЕГДА?", "caption": "Что если интернет отключится навсегда? Ты бы выжил?", "tags": ["#интернет", "#технологии"]},
+  "scenes": [
+   {"img": "{hero} staring in horror at his phone showing a no connection icon, a giant unplugged cable in the background", "en": "What if the internet shut down forever?", "ru": "Что если интернет отключится навсегда?", "cam": "in"},
+   {"img": "a crowd of people holding phones with blank screens, a frozen map app and a loading spinner floating above them", "en": "Instantly, no messages, no videos, no maps on your phone.", "ru": "Мгновенно пропадут сообщения, видео и карты в телефоне.", "cam": "right"},
+   {"img": "a long queue at a bank with a card terminal showing an error, a man holding a fat stack of paper cash proudly", "en": "Card payments would freeze. Cash would suddenly be king.", "ru": "Оплата картой встанет. Наличные снова станут главными.", "cam": "left"},
+   {"img": "a supermarket with empty shelves and a delivery truck stuck with a confused driver holding a paper list", "en": "Shops would empty fast, because supply chains run on the internet.", "ru": "Полки в магазинах быстро опустеют: поставки товаров держатся на интернете.", "cam": "down"},
+   {"img": "an airport departures board showing errors, a hospital and a factory with puzzled workers", "en": "Airports, hospitals and factories would struggle to work.", "ru": "Аэропорты, больницы и заводы с трудом смогут работать.", "cam": "up"},
+   {"img": "a family gathered around an old radio, a rotary landline phone, paper letters and a big folded paper map on the table", "en": "We'd go back to radios, landline phones, paper letters and maps.", "ru": "Люди вернутся к радио, стационарным телефонам, бумажным письмам и картам.", "cam": "in"},
+   {"img": "neighbors chatting and laughing together on porches and in a courtyard, kids playing outside", "en": "And maybe we'd start talking to our neighbors again.", "ru": "И, может быть, мы снова начнём общаться с соседями.", "cam": "out"},
+   {"img": "{hero} typing fast on his phone with a nervous smile as a low battery and weak signal icon blink, looking at the viewer", "en": "How long could you live without the internet? Tell me in the comments, while you still can.", "ru": "А сколько ты продержишься без интернета? Пиши в комментариях, пока он есть.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "aliens-arrive",
+  "mood": "wonder",
+  "en": {"cover": "ALIENS LANDED TOMORROW?", "caption": "What if aliens landed on Earth tomorrow? What would happen first?", "tags": ["#aliens", "#ufo"]},
+  "ru": {"cover": "ПРИЛЕТЯТ ИНОПЛАНЕТЯНЕ?", "caption": "Что если завтра на Землю прилетят инопланетяне? Что случится первым делом?", "tags": ["#инопланетяне", "#нло"]},
+  "scenes": [
+   {"img": "a giant glowing flying saucer hovering over a city park, a beam of light shining down, {hero} dropping his phone in awe", "en": "What if aliens landed on Earth tomorrow?", "ru": "Что если завтра на Землю прилетят инопланетяне?", "cam": "in", "fx": ["flash"]},
+   {"img": "a sleek futuristic alien spaceship next to a tiny old human rocket for comparison, stars behind", "en": "If they could cross the stars, their technology would be far beyond ours.", "ru": "Если они смогли долететь от другой звезды, их технологии далеко впереди наших.", "cam": "right", "part": "stars"},
+   {"img": "a tiny space probe slowly drifting through an enormous starry space towards a distant star, a dotted line of a very long journey", "en": "The nearest star is over four light-years away. Our fastest probes would need tens of thousands of years to get there.", "ru": "Ближайшая звезда в четырёх с лишним световых годах. Нашим самым быстрым зондам лететь туда десятки тысяч лет.", "cam": "left", "part": "stars"},
+   {"img": "world leaders in a busy situation room and people around the world watching giant TV screens with the alien ship live", "en": "Governments would scramble, and the whole world would watch every second live.", "ru": "Правительства засуетятся, а весь мир будет следить за каждой секундой в прямом эфире.", "cam": "in"},
+   {"img": "a scientist showing a big board with simple math symbols and dots to a friendly cartoon alien who tilts its head", "en": "Scientists would try talking to them with math, the one language that should be universal.", "ru": "Учёные попробуют заговорить с ними на языке математики: он должен быть понятен всем.", "cam": "up"},
+   {"img": "giant cartoon germs floating between a human and an alien who both wear protective masks", "en": "But the biggest danger might be invisible: their germs to us, or ours to them.", "ru": "Но главная опасность может быть невидимой: их микробы для нас или наши для них.", "cam": "down"},
+   {"img": "huge radio telescope dishes pointing at a starry night sky, listening for signals", "en": "So far, we've found no sign of aliens, but we keep listening.", "ru": "Пока мы не нашли никаких следов пришельцев, но продолжаем слушать космос.", "cam": "out", "part": "stars"},
+   {"img": "{hero} shaking hands with a cute friendly green alien, both smiling at the viewer", "en": "What would you say to an alien first? Tell me in the comments.", "ru": "А что ты сказал бы инопланетянину первым делом? Пиши в комментариях.", "cam": "in", "part": "stars"}
+  ]
+ },
+ {
+  "id": "solar-storm",
+  "mood": "epic",
+  "en": {"cover": "A GIANT SOLAR STORM HIT TODAY?", "caption": "What if a giant solar storm hit Earth today? It already happened once, in 1859.", "tags": ["#sun", "#space"]},
+  "ru": {"cover": "УДАРИТ СОЛНЕЧНАЯ БУРЯ?", "caption": "Что если сегодня в Землю ударит мощная солнечная буря? Такое уже было в 1859 году.", "tags": ["#солнце", "#космос"]},
+  "scenes": [
+   {"img": "a massive glowing explosion on the surface of the Sun sending a wave of fiery plasma toward a tiny Earth, {hero} watching through a telescope", "en": "What if a giant solar storm hit Earth today?", "ru": "Что если сегодня в Землю ударит мощнейшая солнечная буря?", "cam": "in", "part": "embers"},
+   {"img": "a nineteenth-century telegraph office with old equipment, operators in vintage clothes looking surprised", "en": "It happened in 1859. It's called the Carrington Event.", "ru": "В 1859 году такое уже было. Это назвали событием Кэррингтона.", "cam": "right"},
+   {"img": "telegraph wires throwing sparks over an old town and brilliant red and green northern lights over palm trees", "en": "Telegraph wires sparked, and northern lights were seen as far south as the Caribbean.", "ru": "Телеграфные провода искрили, а северное сияние видели даже на Карибах.", "cam": "up", "part": "embers"},
+   {"img": "satellites in orbit glitching with sparks, a phone showing lost GPS and a city power grid flickering", "en": "Today, a storm like that could knock out satellites, GPS and power grids.", "ru": "Сегодня такая буря может вывести из строя спутники, навигацию и энергосети.", "cam": "left", "part": "embers"},
+   {"img": "a huge electrical transformer at a power station smoking and melting, a dark city behind it", "en": "Huge transformers could burn out, and some regions could stay without power for months.", "ru": "Огромные трансформаторы могут сгореть, и некоторые регионы останутся без света на месяцы.", "cam": "down", "fx": ["flash"]},
+   {"img": "an airplane cockpit with blank navigation screens and confused pilots, phones with no signal", "en": "Planes would lose navigation, and phones and the internet could go down.", "ru": "Самолёты потеряют навигацию, а связь и интернет могут отключиться.", "cam": "in"},
+   {"img": "a huge plasma cloud passing just behind Earth's orbit, Earth on its path barely missing it, a relieved face drawn on Earth", "en": "In 2012, a storm this big just missed Earth by about a week.", "ru": "В 2012 году такая буря прошла мимо, разминувшись с Землёй примерно на неделю.", "cam": "out", "part": "stars"},
+   {"img": "{hero} sitting in a dark room lit by candles with a flashlight and a board game, smiling at the viewer", "en": "Are you ready for a week without power? Tell me in the comments.", "ru": "А ты готов неделю прожить без света? Пиши в комментариях.", "cam": "in", "part": "embers"}
+  ]
+ },
+ {
+  "id": "everyone-jumps",
+  "mood": "fun",
+  "en": {"cover": "EVERYONE JUMPED AT ONCE?", "caption": "What if everyone on Earth jumped at the same time? The answer is surprising.", "tags": ["#physics", "#fun"]},
+  "ru": {"cover": "ВСЕ ЛЮДИ ПОДПРЫГНУТ РАЗОМ?", "caption": "Что если все люди на Земле подпрыгнут одновременно? Ответ удивит.", "tags": ["#физика", "#интересно"]},
+  "scenes": [
+   {"img": "a massive crowd of happy cartoon people of all kinds jumping in the air at the same moment on a giant field, {hero} in the middle", "en": "What if everyone on Earth jumped at the same time?", "ru": "Что если все люди на Земле подпрыгнут одновременно?", "cam": "in"},
+   {"img": "a giant weighing scale with a huge pile of tiny cartoon people on one side", "en": "That's about eight billion people, weighing around four hundred million tons.", "ru": "Это около восьми миллиардов человек общим весом примерно четыреста миллионов тонн.", "cam": "up"},
+   {"img": "all humanity gathered on one spot on a big globe, looking like a tiny crowded dot", "en": "Even if we all stood together in one place, Earth would barely notice.", "ru": "Даже если собрать всех в одном месте, Земля этого почти не заметит.", "cam": "out"},
+   {"img": "a balance scale with the giant planet Earth on one side and a tiny crowd of people on the other, the scale fully tipped", "en": "The planet is more than ten trillion times heavier than all of us combined.", "ru": "Планета тяжелее всего человечества больше чем в десять триллионов раз.", "cam": "left"},
+   {"img": "a magnifying glass showing a tiny atom next to a ruler, with Earth moving by an almost invisible amount", "en": "Our jump would move it by less than the width of an atom.", "ru": "Наш прыжок сдвинет её меньше, чем на размер атома.", "cam": "in"},
+   {"img": "an endless traffic jam of cars, buses and planes stretching to the horizon full of people trying to get home", "en": "The real problem would be getting everyone there and back home again.", "ru": "Настоящей проблемой было бы собрать всех в одном месте, а потом развезти по домам.", "cam": "right"},
+   {"img": "chaotic crowded camp with long lines for water and food, tired people", "en": "Traffic jams, no food, no water. It would be the biggest chaos in history.", "ru": "Пробки, нехватка еды и воды. Это был бы самый большой хаос в истории.", "cam": "down", "part": "dust"},
+   {"img": "{hero} mid-jump with a big grin, arms up, looking at the viewer", "en": "Would you jump? Tell me in the comments.", "ru": "А ты бы прыгнул? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "dinosaurs-alive",
+  "mood": "epic",
+  "en": {"cover": "DINOSAURS NEVER WENT EXTINCT?", "caption": "What if dinosaurs never went extinct? Would humans even exist?", "tags": ["#dinosaurs", "#history"]},
+  "ru": {"cover": "ДИНОЗАВРЫ НЕ ВЫМЕРЛИ?", "caption": "Что если динозавры никогда не вымирали? А люди бы вообще появились?", "tags": ["#динозавры", "#история"]},
+  "scenes": [
+   {"img": "a huge friendly T-rex walking through a modern city street past cars and traffic lights, {hero} holding a coffee staring up", "en": "What if dinosaurs never went extinct?", "ru": "Что если динозавры никогда не вымирали?", "cam": "in", "fx": ["shake"]},
+   {"img": "a giant asteroid flying past Earth and missing it, dinosaurs on the ground waving at it", "en": "Sixty-six million years ago, an asteroid wiped them out. But imagine it missed.", "ru": "Шестьдесят шесть миллионов лет назад их уничтожил астероид. Но представь, что он пролетел мимо.", "cam": "out", "part": "stars"},
+   {"img": "tiny furry mammals hiding in a burrow, peeking out at giant dinosaur feet stomping past", "en": "Small mammals, our ancestors, would probably still be hiding in burrows.", "ru": "Мелкие млекопитающие, наши предки, скорее всего, так и прятались бы в норах.", "cam": "down"},
+   {"img": "a family tree diagram drawn on old paper with a big question mark where humans would be", "en": "Without that lucky break, humans might never have appeared at all.", "ru": "Без этого счастливого случая люди могли вообще не появиться.", "cam": "in"},
+   {"img": "a T-rex with a giant open mouth chomping on a car-sized bone, comic power lines", "en": "And if we did, life would be dangerous. A T. rex could bite with a force of several tons.", "ru": "А если бы появились, жизнь была бы опасной: тираннозавр кусал с силой в несколько тонн.", "cam": "left", "fx": ["boom"]},
+   {"img": "a farm with giant reinforced fences and a city surrounded by huge walls, a long-necked dinosaur peeking over", "en": "Farms would need giant fences, and cities would need walls.", "ru": "Фермам понадобились бы огромные заборы, а городам стены.", "cam": "up"},
+   {"img": "a pigeon and a chicken standing next to a skeleton of a small feathered dinosaur in a museum, similar poses", "en": "Fun fact: dinosaurs never fully disappeared. Birds are their living descendants.", "ru": "Кстати, динозавры не исчезли полностью: птицы их живые потомки.", "cam": "right"},
+   {"img": "{hero} walking a small cute dinosaur on a leash in a park, looking at the viewer", "en": "Which dinosaur would you keep as a pet? Tell me in the comments.", "ru": "Какого динозавра ты бы завёл как питомца? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "time-stops",
+  "mood": "wonder",
+  "en": {"cover": "TIME STOPPED FOR EVERYONE BUT YOU?", "caption": "What if time stopped for everyone except you? It's less fun than it sounds.", "tags": ["#time", "#physics"]},
+  "ru": {"cover": "ВРЕМЯ ОСТАНОВИТСЯ?", "caption": "Что если время остановится для всех, кроме тебя? Всё не так весело, как кажется.", "tags": ["#время", "#физика"]},
+  "scenes": [
+   {"img": "{hero} standing in a city square where everyone else is frozen mid-motion, a giant clock above with stopped hands", "en": "What if time stopped for everyone except you?", "ru": "Что если время остановится для всех, кроме тебя?", "cam": "in"},
+   {"img": "birds frozen in mid-air, raindrops hanging still, a person frozen mid-step with a coffee splash in the air", "en": "Birds frozen in mid-air, raindrops hanging still, people stuck mid-step.", "ru": "Птицы застынут в воздухе, капли дождя повиснут, люди замрут на полушаге.", "cam": "right"},
+   {"img": "a magnified view of frozen air molecules as solid little balls around {hero} trying to move", "en": "Sounds amazing, but there's a problem: air molecules would be frozen too.", "ru": "Звучит круто, но есть проблема: молекулы воздуха тоже замрут.", "cam": "in"},
+   {"img": "{hero} straining hard to push through the air as if it were solid concrete, unable to breathe, cheeks puffed", "en": "Moving would feel like walking through concrete, and you couldn't breathe.", "ru": "Двигаться было бы как сквозь бетон, а дышать ты бы не смог.", "cam": "left"},
+   {"img": "the world going completely dark with frozen beams of light hanging still like glowing sticks in the air", "en": "Light would stop moving too, so everything would go completely dark.", "ru": "Свет тоже остановится, и вокруг станет совершенно темно.", "cam": "out", "part": "stars"},
+   {"img": "a dark silent scene with a crossed out sound wave symbol and a frozen musician mid-note", "en": "And with no sound waves moving, it would be perfectly silent.", "ru": "А раз звуковые волны не движутся, наступит абсолютная тишина.", "cam": "down"},
+   {"img": "{hero} trapped inside a giant glass hourglass frozen in place", "en": "So freezing time would be less of a superpower, and more of a trap.", "ru": "Так что остановка времени не суперсила, а скорее ловушка.", "cam": "up"},
+   {"img": "{hero} holding a big golden pocket watch with a mischievous smile, looking at the viewer", "en": "What would you do with frozen time? Tell me in the comments.", "ru": "А что бы ты сделал, если бы время остановилось? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "ice-age",
+  "mood": "dark",
+  "en": {"cover": "A NEW ICE AGE STARTED TODAY?", "caption": "What if a new ice age started today? Big cities would end up under kilometers of ice.", "tags": ["#iceage", "#climate"]},
+  "ru": {"cover": "НАЧНЁТСЯ ЛЕДНИКОВЫЙ ПЕРИОД?", "caption": "Что если прямо сейчас начнётся ледниковый период? Города окажутся под километрами льда.", "tags": ["#ледниковыйпериод", "#климат"]},
+  "scenes": [
+   {"img": "{hero} in a fur coat standing in a frozen city covered by snow and ice, icicles hanging from street lights", "en": "What if a new ice age started today?", "ru": "Что если прямо сейчас начнётся ледниковый период?", "cam": "in", "part": "snow"},
+   {"img": "a gigantic wall of glacier ice kilometers high towering over tiny hills and a forest, mammoths walking", "en": "Twenty thousand years ago, ice sheets up to three kilometers thick covered much of North America and Europe.", "ru": "Двадцать тысяч лет назад ледники толщиной до трёх километров покрывали большую часть Северной Америки и Европы.", "cam": "up", "part": "snow"},
+   {"img": "the tops of famous skyscrapers and a TV tower poking out of an endless glacier", "en": "Cities like Chicago, Berlin and Stockholm would end up under ice.", "ru": "Чикаго, Берлин и Стокгольм оказались бы подо льдом.", "cam": "left", "part": "snow"},
+   {"img": "the sea level dropping and exposing wide land bridges between continents, beached boats on dry seabed", "en": "Sea levels would drop by over a hundred meters, revealing land bridges between continents.", "ru": "Уровень моря упадёт больше чем на сто метров, и между континентами появятся сухопутные мосты.", "cam": "down"},
+   {"img": "a snowy land bridge connecting two continents across a strait, travelers with backpacks walking across", "en": "You could walk from Russia to Alaska.", "ru": "Из России можно будет пешком дойти до Аляски.", "cam": "right", "part": "snow"},
+   {"img": "long lines of people with luggage traveling south towards a warm sunny tropical land with palm trees", "en": "Billions of people would move towards the equator, where it's still warm.", "ru": "Миллиарды людей потянутся к экватору, где ещё тепло.", "cam": "out"},
+   {"img": "a giant hourglass with snow slowly falling inside, next to a thermometer showing warming", "en": "Luckily, ice ages take thousands of years to build up, and right now our planet is warming.", "ru": "К счастью, ледниковый период наступает тысячи лет, а сейчас планета, наоборот, теплеет.", "cam": "in"},
+   {"img": "{hero} wrapped in a huge scarf next to a friendly woolly mammoth in the snow, looking at the viewer", "en": "Would you survive the cold? Tell me in the comments.", "ru": "А ты бы пережил такой холод? Пиши в комментариях.", "cam": "out", "part": "snow"}
+  ]
+ }
+]

@@ -1,0 +1,82 @@
+[
+ {
+  "id": "no-mosquitoes",
+  "mood": "fun",
+  "en": {"cover": "ALL MOSQUITOES DISAPPEARED?", "caption": "What if all mosquitoes disappeared? Would nature even miss them?", "tags": ["#mosquito", "#nature"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ КОМАРЫ?", "caption": "Что если исчезнут все комары? А природа вообще заметит?", "tags": ["#комары", "#природа"]},
+  "scenes": [
+   {"img": "{hero} in pajamas cheering in his bedroom as a cloud of mosquitoes vanishes in sparkles", "en": "What if all mosquitoes disappeared?", "ru": "Что если исчезнут все комары?", "cam": "in"},
+   {"img": "a menacing cartoon mosquito wearing a tiny crown on a podium labeled with a skull trophy, other animals looking scared", "en": "Mosquitoes are the deadliest animals on Earth. They spread malaria, which still kills hundreds of thousands of people every year.", "ru": "Комары самые смертоносные животные на Земле. Они переносят малярию, от которой каждый год до сих пор умирают сотни тысяч людей.", "cam": "right"},
+   {"img": "happy families in a tropical village, a doctor smiling, a crossed out mosquito symbol", "en": "Without them, millions of lives could be saved.", "ru": "Без них можно было бы спасти миллионы жизней.", "cam": "left"},
+   {"img": "a calm summer night by a lake with campers sleeping peacefully outside under the stars", "en": "Summer nights would be peaceful, without that annoying buzz.", "ru": "Летние ночи стали бы тихими, без этого надоедливого писка.", "cam": "up", "part": "stars"},
+   {"img": "a pond with a frog, a small fish and a swallow looking at an empty spot where mosquito larvae used to be", "en": "But some birds, fish and frogs eat mosquitoes and their larvae.", "ru": "Но комарами и их личинками питаются некоторые птицы, рыбы и лягушки.", "cam": "down", "part": "bubbles"},
+   {"img": "other small flying insects like midges and gnats moving into a pond ecosystem, a frog happily catching them", "en": "Many scientists think other insects would quickly take their place in the food chain.", "ru": "Многие учёные считают, что их место в пищевой цепочке быстро займут другие насекомые.", "cam": "in"},
+   {"img": "a scientist in a lab releasing a box of special mosquitoes, a female mosquito with a bow next to a male", "en": "Only females bite, and scientists are already testing special mosquitoes to shrink their numbers.", "ru": "Кусаются только самки, а учёные уже испытывают особых комаров, чтобы сократить их число.", "cam": "out"},
+   {"img": "{hero} holding a fly swatter like a sword, looking at the viewer with a determined face", "en": "Would you get rid of mosquitoes forever? Tell me in the comments.", "ru": "А ты бы избавился от комаров навсегда? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "animals-talk",
+  "mood": "fun",
+  "en": {"cover": "ANIMALS COULD TALK?", "caption": "What if animals could talk? Your cat would have a lot to explain.", "tags": ["#animals", "#pets"]},
+  "ru": {"cover": "ЖИВОТНЫЕ ЗАГОВОРЯТ?", "caption": "Что если животные заговорят? Кошке придётся многое объяснить.", "tags": ["#животные", "#питомцы"]},
+  "scenes": [
+   {"img": "{hero} on a sofa listening in shock as his dog, cat and parrot all talk to him with speech bubbles", "en": "What if animals could talk?", "ru": "Что если животные заговорят?", "cam": "in"},
+   {"img": "an excited dog holding a leash in its mouth with speech bubbles full of hearts and bones", "en": "Your dog would probably say the same thing over and over: walk, food, love you, walk.", "ru": "Твоя собака, наверное, повторяла бы одно и то же: гулять, еда, люблю тебя, гулять.", "cam": "right"},
+   {"img": "a smug cat on a table pushing a cup off the edge while giving a lecture with a pointer", "en": "Your cat might finally explain why it knocks things off the table.", "ru": "А кошка наконец объяснила бы, зачем сбрасывает вещи со стола.", "cam": "left"},
+   {"img": "a cow, a pig and a chicken at a farm holding a serious meeting with a farmer, speech bubbles with question marks", "en": "Farm animals might ask us some tough questions.", "ru": "Домашние животные на фермах могли бы задать нам непростые вопросы.", "cam": "in"},
+   {"img": "a dolphin and a whale talking to divers about mysterious glowing creatures in the deep ocean", "en": "Dolphins and whales could tell us what's happening deep in the ocean.", "ru": "Дельфины и киты рассказали бы, что творится в глубинах океана.", "cam": "down", "part": "bubbles"},
+   {"img": "a group of crows on a wire gossiping and pointing at a man below, one crow holding a photo of his face", "en": "Crows might gossip about us. They can already recognize human faces and remember them for years.", "ru": "Вороны начали бы сплетничать о нас. Они и сейчас узнают человеческие лица и помнят их годами.", "cam": "up"},
+   {"img": "scientists on a boat with a laptop and underwater microphones recording whale songs, sound waves on screen", "en": "Scientists are actually using AI to decode animal sounds, starting with whales.", "ru": "Учёные уже пытаются с помощью ИИ расшифровать язык животных, начиная с китов.", "cam": "out", "part": "bubbles"},
+   {"img": "{hero} holding a microphone out to his cat like an interviewer, looking at the viewer", "en": "What would you ask your pet? Tell me in the comments.", "ru": "А что бы ты спросил у своего питомца? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "giant-cats",
+  "mood": "fun",
+  "en": {"cover": "CATS WERE AS BIG AS TIGERS?", "caption": "What if house cats were as big as tigers? Morning wake-ups would be brutal.", "tags": ["#cats", "#animals"]},
+  "ru": {"cover": "КОШКИ РАЗМЕРОМ С ТИГРА?", "caption": "Что если домашние кошки будут размером с тигра? Утренние побудки станут жёсткими.", "tags": ["#кошки", "#животные"]},
+  "scenes": [
+   {"img": "a giant fluffy house cat the size of a tiger sitting in a living room, {hero} sitting tiny next to it", "en": "What if house cats were as big as tigers?", "ru": "Что если домашние кошки будут размером с тигра?", "cam": "in"},
+   {"img": "a giant cat sitting on a bathroom scale that is breaking, the needle spinning", "en": "Your cat would weigh around two hundred kilograms.", "ru": "Твоя кошка весила бы около двухсот килограммов.", "cam": "down"},
+   {"img": "a giant cat paw gently tapping a sleeping {hero} in bed and launching him flying off the bed", "en": "That cute morning paw on your face? Now it could knock you out of bed.", "ru": "Милая лапка на лице по утрам теперь могла бы сбросить тебя с кровати.", "cam": "right"},
+   {"img": "a giant playful cat chewing on a sofa like a toy, the sofa ripped to pieces", "en": "And a playful bite would be a real danger.", "ru": "А игривый укус стал бы настоящей опасностью.", "cam": "left"},
+   {"img": "a litter box as big as a children's sandbox and a pile of huge pet food bags", "en": "You'd need a litter box the size of a sandbox, and tons of meat every year.", "ru": "Понадобился бы лоток размером с песочницу и тонны мяса в год.", "cam": "up"},
+   {"img": "a giant cat crouching in hunting pose behind a terrified small dog in a backyard", "en": "Its hunting instinct wouldn't go anywhere. Your dog would be in big trouble.", "ru": "Охотничий инстинкт никуда не делся бы, так что собаке пришлось бы несладко.", "cam": "in"},
+   {"img": "a small house cat and a tiger sitting side by side in the same pose with matching expressions", "en": "Fun fact: house cats share about ninety-five percent of their DNA with tigers.", "ru": "Кстати, ДНК домашней кошки совпадает с тигриной примерно на девяносто пять процентов.", "cam": "out"},
+   {"img": "{hero} hugging a giant purring cat that is curled around him, looking at the viewer", "en": "Would you keep a giant cat? Tell me in the comments.", "ru": "А ты бы завёл кошку размером с тигра? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "no-sharks",
+  "mood": "tense",
+  "en": {"cover": "ALL SHARKS DISAPPEARED?", "caption": "What if all the sharks disappeared? The ocean needs them more than you think.", "tags": ["#sharks", "#ocean"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ АКУЛЫ?", "caption": "Что если исчезнут все акулы? Океану они нужнее, чем кажется.", "tags": ["#акулы", "#океан"]},
+  "scenes": [
+   {"img": "a coral reef where a shark outline fades away in bubbles, fish looking around confused, {hero} diving nearby", "en": "What if all the sharks disappeared?", "ru": "Что если исчезнут все акулы?", "cam": "in", "part": "bubbles"},
+   {"img": "an ancient shark swimming in a prehistoric ocean next to a timeline showing sharks older than trees", "en": "Sharks have been around for over four hundred million years. That's longer than trees.", "ru": "Акулы живут на Земле больше четырёхсот миллионов лет. Это дольше, чем существуют деревья.", "cam": "right", "part": "bubbles"},
+   {"img": "a shark at the top of an ocean food pyramid balancing it like a scale", "en": "They're top predators, keeping other sea animals in balance.", "ru": "Это главные хищники, которые держат в равновесии других морских животных.", "cam": "up", "part": "bubbles"},
+   {"img": "an ocean overcrowded with rays and seals, too many of them packed together", "en": "Without them, animals like rays and seals could multiply out of control.", "ru": "Без них скаты, тюлени и другие животные начнут бесконтрольно размножаться.", "cam": "left", "part": "bubbles"},
+   {"img": "a damaged coral reef and bare seabed with empty shells, sad looking clams", "en": "Then the shellfish, seagrass and reefs they feed on could collapse.", "ru": "И тогда могут погибнуть моллюски, морские травы и рифы, которыми они питаются.", "cam": "down", "part": "bubbles"},
+   {"img": "a fishing boat with confused fishermen pulling up nets full of one kind of fish and empty of others", "en": "Fishermen would see some fish vanish and others explode in numbers.", "ru": "Рыбаки увидят, как одни рыбы пропадают, а других становится слишком много.", "cam": "in"},
+   {"img": "a balance scale with a tiny number of people on one side and a huge pile of sharks on the other", "en": "Sharks kill around ten people a year. Humans kill about a hundred million sharks.", "ru": "Акулы убивают около десяти человек в год. А люди около ста миллионов акул.", "cam": "out", "fx": ["boom"]},
+   {"img": "{hero} in scuba gear giving a nervous thumbs up next to a calm friendly shark, looking at the viewer", "en": "Are you afraid of sharks? Tell me in the comments.", "ru": "А ты боишься акул? Пиши в комментариях.", "cam": "in", "part": "bubbles"}
+  ]
+ },
+ {
+  "id": "octopus-rule",
+  "mood": "wonder",
+  "en": {"cover": "OCTOPUSES TOOK OVER THE WORLD?", "caption": "What if octopuses took over the world? They're smarter than you think.", "tags": ["#octopus", "#animals"]},
+  "ru": {"cover": "ОСЬМИНОГИ ЗАХВАТЯТ МИР?", "caption": "Что если осьминоги захватят мир? Они умнее, чем кажется.", "tags": ["#осьминог", "#животные"]},
+  "scenes": [
+   {"img": "a purple octopus wearing a tiny crown sitting on a throne on the seabed, {hero} bowing nervously", "en": "What if octopuses took over the world?", "ru": "Что если осьминоги захватят мир?", "cam": "in", "part": "bubbles"},
+   {"img": "a clever octopus opening a jar lid, solving a puzzle and sneaking out of an aquarium", "en": "They're already among the smartest animals: they solve puzzles, open jars and escape aquariums.", "ru": "Они и так одни из самых умных животных: решают головоломки, открывают банки и сбегают из аквариумов.", "cam": "right", "part": "bubbles"},
+   {"img": "an octopus anatomy cartoon with three little hearts, blue blood and glowing brain cells in its arms", "en": "An octopus has three hearts and blue blood, and most of its neurons are in its arms.", "ru": "У осьминога три сердца, голубая кровь, а большая часть нейронов находится в щупальцах.", "cam": "left", "part": "bubbles"},
+   {"img": "an octopus changing color and skin texture to blend perfectly with a coral rock", "en": "They can change color and texture in a split second to disappear.", "ru": "За долю секунды они меняют цвет и текстуру кожи, чтобы стать незаметными.", "cam": "in", "part": "bubbles"},
+   {"img": "an underwater octopus city with shell buildings, coral towers and octopuses carrying tools", "en": "An octopus civilization would build cities on the seabed.", "ru": "Цивилизация осьминогов строила бы города на морском дне.", "cam": "up", "part": "bubbles"},
+   {"img": "an old octopus with a walking stick and a short calendar with only one or two years on it", "en": "But there's a catch: most octopuses live only one or two years.", "ru": "Но есть подвох: большинство осьминогов живут всего год-два.", "cam": "down", "part": "bubbles"},
+   {"img": "an octopus mother guarding glowing eggs in a cave, tiny baby octopuses hatching alone", "en": "And mothers die after their eggs hatch, so they can't pass on what they know.", "ru": "А матери погибают, когда вылупляются детёныши, так что передать им знания некому.", "cam": "out", "part": "bubbles"},
+   {"img": "{hero} shaking tentacles with an octopus wearing a tie on a sunny beach, looking at the viewer", "en": "Would you trust an octopus president? Tell me in the comments.", "ru": "А ты бы проголосовал за осьминога-президента? Пиши в комментариях.", "cam": "in"}
+  ]
+ }
+]

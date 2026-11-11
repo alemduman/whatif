@@ -1,0 +1,162 @@
+[
+ {
+  "id": "no-water",
+  "mood": "dark",
+  "en": {"cover": "THERE WAS NO WATER LEFT?", "caption": "What if there was no water left on Earth? It would take days, not years.", "tags": ["#water", "#earth"]},
+  "ru": {"cover": "НА ЗЕМЛЕ НЕ ОСТАНЕТСЯ ВОДЫ?", "caption": "Что если на Земле не останется воды? Счёт пойдёт на дни, а не на годы.", "tags": ["#вода", "#земля"]},
+  "scenes": [
+   {"img": "{hero} holding an empty glass and turning a dry tap that drips nothing, cracked dry ground outside the window", "en": "What if there was no water left on Earth?", "ru": "Что если на Земле не останется воды?", "cam": "in"},
+   {"img": "an empty ocean basin revealing giant underwater mountains, deep canyons and stranded ships on dry sand", "en": "The oceans would vanish, revealing mountains and canyons deeper than anything on land.", "ru": "Океаны исчезнут, и откроются горы и ущелья глубже всего, что есть на суше.", "cam": "down", "part": "dust"},
+   {"img": "a perfectly cloudless harsh sky with a blazing Sun over a dry city, people shading their eyes", "en": "Clouds would disappear. No rain, no snow, only a blazing Sun in a dry sky.", "ru": "Пропадут облака. Ни дождя, ни снега, только палящее солнце в сухом небе.", "cam": "up"},
+   {"img": "a forest of wilting brown trees and plants crumbling into dust, dry leaves blowing away", "en": "Plants would wilt within days, and forests would turn to dust.", "ru": "Растения завянут за несколько дней, а леса превратятся в пыль.", "cam": "left", "part": "dust"},
+   {"img": "a cartoon human silhouette filled sixty percent with blue water like a glass, a calendar showing three days", "en": "Your body is about sixty percent water. Without drinking, a person survives only about three days.", "ru": "Человек примерно на шестьдесят процентов состоит из воды. Без питья он проживёт всего около трёх дней.", "cam": "in"},
+   {"img": "split scene of a desert landscape: scorching red day on one side with a thermometer at max, freezing blue frosty night on the other", "en": "Without oceans to store heat, days would be scorching, and nights freezing.", "ru": "Без океанов, которые держат тепло, дни станут обжигающими, а ночи ледяными.", "cam": "right"},
+   {"img": "planet Earth seen from space turned red and dusty like Mars, no clouds, no blue oceans", "en": "In the end, Earth would look like Mars: a red, dusty, silent desert.", "ru": "В итоге Земля станет похожа на Марс: красная, пыльная и безмолвная пустыня.", "cam": "out", "part": "stars"},
+   {"img": "{hero} carefully closing a dripping tap and holding a full glass of water, smiling at the viewer", "en": "So save water. How long could you go without it? Tell me in the comments.", "ru": "Так что береги воду. А сколько бы ты продержался без неё? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "ice-melts",
+  "mood": "tense",
+  "en": {"cover": "ALL THE ICE MELTED?", "caption": "What if all the ice on Earth melted? Check if your city would survive.", "tags": ["#climate", "#ocean"]},
+  "ru": {"cover": "РАСТАЕТ ВЕСЬ ЛЁД?", "caption": "Что если растает весь лёд на Земле? Проверь, останется ли твой город на суше.", "tags": ["#климат", "#океан"]},
+  "scenes": [
+   {"img": "{hero} standing on a melting iceberg with a tiny umbrella as huge glaciers collapse into the sea behind him", "en": "What if all the ice on Earth melted?", "ru": "Что если на Земле растает весь лёд?", "cam": "in", "part": "snow"},
+   {"img": "a twenty-story building partly underwater with the waterline marked at the top floors, boats floating by", "en": "Sea levels would rise by about seventy meters, as tall as a twenty-story building.", "ru": "Уровень моря поднимется примерно на семьдесят метров, это высота двадцатиэтажного дома.", "cam": "up"},
+   {"img": "famous world city skylines half submerged in the sea, skyscrapers poking out of the water, fish swimming between them", "en": "Cities like New York, London, Shanghai and Venice would be underwater.", "ru": "Под водой окажутся Нью-Йорк, Лондон, Шанхай и Венеция.", "cam": "left", "part": "bubbles"},
+   {"img": "a world map with whole coastal countries fading away under blue water, windmills and rice fields sinking", "en": "Entire countries, like the Netherlands and Bangladesh, would disappear from the map.", "ru": "С карты исчезнут целые страны, например, Нидерланды и Бангладеш.", "cam": "right"},
+   {"img": "a giant inland sea where a rainforest used to be, treetops poking out of the water, river dolphins swimming", "en": "Florida would be gone, and the Amazon would turn into a giant inland sea.", "ru": "Флорида исчезнет, а на месте Амазонки появится огромное внутреннее море.", "cam": "down", "part": "bubbles"},
+   {"img": "Antarctica without ice: a rocky continent with lakes, islands and green patches, penguins looking confused", "en": "Most of the ice is in Antarctica. Without it, it would become a land of lakes and islands.", "ru": "Больше всего льда в Антарктиде. Без него она превратится в землю озёр и островов.", "cam": "out"},
+   {"img": "a glacier melting slowly with a large hourglass beside it, meltwater streams flowing", "en": "Melting all of it would take thousands of years, but the ice is already shrinking today.", "ru": "Чтобы растаял весь лёд, нужны тысячи лет, но он уже тает прямо сейчас.", "cam": "in", "part": "snow"},
+   {"img": "{hero} in a small rowing boat floating past a submerged city street sign, looking at the viewer with a worried smile", "en": "Would your city survive? Tell me in the comments.", "ru": "А твой город остался бы на суше? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "supervolcano",
+  "mood": "epic",
+  "en": {"cover": "YELLOWSTONE ERUPTED?", "caption": "What if the Yellowstone supervolcano erupted? The whole planet would feel it.", "tags": ["#volcano", "#yellowstone"]},
+  "ru": {"cover": "ПРОСНЁТСЯ СУПЕРВУЛКАН?", "caption": "Что если проснётся супервулкан Йеллоустоун? Это почувствует вся планета.", "tags": ["#вулкан", "#йеллоустоун"]},
+  "scenes": [
+   {"img": "a colossal volcanic eruption bursting from a forested national park with geysers, {hero} running away in panic", "en": "What if the Yellowstone supervolcano erupted?", "ru": "Что если проснётся супервулкан Йеллоустоун?", "cam": "in", "fx": ["shake"], "part": "embers"},
+   {"img": "an enormous column of ash and rock shooting into the sky, a tiny city at its foot for scale", "en": "It would blast out over a thousand cubic kilometers of rock and ash.", "ru": "Он выбросит больше тысячи кубических километров камней и пепла.", "cam": "up", "part": "ash"},
+   {"img": "a wave of glowing grey ash and hot gas rolling across forests and hills", "en": "Everything within about a hundred kilometers would be buried by burning ash and hot gas.", "ru": "Всё в радиусе около ста километров накроет раскалённым пеплом и газом.", "cam": "left", "part": "embers"},
+   {"img": "a small American town covered in thick grey ash like snow, collapsed roofs, buried cars and fields", "en": "Ash would fall across much of the United States, collapsing roofs and ruining farmland.", "ru": "Пепел выпадет на большей части США, будут рушиться крыши и гибнуть поля.", "cam": "right", "part": "ash"},
+   {"img": "planet Earth from space wrapped in a hazy yellow veil, the Sun looking dim and pale", "en": "Sulfur gases would dim the Sun and cool the planet for several years.", "ru": "Сернистые газы закроют Солнце, и на несколько лет на всей планете похолодает.", "cam": "out", "part": "stars"},
+   {"img": "a supermarket with nearly empty shelves and price tags shooting upward, worried shoppers", "en": "Crops would fail around the world, and food prices would skyrocket.", "ru": "Урожаи пострадают по всему миру, а еда резко подорожает.", "cam": "down"},
+   {"img": "scientists in a cozy observatory calmly monitoring a sleeping volcano with instruments, a big dice showing tiny odds", "en": "The good news: scientists put the chance of this happening in any given year at about one in seven hundred thousand.", "ru": "Хорошая новость: учёные оценивают шанс такого извержения примерно как один к семистам тысячам в год.", "cam": "in"},
+   {"img": "{hero} roasting a marshmallow on a stick over a steaming geyser, looking at the viewer with a cheeky grin", "en": "Would you live near a supervolcano? Tell me in the comments.", "ru": "А ты бы жил рядом с супервулканом? Пиши в комментариях.", "cam": "out", "part": "embers"}
+  ]
+ },
+ {
+  "id": "oxygen-5sec",
+  "mood": "tense",
+  "en": {"cover": "OXYGEN VANISHED FOR 5 SECONDS?", "caption": "What if Earth lost all its oxygen for just five seconds?", "tags": ["#oxygen", "#science"]},
+  "ru": {"cover": "КИСЛОРОД ИСЧЕЗНЕТ НА 5 СЕКУНД?", "caption": "Что если на Земле на пять секунд исчезнет кислород?", "tags": ["#кислород", "#наука"]},
+  "scenes": [
+   {"img": "{hero} in a busy city street freezing mid-breath with wide eyes as glowing oxygen bubbles vanish from the air around him", "en": "What if Earth lost all its oxygen for just five seconds?", "ru": "Что если на Земле на пять секунд исчезнет кислород?", "cam": "in"},
+   {"img": "campfires, candles and a gas stove all going out at the same moment, little smoke curls rising", "en": "Every fire on the planet would go out instantly.", "ru": "Все огни на планете мгновенно погаснут.", "cam": "right", "part": "ash"},
+   {"img": "a highway with cars stalling and coasting, an airplane gliding silently above with its engines quiet", "en": "Car engines would stop, and planes would have to glide, because engines need oxygen to burn fuel.", "ru": "Заглохнут машины, а самолёты пойдут на планирование: двигателям нужен кислород, чтобы сжигать топливо.", "cam": "left"},
+   {"img": "{hero} holding his ears in pain with little pop symbols, like riding a fast elevator up a mountain", "en": "Air pressure would suddenly drop by a fifth. Your ears would pop like on a fast trip up a mountain.", "ru": "Давление воздуха резко упадёт на пятую часть. Уши заложит, как при быстром подъёме в горы.", "cam": "in"},
+   {"img": "the ozone layer around Earth disappearing, strong purple UV rays from the Sun hitting a beach full of people", "en": "The ozone layer is made of oxygen too, so the Sun's UV rays would hit us at full strength.", "ru": "Озоновый слой тоже состоит из кислорода, так что ультрафиолет Солнца ударит в полную силу.", "cam": "down"},
+   {"img": "people holding their breath with puffed cheeks, a diver underwater and a hospital patient with doctors rushing", "en": "Holding your breath, you'd be fine. But divers and patients on oxygen would be in danger.", "ru": "Если задержать дыхание, ничего страшного. Но водолазы и больные на кислороде оказались бы в опасности.", "cam": "up"},
+   {"img": "a powerful whoosh of air rushing back into the city, flags and hair blowing, papers swirling", "en": "Then oxygen would rush back in, with a roar like a giant gust of wind.", "ru": "А потом кислород вернётся, и с рёвом налетит, как огромный порыв ветра.", "cam": "out", "part": "dust"},
+   {"img": "{hero} taking a huge relieved deep breath with arms wide open in a green park, looking at the viewer", "en": "How long can you hold your breath? Tell me in the comments.", "ru": "А сколько ты можешь не дышать? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "no-trees",
+  "mood": "dark",
+  "en": {"cover": "ALL TREES DISAPPEARED?", "caption": "What if every tree on Earth disappeared overnight?", "tags": ["#trees", "#nature"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ ДЕРЕВЬЯ?", "caption": "Что если за одну ночь исчезнут все деревья на Земле?", "tags": ["#деревья", "#природа"]},
+  "scenes": [
+   {"img": "{hero} waking up and looking out the window at a park where all the trees have vanished, leaving only round holes in the ground", "en": "What if all the trees on Earth disappeared?", "ru": "Что если на Земле исчезнут все деревья?", "cam": "in"},
+   {"img": "a vast green forest seen from above fading away into empty bare land, a counter showing three trillion", "en": "There are about three trillion trees on our planet. Overnight, they'd all be gone.", "ru": "На планете около трёх триллионов деревьев. И за одну ночь их не станет.", "cam": "out"},
+   {"img": "sad monkeys, owls, squirrels and koalas sitting on the bare ground with nowhere to live", "en": "Millions of animals would lose their homes, and countless species would go extinct.", "ru": "Миллионы животных останутся без дома, и множество видов вымрет.", "cam": "left"},
+   {"img": "heavy rain washing muddy soil down bare hills into a flooded village, landslide", "en": "Without roots holding the soil, rain would wash it away, causing floods and landslides.", "ru": "Без корней почву будет смывать дождями: начнутся наводнения и оползни.", "cam": "down", "part": "rain"},
+   {"img": "the ocean surface glowing green with tiny plankton producing oxygen bubbles, a happy whale nearby", "en": "We wouldn't run out of air, because about half of our oxygen comes from tiny plankton in the ocean.", "ru": "Задохнуться нам не грозит: примерно половину кислорода дают крошечные водоросли в океане.", "cam": "up", "part": "bubbles"},
+   {"img": "a hot hazy city with a thermometer rising and clouds of carbon dioxide, no trees anywhere", "en": "But carbon dioxide would build up fast, and the planet would heat up.", "ru": "Но углекислый газ начнёт быстро накапливаться, и планета станет нагреваться.", "cam": "right", "part": "dust"},
+   {"img": "people sweating in a sunny city street with no shade, empty fruit stands, no paper or wooden furniture", "en": "No wood, no paper, no shade, and far fewer fruits.", "ru": "Ни древесины, ни бумаги, ни тени, а фруктов станет гораздо меньше.", "cam": "in"},
+   {"img": "{hero} planting a small sapling in the ground with a watering can, smiling at the viewer", "en": "Have you ever planted a tree? Tell me in the comments.", "ru": "А ты когда-нибудь сажал дерево? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "no-insects",
+  "mood": "tense",
+  "en": {"cover": "ALL INSECTS DISAPPEARED?", "caption": "What if all the insects disappeared? No mosquitoes sounds great, until you see what's next.", "tags": ["#insects", "#nature"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ НАСЕКОМЫЕ?", "caption": "Что если исчезнут все насекомые? Без комаров хорошо, но только поначалу.", "tags": ["#насекомые", "#природа"]},
+  "scenes": [
+   {"img": "{hero} in a summer meadow looking puzzled as bees, butterflies and beetles vanish in little sparkles", "en": "What if all the insects disappeared?", "ru": "Что если исчезнут все насекомые?", "cam": "in"},
+   {"img": "{hero} relaxing happily in a hammock on a summer evening with no mosquitoes or flies around", "en": "No more mosquitoes or flies sounds great at first.", "ru": "Без комаров и мух поначалу будет даже приятно.", "cam": "right"},
+   {"img": "a sad orchard with flowers that were never pollinated, an empty beehive, worried farmers", "en": "But about three quarters of our food crops depend at least partly on pollinators like bees.", "ru": "Но около трёх четвертей сельхозкультур хотя бы частично зависят от опылителей, например, пчёл.", "cam": "left"},
+   {"img": "a market stall with a few very expensive apples, strawberries and a tiny chocolate bar under a glass case", "en": "Apples, strawberries and even cocoa for chocolate would become rare.", "ru": "Яблоки, клубника и даже какао для шоколада стали бы редкостью.", "cam": "in"},
+   {"img": "hungry birds, frogs and fish looking around for food with empty plates", "en": "Birds, frogs and many fish that eat insects would starve.", "ru": "Птицы, лягушки и многие рыбы, которые едят насекомых, начнут голодать.", "cam": "down"},
+   {"img": "huge piles of fallen leaves, logs and old fruit building up in a forest because nothing breaks them down", "en": "Fallen leaves and dead animals would pile up, because insects help break them down.", "ru": "Повсюду копились бы опавшие листья и останки животных, ведь насекомые помогают их перерабатывать.", "cam": "up", "part": "dust"},
+   {"img": "a beautiful ecosystem drawn as a tower of blocks with the insect block pulled out, the tower starting to crumble", "en": "Many scientists believe that without insects, nature as we know it would collapse.", "ru": "Многие учёные считают, что без насекомых природа, какой мы её знаем, просто рухнет.", "cam": "out", "fx": ["shake"]},
+   {"img": "{hero} smiling at a ladybug sitting on his finger in a flower garden, looking at the viewer", "en": "Which insect would you miss the most? Tell me in the comments.", "ru": "А по какому насекомому ты бы скучал больше всего? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "hole-through-earth",
+  "mood": "epic",
+  "en": {"cover": "A HOLE THROUGH THE EARTH?", "caption": "What if you dug a hole through the Earth and jumped in? The trip takes about 40 minutes.", "tags": ["#earth", "#physics"]},
+  "ru": {"cover": "ДЫРА СКВОЗЬ ЗЕМЛЮ?", "caption": "Что если прокопать дыру сквозь Землю и прыгнуть? Дорога займёт около 40 минут.", "tags": ["#земля", "#физика"]},
+  "scenes": [
+   {"img": "{hero} standing on the edge of a perfectly round deep hole in his backyard holding a shovel, peering into darkness", "en": "What if you dug a hole through the Earth and jumped in?", "ru": "Что если прокопать дыру сквозь Землю и прыгнуть в неё?", "cam": "in"},
+   {"img": "a cutaway of planet Earth showing a tiny scratch of a drill hole near the surface compared to the huge planet", "en": "The deepest hole ever drilled is only about twelve kilometers deep. Earth is almost thirteen thousand kilometers across.", "ru": "Самая глубокая скважина в мире, Кольская, всего около двенадцати километров. А Земля в поперечнике почти тринадцать тысяч.", "cam": "out"},
+   {"img": "a cutaway of Earth's layers with a glowing white-hot core and a thermometer showing extreme heat", "en": "Inside, the core is over five thousand degrees, as hot as the surface of the Sun.", "ru": "Внутри, в ядре, больше пяти тысяч градусов, как на поверхности Солнца.", "cam": "down", "part": "embers"},
+   {"img": "{hero} falling down a glowing magical protected tunnel through the planet, wind in his hair, speed lines", "en": "But let's say your tunnel is magically protected. You'd fall faster and faster.", "ru": "Но допустим, тоннель волшебно защищён. Ты будешь падать всё быстрее и быстрее.", "cam": "down", "part": "embers"},
+   {"img": "{hero} floating weightless at the center of the Earth inside the tunnel, super fast motion blur around him", "en": "At the center, you'd be weightless and flying at about eight kilometers per second.", "ru": "В центре Земли ты станешь невесомым и будешь лететь со скоростью около восьми километров в секунду.", "cam": "in", "fx": ["flash"]},
+   {"img": "{hero} popping out of a hole on the other side of the world next to surprised people in a faraway country, a clock showing forty minutes", "en": "Then you'd slow down and pop out on the other side about forty minutes later.", "ru": "Потом ты замедлишься и минут через сорок вынырнешь на другой стороне планеты.", "cam": "up"},
+   {"img": "a dotted line showing a person bouncing back and forth through the Earth like a yo-yo", "en": "If you didn't grab the edge, you'd fall back again, back and forth, forever.", "ru": "А если не схватишься за край, полетишь обратно, и так туда-сюда вечно.", "cam": "left"},
+   {"img": "{hero} holding onto the edge of a hole with one hand, waving at the viewer with a big grin", "en": "Where would your hole come out? Tell me in the comments.", "ru": "А где бы вылез ты? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "no-magnetic-field",
+  "mood": "tense",
+  "en": {"cover": "EARTH LOST ITS SHIELD?", "caption": "What if Earth lost its magnetic field? You can't see it, but it protects you every day.", "tags": ["#earth", "#science"]},
+  "ru": {"cover": "ЗЕМЛЯ ПОТЕРЯЕТ ЩИТ?", "caption": "Что если у Земли исчезнет магнитное поле? Его не видно, но оно защищает нас каждый день.", "tags": ["#земля", "#наука"]},
+  "scenes": [
+   {"img": "planet Earth in space with a glowing blue magnetic shield bubble flickering and fading away, {hero} looking through a telescope worried", "en": "What if Earth lost its magnetic field?", "ru": "Что если у Земли исчезнет магнитное поле?", "cam": "in", "part": "stars"},
+   {"img": "Earth surrounded by an invisible-looking glowing shield made of curved field lines like a bubble", "en": "You can't see it, but it surrounds the planet like an invisible shield.", "ru": "Его не видно, но оно окружает планету, как невидимый щит.", "cam": "out", "part": "stars"},
+   {"img": "a stream of glowing particles blasting from the Sun and bending around Earth's magnetic shield", "en": "It deflects the solar wind, a stream of charged particles blasting from the Sun.", "ru": "Оно отклоняет солнечный ветер, поток заряженных частиц от Солнца.", "cam": "right", "part": "embers"},
+   {"img": "a compass needle spinning wildly, confused migrating birds, sea turtles and a whale heading in wrong directions", "en": "Without it, compasses would stop working, and birds, turtles and whales could get lost.", "ru": "Без него перестанут работать компасы, а птицы, черепахи и киты могут сбиться с пути.", "cam": "left"},
+   {"img": "a smoking broken satellite in orbit and a city below losing power, sparks on power lines", "en": "Solar storms would fry satellites and knock out power grids.", "ru": "Солнечные бури будут выжигать спутники и обесточивать города.", "cam": "down", "part": "embers"},
+   {"img": "Mars as a dry red planet with a thin atmosphere being blown away by the solar wind, Earth next to it", "en": "Over millions of years, the solar wind could strip away part of our air, just like it did on Mars.", "ru": "А за миллионы лет солнечный ветер может сдуть часть нашей атмосферы, как это случилось на Марсе.", "cam": "up", "part": "stars"},
+   {"img": "a giant bar magnet inside the Earth slowly flipping north and south, dinosaurs and early humans living calmly on the surface", "en": "The field weakens and flips every few hundred thousand years, and life has always survived.", "ru": "Поле время от времени ослабевает и меняет полюса, и жизнь всегда это переживала.", "cam": "in"},
+   {"img": "{hero} holding a big horseshoe magnet and smiling at the viewer under a sky with green northern lights", "en": "Did you know our planet had a shield? Tell me in the comments.", "ru": "А ты знал, что у планеты есть такой щит? Пиши в комментариях.", "cam": "out", "part": "stars"}
+  ]
+ },
+ {
+  "id": "pangea",
+  "mood": "wonder",
+  "en": {"cover": "ALL CONTINENTS JOINED AGAIN?", "caption": "What if all the continents joined into one again? Spoiler: it will happen.", "tags": ["#pangea", "#earth"]},
+  "ru": {"cover": "МАТЕРИКИ СОЕДИНЯТСЯ?", "caption": "Что если все континенты снова соединятся в один? Спойлер: так и будет.", "tags": ["#пангея", "#земля"]},
+  "scenes": [
+   {"img": "a cartoon globe where all the continents slide together like puzzle pieces into one giant landmass, {hero} pushing one of them", "en": "What if all the continents joined together again?", "ru": "Что если все континенты снова соединятся в один?", "cam": "in"},
+   {"img": "an ancient supercontinent surrounded by one huge ocean, dinosaurs walking on it", "en": "It's happened before. Around two hundred million years ago, there was one supercontinent: Pangaea.", "ru": "Так уже было: около двухсот миллионов лет назад существовал один суперконтинент, Пангея.", "cam": "out"},
+   {"img": "{hero} with a backpack walking along a long road from one famous city skyline to another, no ocean in between", "en": "You could walk from London to New York.", "ru": "Из Москвы в Нью-Йорк можно было бы дойти пешком.", "cam": "right"},
+   {"img": "a gigantic scorching desert in the middle of a supercontinent, a lonely camel and a distant sea far away", "en": "But the middle of it would be thousands of kilometers from the sea, a giant scorching desert.", "ru": "Но его середина оказалась бы за тысячи километров от моря: гигантская раскалённая пустыня.", "cam": "left", "part": "dust"},
+   {"img": "huge new jagged mountains rising up where two continents crash together, rocks crumpling", "en": "Where continents collide, giant new mountain ranges would rise.", "ru": "Там, где сталкиваются материки, вырастут новые огромные горы.", "cam": "up", "fx": ["shake"]},
+   {"img": "kangaroos, lions, polar bears and llamas meeting each other for the first time with surprised faces", "en": "Animals from every continent would meet, and many species would lose the competition.", "ru": "Животные со всех континентов встретятся, и многие виды не выдержат конкуренции.", "cam": "in"},
+   {"img": "a futuristic globe showing a new supercontinent forming, a big calendar showing far future", "en": "And it really will happen again, in about two hundred and fifty million years.", "ru": "И это действительно случится снова, примерно через двести пятьдесят миллионов лет.", "cam": "out"},
+   {"img": "{hero} standing on a border line between two countries with one foot on each side, waving at the viewer", "en": "Which country would you want as a neighbor? Tell me in the comments.", "ru": "А с какой страной ты бы хотел граничить? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "endless-rain",
+  "mood": "dark",
+  "en": {"cover": "IT NEVER STOPPED RAINING?", "caption": "What if it started raining everywhere and never stopped? There's a twist.", "tags": ["#rain", "#weather"]},
+  "ru": {"cover": "ДОЖДЬ НЕ ПРЕКРАТИТСЯ?", "caption": "Что если на всей Земле пойдёт дождь без остановки? Тут есть подвох.", "tags": ["#дождь", "#погода"]},
+  "scenes": [
+   {"img": "{hero} under a small umbrella in heavy endless rain, the whole city grey and wet around him", "en": "What if it rained everywhere on Earth, non-stop?", "ru": "Что если на всей Земле пойдёт дождь без остановки?", "cam": "in", "part": "rain"},
+   {"img": "a city street turned into a canal, people paddling in boats and on inflatable rings past shops", "en": "In the first days, rivers would overflow, and streets would turn into canals.", "ru": "В первые дни реки выйдут из берегов, а улицы превратятся в каналы.", "cam": "right", "part": "rain"},
+   {"img": "a cross-section of soil soaked with water like a sponge, puddles everywhere on top", "en": "The ground would soak up water like a sponge, until it couldn't take any more.", "ru": "Земля будет впитывать воду, как губка, пока не перестанет.", "cam": "down", "part": "rain"},
+   {"img": "a muddy hillside sliding down towards houses in a dramatic mudslide", "en": "Then whole hillsides would start sliding down in huge mudslides.", "ru": "А потом целые склоны начнут сползать огромными оползнями.", "cam": "left", "fx": ["shake"], "part": "rain"},
+   {"img": "rotting wet crops in a flooded field and fuzzy green mold growing on walls and bread", "en": "Crops would rot in the fields, and mold would grow on everything.", "ru": "Урожай сгниёт на полях, а плесень появится повсюду.", "cam": "in", "part": "rain"},
+   {"img": "a cartoon cloud squeezed like a wet towel with the last drops falling out, a calendar showing ten days", "en": "But here's the twist: all the water in the air is only enough for about ten days of rain.", "ru": "Но есть подвох: всей воды в воздухе хватит лишь примерно на десять дней дождя.", "cam": "up", "part": "rain"},
+   {"img": "the clouds parting and a bright rainbow appearing over a flooded but sunny town, people cheering", "en": "After that, the clouds would simply run dry, and the sky would finally clear.", "ru": "После этого облака просто иссякнут, и небо наконец прояснится.", "cam": "out", "fx": ["flash"]},
+   {"img": "{hero} splashing happily in a puddle in rain boots, looking at the viewer", "en": "Do you love rainy days or hate them? Tell me in the comments.", "ru": "А ты любишь дождь или терпеть его не можешь? Пиши в комментариях.", "cam": "in", "part": "rain"}
+  ]
+ }
+]

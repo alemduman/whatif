@@ -1,0 +1,92 @@
+name: Сделать ролики
+
+# Делает ролики из банка тем (topics/): кадры нейросетью (общие для всех языков), озвучка, видео EN и RU, обложки.
+# Готовое кладётся в релиз "library" (видео не раздувают репозиторий), список готовых тем — в library.json.
+# Запускается вручную или сам из автопостинга, когда в очереди остаётся мало роликов.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Сколько новых тем сделать'
+        type: string
+        default: '3'
+      ids:
+        description: 'Конкретные темы через запятую (например sun-off,zombies). Пусто = следующие по порядку'
+        type: string
+        default: ''
+      reuse_images:
+        description: 'Если тема уже делалась, взять старые кадры (не платить за картинки повторно)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Установить зависимости
+        timeout-minutes: 15
+        run: |
+          pip install --quiet edge-tts pillow numpy scipy opencv-python-headless
+          command -v ffmpeg >/dev/null || (timeout 180 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg)
+          ffmpeg -version | head -n 1
+
+      - name: Проверить банк тем
+        run: python3 scripts/produce.py --check
+
+      - name: Сделать ролики
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          REUSE_IMAGES: ${{ inputs.reuse_images && '1' || '0' }}
+          COUNT: ${{ inputs.count }}
+          IDS: ${{ inputs.ids }}
+        run: python3 scripts/produce.py --count "${COUNT:-3}" --ids "$IDS"
+
+      - name: Выложить в релиз library
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f out/produced.json ] || { echo "Ничего не сделано"; exit 0; }
+          gh release view library >/dev/null 2>&1 || gh release create library --title "Готовые ролики" --notes "Ролики «Что если?»: <id>.en.mp4 — Instagram, <id>.ru.mp4 — TikTok, обложки .jpg, кадры .images.zip"
+          files=$(ls out/*/*.mp4 out/*/*.jpg out/*/*.json out/*/*.images.zip 2>/dev/null)
+          for i in 1 2 3; do gh release upload library $files --clobber && break; echo "повтор загрузки"; sleep 15; done
+          {
+            echo "### Готово"
+            python3 -c "import json;[print(f\"- **{p['id']}**: \" + ', '.join(f\"{k} {v['seconds']} с\" for k,v in p['langs'].items())) for p in json.load(open('out/produced.json'))]"
+            echo ""
+            echo "Файлы: релиз **library** (Releases)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Записать в library.json
+        if: hashFiles('out/produced.json') != ''
+        run: |
+          git config user.name "whatif-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp out/produced.json "$RUNNER_TEMP/produced.json"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/add_library.py "$RUNNER_TEMP/produced.json"
+            git add library.json
+            git commit -q -m "Готовые ролики: $(python3 -c "import json;print(', '.join(p['id'] for p in json.load(open('$RUNNER_TEMP/produced.json'))))")" || exit 0
+            git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

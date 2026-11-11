@@ -1,0 +1,82 @@
+[
+ {
+  "id": "everyone-millionaire",
+  "mood": "fun",
+  "en": {"cover": "EVERYONE BECAME A MILLIONAIRE?", "caption": "What if everyone on Earth became a millionaire overnight? Your money would be worth nothing.", "tags": ["#money", "#economy"]},
+  "ru": {"cover": "ВСЕ СТАНУТ МИЛЛИОНЕРАМИ?", "caption": "Что если все люди станут миллионерами за одну ночь? Деньги перестанут что-то стоить.", "tags": ["#деньги", "#экономика"]},
+  "scenes": [
+   {"img": "{hero} waking up in bed covered in a pile of banknotes, money raining from the ceiling, huge grin", "en": "What if everyone on Earth became a millionaire overnight?", "ru": "Что если за одну ночь все люди на Земле станут миллионерами?", "cam": "in"},
+   {"img": "a happy crowd shopping with huge bags, sports cars and suitcases for vacations, confetti", "en": "For a moment, everyone would celebrate: shopping, cars, vacations!", "ru": "Сначала все будут праздновать: покупки, машины, путешествия!", "cam": "right"},
+   {"img": "an empty farm, a closed shop and a quiet factory with signs saying closed, workers relaxing on yachts", "en": "But nobody would want to work in shops, farms or factories anymore.", "ru": "Но работать в магазинах, на фермах и заводах больше никто не захочет.", "cam": "left"},
+   {"img": "price tags on store shelves shooting up like rockets, shocked shoppers holding piles of cash", "en": "Prices would shoot up: a lot more money, but the same amount of stuff.", "ru": "Цены взлетят: денег станет намного больше, а товаров столько же.", "cam": "up"},
+   {"img": "a single loaf of bread on a pedestal with a giant price tag, a person pushing a wheelbarrow full of cash", "en": "This is called inflation. A loaf of bread could cost thousands.", "ru": "Это называется инфляцией. Буханка хлеба могла бы стоить тысячи.", "cam": "in"},
+   {"img": "a market scene with people carrying huge bags of banknotes to buy a few eggs, a calendar with doubling arrows", "en": "It really happened in Zimbabwe in 2008, when prices doubled almost every day.", "ru": "Так уже было в Зимбабве в 2008 году: цены удваивались почти каждый день.", "cam": "down"},
+   {"img": "banknotes blowing away in the wind like old leaves, a man sitting on a pile of money looking bored", "en": "Soon, being a millionaire would mean nothing at all.", "ru": "Очень скоро быть миллионером значило бы ровно ничего.", "cam": "out", "part": "dust"},
+   {"img": "{hero} holding a shopping list and a fan of banknotes, looking at the viewer with a cheeky smile", "en": "What would you buy first? Tell me in the comments.", "ru": "А что бы ты купил первым делом? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "no-money",
+  "mood": "wonder",
+  "en": {"cover": "MONEY DISAPPEARED?", "caption": "What if money disappeared? We'd basically reinvent it.", "tags": ["#money", "#history"]},
+  "ru": {"cover": "ДЕНЬГИ ИСЧЕЗНУТ?", "caption": "Что если деньги исчезнут? Мы бы просто изобрели их заново.", "tags": ["#деньги", "#история"]},
+  "scenes": [
+   {"img": "{hero} opening an empty wallet with a moth flying out, a bank building fading away behind him", "en": "What if money disappeared?", "ru": "Что если деньги исчезнут?", "cam": "in"},
+   {"img": "a market where a farmer offers two chickens to a shoemaker for a pair of boots", "en": "We'd go back to trading things: two chickens for a pair of boots.", "ru": "Мы вернулись бы к обмену: две курицы за пару сапог.", "cam": "right"},
+   {"img": "a shoemaker shaking his head at the chickens, a long confusing chain of people trading items with arrows", "en": "But what if the shoemaker doesn't want chickens? Trading gets complicated fast.", "ru": "А если сапожнику не нужны куры? Обмен быстро становится сложным.", "cam": "left"},
+   {"img": "a table showing salt, sea shells, gold coins and other old trading goods glowing as valuable", "en": "So people would start using something everyone wants as money: salt, shells or gold.", "ru": "Поэтому люди начали бы использовать как деньги то, что нужно всем: соль, ракушки или золото.", "cam": "up"},
+   {"img": "an ancient marketplace with people trading with the first coins, a historic scene", "en": "That's exactly how money was invented thousands of years ago.", "ru": "Именно так деньги и появились тысячи лет назад.", "cam": "in"},
+   {"img": "two people swapping services: one fixing a bike, the other teaching guitar, phones with a swap app", "en": "Online, people could swap skills: you fix my bike, I teach you guitar.", "ru": "В интернете люди меняли бы услуги: ты чинишь мне велосипед, я учу тебя играть на гитаре.", "cam": "down"},
+   {"img": "giant round stone discs with holes in the middle taller than people on a tropical Pacific island", "en": "And on the island of Yap, people used giant stone discs as money, some taller than a person.", "ru": "А на острове Яп деньгами служили огромные каменные диски, некоторые выше человека.", "cam": "out"},
+   {"img": "{hero} holding a basket of apples and a guitar, offering them to the viewer with a smile", "en": "What would you trade? Tell me in the comments.", "ru": "А что бы ты предложил на обмен? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "one-language",
+  "mood": "wonder",
+  "en": {"cover": "EVERYONE SPOKE ONE LANGUAGE?", "caption": "What if everyone in the world spoke the same language? We'd gain a lot, and lose a lot.", "tags": ["#language", "#world"]},
+  "ru": {"cover": "ВСЕ ЗАГОВОРЯТ НА ОДНОМ ЯЗЫКЕ?", "caption": "Что если все люди в мире будут говорить на одном языке? Мы многое получим и многое потеряем.", "tags": ["#язык", "#мир"]},
+  "scenes": [
+   {"img": "people from all over the world in different traditional clothes chatting together with identical speech bubbles, {hero} in the middle", "en": "What if everyone in the world spoke the same language?", "ru": "Что если все люди в мире будут говорить на одном языке?", "cam": "in"},
+   {"img": "a globe covered in thousands of colorful speech bubbles with different scripts and symbols", "en": "Today, there are about seven thousand languages on Earth.", "ru": "Сейчас на Земле около семи тысяч языков.", "cam": "out"},
+   {"img": "{hero} with a backpack chatting easily with locals in a market in a faraway exotic country", "en": "With one language, you could travel anywhere and talk to anyone.", "ru": "С одним языком можно поехать куда угодно и поговорить с кем угодно.", "cam": "right"},
+   {"img": "a busy futuristic office with scientists and business people working together, a dusty dictionary in a museum case", "en": "Business, science and the internet would move faster. No more translators.", "ru": "Бизнес, наука и интернет работали бы быстрее, переводчики стали бы не нужны.", "cam": "left"},
+   {"img": "old books, song sheets and joke cartoons slowly fading into dust, a sad poet", "en": "But we'd lose so much: songs, jokes and words that can't be translated.", "ru": "Но мы потеряли бы очень многое: песни, шутки и слова, которые невозможно перевести.", "cam": "down", "part": "dust"},
+   {"img": "warm sunlight filtering through green tree leaves in a forest, beams of light on the ground", "en": "Like the Japanese word komorebi: sunlight filtering through the leaves.", "ru": "Например, японское слово комореби: солнечный свет, пробивающийся сквозь листья.", "cam": "up", "part": "dust"},
+   {"img": "a single tree trunk of language branching into many new colorful branches over time, a timeline of centuries", "en": "And over centuries, that one language would split into new dialects anyway.", "ru": "А за несколько веков единый язык всё равно распался бы на новые наречия.", "cam": "in"},
+   {"img": "{hero} holding a big speech bubble with a question mark, looking at the viewer", "en": "Which language should everyone speak? Tell me in the comments.", "ru": "А какой язык ты бы выбрал для всех? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "no-smartphones",
+  "mood": "tense",
+  "en": {"cover": "SMARTPHONES DISAPPEARED?", "caption": "What if smartphones disappeared overnight? Could you handle it?", "tags": ["#smartphone", "#technology"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ СМАРТФОНЫ?", "caption": "Что если за одну ночь исчезнут все смартфоны? Ты бы справился?", "tags": ["#смартфон", "#технологии"]},
+  "scenes": [
+   {"img": "{hero} reaching into his pocket in panic and finding it empty, phones vanishing from everyone's hands around him", "en": "What if smartphones disappeared overnight?", "ru": "Что если за одну ночь исчезнут все смартфоны?", "cam": "in"},
+   {"img": "a person checking a phone again and again, a counter above them showing a hundred times", "en": "The average person checks their phone over a hundred times a day.", "ru": "В среднем человек проверяет телефон больше ста раз в день.", "cam": "right"},
+   {"img": "{hero} lost in a city holding a big paper map upside down, no music, no camera", "en": "Suddenly, no maps, no music, no camera in your pocket.", "ru": "Вдруг ни карт, ни музыки, ни камеры в кармане.", "cam": "left"},
+   {"img": "people waiting alone at different meeting spots and a sad birthday cake with no guests", "en": "People would get lost, miss meetings and forget birthdays.", "ru": "Люди начнут теряться, пропускать встречи и забывать о днях рождения.", "cam": "down"},
+   {"img": "an empty taxi stand, a delivery scooter parked with no orders, a closed mobile bank sign", "en": "Taxi apps, food delivery and mobile banking would all stop.", "ru": "Перестанут работать такси, доставка еды и мобильные банки.", "cam": "up"},
+   {"img": "{hero} sleeping peacefully in bed with no glowing screen, birds singing outside the window in the morning", "en": "But after a few weeks, many people would sleep better and feel calmer.", "ru": "Но уже через пару недель многие стали бы лучше спать и чувствовать себя спокойнее.", "cam": "in"},
+   {"img": "a family laughing together around a dinner table, someone reading a paper book, kids looking at the sky", "en": "We'd read paper books, look up at the sky, and actually talk at dinner.", "ru": "Мы читали бы бумажные книги, смотрели на небо и разговаривали за ужином.", "cam": "out"},
+   {"img": "{hero} hugging an old phone dramatically and looking at the viewer with a funny worried face", "en": "Could you survive a week without your phone? Tell me in the comments.", "ru": "А ты бы прожил неделю без телефона? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "no-cars",
+  "mood": "wonder",
+  "en": {"cover": "ALL CARS DISAPPEARED?", "caption": "What if all the cars disappeared tomorrow? Cities would look completely different.", "tags": ["#cars", "#city"]},
+  "ru": {"cover": "ИСЧЕЗНУТ ВСЕ МАШИНЫ?", "caption": "Что если завтра исчезнут все машины? Города стали бы совсем другими.", "tags": ["#машины", "#город"]},
+  "scenes": [
+   {"img": "{hero} standing in the middle of a huge empty highway in a big city, no cars anywhere, holding car keys", "en": "What if all the cars disappeared tomorrow?", "ru": "Что если завтра исчезнут все машины?", "cam": "in"},
+   {"img": "an endless sea of colorful cartoon cars filling the planet, a counter showing one and a half billion", "en": "There are about one and a half billion cars on Earth.", "ru": "На Земле около полутора миллиардов автомобилей.", "cam": "out"},
+   {"img": "a giant empty multi-lane road with kids skateboarding and people picnicking on it", "en": "Overnight, roads would turn into huge empty spaces.", "ru": "За одну ночь дороги превратятся в огромные пустые пространства.", "cam": "right"},
+   {"img": "a quiet sunny city with clear blue sky, birds singing, people walking calmly", "en": "Cities would suddenly be quiet, and the air much cleaner.", "ru": "В городах вдруг станет тихо, а воздух намного чище.", "cam": "up"},
+   {"img": "paramedics running with a stretcher and firefighters carrying hoses on foot, a grocery truck missing", "en": "But food deliveries, ambulances and fire trucks would stop too.", "ru": "Но остановятся и доставка продуктов, и скорая помощь, и пожарные.", "cam": "left"},
+   {"img": "a busy street full of bicycles, a modern train and a horse-drawn carriage passing by", "en": "Bikes, trains and even horses would make a big comeback.", "ru": "Велосипеды, поезда и даже лошади снова стали бы популярными.", "cam": "down"},
+   {"img": "a former parking lot turned into a green park with gardens, trees and a playground full of kids", "en": "Parking lots could become parks, gardens and playgrounds.", "ru": "Парковки можно было бы превратить в парки, сады и детские площадки.", "cam": "in"},
+   {"img": "{hero} riding a bicycle down a sunny tree-lined street, waving at the viewer", "en": "Would you miss your car? Tell me in the comments.", "ru": "А ты бы скучал по машине? Пиши в комментариях.", "cam": "out"}
+  ]
+ }
+]

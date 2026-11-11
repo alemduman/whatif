@@ -1,0 +1,170 @@
+name: What If autopost
+
+on:
+  schedule:
+    # Время в UTC: Баку = UTC + 4. Слоты задаются в config.json → schedule.hours (сейчас 13:07 и 19:07 по Баку).
+    # Запуск повторяется каждые 15 минут внутри слота: GitHub иногда теряет запуски. Дубль в тот же слот пропускается (state.json, поле slot).
+    # Пока в config.json "autoPublish": false, запуски по расписанию ничего не делают.
+    - cron: '7,22,37,52 9,15 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Проверка: подготовить видео, но НЕ публиковать'
+        type: boolean
+        default: true
+      topic:
+        description: 'Конкретная тема (id из library.json). Пусто = следующая по очереди'
+        type: string
+        default: ''
+      source:
+        description: 'cron = запуск от внешнего планировщика (правила расписания: слоты, дубли, автопубликация)'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-24.04
+    env:
+      TOPIC: ${{ inputs.topic }}
+      RUN_KIND: ${{ github.event_name == 'schedule' && 'schedule' || (inputs.source == 'cron' && 'schedule' || github.event_name) }}
+      GH_TOKEN: ${{ github.token }}
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy2.outputs.page_url || steps.deploy3.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Взять следующий готовый ролик
+        id: render
+        run: node scripts/next.mjs
+
+      - uses: actions/configure-pages@v6
+        if: steps.render.outputs.skip != 'true'
+
+      - uses: actions/upload-pages-artifact@v5
+        if: steps.render.outputs.skip != 'true'
+        with:
+          path: out/site
+
+      - name: Уникальная версия выкладки
+        id: pv
+        if: steps.render.outputs.skip != 'true'
+        run: echo "v=$(echo "${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-$(date +%s%N)" | sha1sum | cut -c1-40)" >> "$GITHUB_OUTPUT"
+
+      - name: Выложить видео по публичной ссылке (GitHub Pages)
+        id: deploy
+        if: steps.render.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          GITHUB_SHA: ${{ steps.pv.outputs.v }}
+        uses: actions/deploy-pages@v5
+
+      - name: Пауза перед повтором выкладки
+        if: steps.render.outputs.skip != 'true' && steps.deploy.outcome == 'failure'
+        run: sleep 45
+
+      - name: Выложить видео, попытка 2
+        id: deploy2
+        if: steps.render.outputs.skip != 'true' && steps.deploy.outcome == 'failure'
+        continue-on-error: true
+        env:
+          GITHUB_SHA: ${{ steps.pv.outputs.v }}
+        uses: actions/deploy-pages@v5
+
+      - name: Пауза перед последним повтором
+        if: steps.render.outputs.skip != 'true' && steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 90
+
+      - name: Выложить видео, попытка 3
+        id: deploy3
+        if: steps.render.outputs.skip != 'true' && steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        continue-on-error: true
+        env:
+          GITHUB_SHA: ${{ steps.pv.outputs.v }}
+        uses: actions/deploy-pages@v5
+
+      - name: Остановить, если выложить видео не удалось
+        if: steps.render.outputs.skip != 'true' && steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure' && steps.deploy3.outcome == 'failure'
+        run: |
+          echo "GitHub Pages не принял видео за 3 попытки"
+          exit 1
+
+      - name: Опубликовать в Instagram
+        id: publish
+        if: steps.render.outputs.skip != 'true'
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PAGE_URL: ${{ steps.deploy.outputs.page_url || steps.deploy2.outputs.page_url || steps.deploy3.outputs.page_url }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: node scripts/publish.mjs
+
+      - name: Запомнить, что уже опубликовано
+        if: steps.publish.outputs.posted == 'true'
+        run: |
+          git config user.name "whatif-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp state.json "$RUNNER_TEMP/state.ours.json"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            node scripts/merge-state.mjs "$RUNNER_TEMP/state.ours.json" state.json
+            git add state.json
+            git commit -q -m "Опубликован ролик $(date -u +%F)" || exit 0
+            git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
+
+      # Когда готовых роликов остаётся меньше minStock, заказываем новую партию (config.json: autoProduce, minStock, produceBatch).
+      # Только при включённом autoPublish, чтобы на паузе не тратились деньги на картинки
+      - name: Пополнить очередь роликов
+        if: always() && steps.render.outcome == 'success'
+        continue-on-error: true
+        run: |
+          read auto min batch <<< "$(node -e "const c=require('./config.json');console.log(c.autoProduce!==false && c.autoPublish===true, c.minStock??3, c.produceBatch??3)")"
+          stock="${{ steps.render.outputs.stock }}"
+          [ -n "$stock" ] || stock=0
+          echo "В очереди: $stock, минимум: $min, авто: $auto"
+          if [ "$auto" = "true" ] && [ "$stock" -lt "$min" ]; then
+            if gh run list --workflow produce.yml --status in_progress --json databaseId -q 'length' | grep -qv '^0$' || gh run list --workflow produce.yml --status queued --json databaseId -q 'length' | grep -qv '^0$'; then
+              echo "Сборка уже идёт"
+            else
+              gh workflow run produce.yml -f count="$batch" && echo "Заказана новая партия: $batch"
+            fi
+          fi
+
+      - name: Сменить хэш коммита для следующей выкладки
+        if: always() && steps.deploy.outcome != 'skipped' && steps.publish.outputs.posted != 'true'
+        continue-on-error: true
+        run: |
+          git config user.name "whatif-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            date -u +%s > .deploy-marker
+            git add .deploy-marker
+            git commit -q -m "Служебная метка выкладки" || exit 0
+            git push -q origin HEAD:main && exit 0
+            sleep $((i * 4))
+          done

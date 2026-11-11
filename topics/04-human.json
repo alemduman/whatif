@@ -1,0 +1,162 @@
+[
+ {
+  "id": "no-sleep",
+  "mood": "tense",
+  "en": {"cover": "YOU STOPPED SLEEPING?", "caption": "What if you stopped sleeping? Here's what happens to your brain, day by day.", "tags": ["#sleep", "#brain"]},
+  "ru": {"cover": "ПЕРЕСТАТЬ СПАТЬ?", "caption": "Что если перестать спать? Вот что происходит с мозгом день за днём.", "tags": ["#сон", "#мозг"]},
+  "scenes": [
+   {"img": "{hero} sitting in bed wide awake at night with huge red tired eyes, a clock showing 3 AM, coffee cups everywhere", "en": "What if you stopped sleeping?", "ru": "Что если ты перестанешь спать?", "cam": "in"},
+   {"img": "{hero} grumpy and clumsy in the morning spilling cereal while eating a giant sandwich", "en": "After one night, you'd feel grumpy, clumsy and hungry.", "ru": "После одной бессонной ночи ты станешь раздражительным, неуклюжим и голодным.", "cam": "right"},
+   {"img": "{hero} trying to catch a ball in slow motion with wobbly eyes, a turtle racing past him", "en": "After a full day without sleep, your reactions would be as slow as if you were drunk.", "ru": "После суток без сна реакция станет такой же медленной, как у пьяного.", "cam": "left"},
+   {"img": "{hero} at a desk with his eyes flickering closed for a moment, a tiny dream cloud popping above his head", "en": "By day two, your brain would start taking micro-sleeps, blacking out for seconds without you noticing.", "ru": "На второй день мозг начнёт засыпать урывками на несколько секунд, а ты этого даже не заметишь.", "cam": "in"},
+   {"img": "{hero} in his room seeing strange colorful hallucinations: walls melting, floating fish and talking furniture", "en": "By day three, you could start seeing things that aren't there.", "ru": "На третий день могут начаться галлюцинации.", "cam": "out", "part": "dust"},
+   {"img": "a teenager in 1960s clothes with a calendar showing eleven crossed out days and a trophy, retro style", "en": "The world record is about eleven days, set by a seventeen-year-old student, Randy Gardner, in 1964.", "ru": "Рекорд около одиннадцати суток. Его поставил школьник Рэнди Гарднер в 1964 году.", "cam": "up"},
+   {"img": "a cute cartoon brain sleeping in a bed with tiny cleaning robots tidying it up and filing memories into drawers", "en": "Doctors don't recommend trying. Sleep is when your brain cleans itself and stores memories.", "ru": "Врачи не советуют повторять: во сне мозг очищается и сохраняет воспоминания.", "cam": "down", "part": "stars"},
+   {"img": "{hero} sleeping peacefully under a cozy blanket with a sleeping mask, then peeking at the viewer with one eye", "en": "How many hours do you sleep? Tell me in the comments.", "ru": "А сколько часов спишь ты? Пиши в комментариях.", "cam": "in", "part": "stars"}
+  ]
+ },
+ {
+  "id": "humans-fly",
+  "mood": "fun",
+  "en": {"cover": "HUMANS COULD FLY?", "caption": "What if humans could fly? You'd need some seriously big wings.", "tags": ["#fly", "#superpower"]},
+  "ru": {"cover": "ЛЮДИ НАУЧАТСЯ ЛЕТАТЬ?", "caption": "Что если люди научатся летать? Понадобятся очень большие крылья.", "tags": ["#полёт", "#суперсила"]},
+  "scenes": [
+   {"img": "{hero} with big feathered wings flying high over a city at sunrise with a huge grin", "en": "What if humans could fly?", "ru": "Что если люди научатся летать?", "cam": "in"},
+   {"img": "a funny diagram of a person with enormous six-meter wings and bulging chest muscles, a measuring tape across the wings", "en": "To lift a person, you'd need wings about six meters wide and huge chest muscles.", "ru": "Чтобы поднять человека, нужны крылья размахом около шести метров и огромные грудные мышцы.", "cam": "out"},
+   {"img": "{hero} with wings eating a mountain of sandwiches and fruit while flying tired", "en": "You'd burn so much energy, you'd have to eat constantly.", "ru": "Энергии уходило бы столько, что есть пришлось бы постоянно.", "cam": "right"},
+   {"img": "people with wings flying to work over rooftops while a traffic jam sits below on the streets", "en": "But imagine: no traffic jams, just flying to work over the rooftops.", "ru": "Зато представь: никаких пробок, летишь на работу над крышами.", "cam": "left"},
+   {"img": "a futuristic city with doors on rooftops, landing balconies and traffic lights floating in the sky for flying people", "en": "Cities would change: rooftop doors, landing balconies and traffic lights in the sky.", "ru": "Города бы изменились: двери на крышах, балконы для посадки и светофоры в небе.", "cam": "up"},
+   {"img": "{hero} flying through heavy rain and wind with an angry flock of seagulls chasing him", "en": "Bad weather would be a real problem. Rain, wind and birds would be your new enemies.", "ru": "Плохая погода стала бы настоящей проблемой: дождь, ветер и птицы твои новые враги.", "cam": "down", "part": "rain"},
+   {"img": "a big airplane flying over an ocean while winged people wave goodbye from a cliff", "en": "And airplanes? Only for really long trips.", "ru": "А самолёты понадобятся только для очень дальних путешествий.", "cam": "right"},
+   {"img": "{hero} sitting on top of a tall mountain peak with his wings folded, looking at the viewer", "en": "Where would you fly first? Tell me in the comments.", "ru": "А куда ты полетел бы первым делом? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "immortal",
+  "mood": "wonder",
+  "en": {"cover": "YOU COULD LIVE FOREVER?", "caption": "What if you could live forever? It sounds amazing, until you think it through.", "tags": ["#immortality", "#life"]},
+  "ru": {"cover": "ЖИТЬ ВЕЧНО?", "caption": "Что если ты сможешь жить вечно? Звучит прекрасно, пока не задумаешься.", "tags": ["#бессмертие", "#жизнь"]},
+  "scenes": [
+   {"img": "{hero} glowing with a golden aura holding a sparkling hourglass that never runs out", "en": "What if you could live forever?", "ru": "Что если ты сможешь жить вечно?", "cam": "in", "part": "dust"},
+   {"img": "{hero} with a backpack in front of a world map covered with travel pins, books and a passport full of stamps", "en": "At first, it sounds amazing: endless time to travel, learn and try everything.", "ru": "Сначала звучит отлично: бесконечно много времени, чтобы путешествовать, учиться и попробовать всё.", "cam": "right"},
+   {"img": "{hero} surrounded by many musical instruments and books in different languages", "en": "You could learn every language and master every instrument.", "ru": "Можно выучить все языки и освоить все инструменты.", "cam": "left"},
+   {"img": "{hero} still young standing next to his friends who have become old with grey hair, bittersweet mood", "en": "But you'd watch your friends and family grow old without you.", "ru": "Но твои друзья и близкие будут стареть, а ты нет.", "cam": "in"},
+   {"img": "a futuristic city of the year 3000 with strange buildings, flying vehicles and new flags", "en": "In a thousand years, the world would be unrecognizable: new countries, new languages.", "ru": "Через тысячу лет мир станет неузнаваемым: новые страны, новые языки.", "cam": "up"},
+   {"img": "a swollen giant red Sun filling the sky over a scorched Earth, a spaceship leaving", "en": "In about five billion years, the Sun would swell up, and you'd have to leave Earth.", "ru": "Примерно через пять миллиардов лет Солнце раздуется, и с Земли придётся улетать.", "cam": "out", "part": "embers"},
+   {"img": "a tiny glowing transparent jellyfish in the deep blue sea with a little crown, sparkles around it", "en": "Some animals already cheat death, like a tiny jellyfish that can turn itself young again.", "ru": "А некоторые животные уже обманывают смерть: например, крошечная медуза, которая умеет снова становиться молодой.", "cam": "down", "part": "bubbles"},
+   {"img": "{hero} holding a glowing potion bottle and looking at the viewer with a thoughtful face", "en": "Would you choose to live forever? Tell me in the comments.", "ru": "А ты бы выбрал вечную жизнь? Пиши в комментариях.", "cam": "in", "part": "dust"}
+  ]
+ },
+ {
+  "id": "ant-size",
+  "mood": "fun",
+  "en": {"cover": "YOU SHRANK TO THE SIZE OF AN ANT?", "caption": "What if you shrank to the size of an ant? Some things get scary, some get awesome.", "tags": ["#ants", "#physics"]},
+  "ru": {"cover": "СТАТЬ РАЗМЕРОМ С МУРАВЬЯ?", "caption": "Что если ты уменьшишься до размеров муравья? Что-то станет страшным, а что-то крутым.", "tags": ["#муравьи", "#физика"]},
+  "scenes": [
+   {"img": "a tiny {hero} standing next to a giant ant on a blade of grass, both looking at each other in surprise", "en": "What if you shrank to the size of an ant?", "ru": "Что если ты уменьшишься до размеров муравья?", "cam": "in"},
+   {"img": "a tiny {hero} running away from a giant falling raindrop as big as a water balloon", "en": "A single raindrop would be like a giant water balloon.", "ru": "Одна капля дождя будет для тебя как огромный водяной шар.", "cam": "up", "part": "rain"},
+   {"img": "a tiny {hero} happily floating down from a tall table like a feather with a parachute made of a leaf", "en": "But you could fall from any height and be fine: the air would slow you down.", "ru": "Зато ты сможешь упасть с любой высоты и не разбиться: воздух затормозит падение.", "cam": "down"},
+   {"img": "a tiny {hero} lifting a huge crumb of cookie above his head like a weightlifter", "en": "For your size, you'd be incredibly strong, able to lift many times your own weight.", "ru": "Для своего размера ты станешь невероятно сильным и сможешь поднять в разы больше своего веса.", "cam": "in"},
+   {"img": "a tiny shivering {hero} wrapped in a leaf eating a giant bread crumb", "en": "But you'd lose heat very fast and need to eat almost all the time.", "ru": "Но ты будешь очень быстро терять тепло и есть почти постоянно.", "cam": "left"},
+   {"img": "a tiny {hero} stuck inside a big wobbly drop of water on a leaf, pushing against its surface", "en": "Water would be tricky. Surface tension could trap you inside a single drop.", "ru": "С водой станет сложно: поверхностное натяжение может поймать тебя в одной капле.", "cam": "right", "part": "bubbles"},
+   {"img": "a giant house cat looking down like a dinosaur at a tiny terrified {hero} on the floor", "en": "And your neighbor's cat? It would look like a dinosaur.", "ru": "А соседская кошка покажется тебе настоящим динозавром.", "cam": "up", "fx": ["boom"]},
+   {"img": "a tiny {hero} riding on the back of a friendly ant through a grass jungle, waving at the viewer", "en": "Would you try being tiny for a day? Tell me in the comments.", "ru": "А ты бы хотел побыть крошечным денёк? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "breathe-underwater",
+  "mood": "wonder",
+  "en": {"cover": "HUMANS COULD BREATHE UNDERWATER?", "caption": "What if humans could breathe underwater? Most of the planet would open up to us.", "tags": ["#ocean", "#sea"]},
+  "ru": {"cover": "ДЫШАТЬ ПОД ВОДОЙ?", "caption": "Что если люди смогут дышать под водой? Нам откроется большая часть планеты.", "tags": ["#океан", "#море"]},
+  "scenes": [
+   {"img": "{hero} swimming happily underwater without any scuba gear, small gills on his neck, colorful fish around", "en": "What if humans could breathe underwater?", "ru": "Что если люди смогут дышать под водой?", "cam": "in", "part": "bubbles"},
+   {"img": "a diagram of a person with very large frilly gills, a comparison of tiny oxygen dots in water versus many dots in air", "en": "We'd need gills, and big ones, because water holds about thirty times less oxygen than air.", "ru": "Нам понадобились бы жабры, причём огромные: в воде примерно в тридцать раз меньше кислорода, чем в воздухе.", "cam": "right", "part": "bubbles"},
+   {"img": "planet Earth with its blue oceans glowing and highlighted, tiny people diving into them", "en": "But more than seventy percent of the planet would open up to us.", "ru": "Зато нам открылось бы больше семидесяти процентов планеты.", "cam": "out"},
+   {"img": "an underwater city on the seabed with dome houses and coral gardens instead of parks, people swimming between them", "en": "We could build cities on the seabed, with coral gardens instead of parks.", "ru": "Города можно было бы строить на дне моря, с коралловыми садами вместо парков.", "cam": "up", "part": "bubbles"},
+   {"img": "{hero} exploring an old sunken pirate ship and swimming alongside a huge friendly whale", "en": "We'd explore shipwrecks, swim with whales, and find new species every day.", "ru": "Мы исследовали бы затонувшие корабли, плавали с китами и каждый день находили новые виды.", "cam": "left", "part": "bubbles"},
+   {"img": "the dark deep ocean trench with a submarine being squeezed and dented by pressure, glowing deep sea creatures", "en": "But the deep ocean would still be off-limits. The pressure down there can crush a submarine.", "ru": "Но глубины всё равно были бы опасны: давление там способно раздавить подводную лодку.", "cam": "down", "part": "bubbles"},
+   {"img": "a shark swimming past a group of underwater people who freeze nervously, the shark ignoring them", "en": "And we'd have to watch out for sharks, although they rarely attack humans.", "ru": "А ещё пришлось бы остерегаться акул, хотя на людей они нападают редко.", "cam": "right", "part": "bubbles"},
+   {"img": "{hero} sitting on a rock half underwater half above, looking at the viewer with a curious face", "en": "Would you live on land or under the sea? Tell me in the comments.", "ru": "А ты жил бы на суше или под водой? Пиши в комментариях.", "cam": "in", "part": "bubbles"}
+  ]
+ },
+ {
+  "id": "read-minds",
+  "mood": "tense",
+  "en": {"cover": "YOU COULD READ MINDS?", "caption": "What if you could read everyone's mind? It might be a curse, not a gift.", "tags": ["#superpower", "#mind"]},
+  "ru": {"cover": "ЧИТАТЬ МЫСЛИ?", "caption": "Что если ты сможешь читать чужие мысли? Это может оказаться проклятием.", "tags": ["#суперсила", "#мысли"]},
+  "scenes": [
+   {"img": "{hero} with glowing eyes surrounded by floating thought bubbles from people around him in a cafe", "en": "What if you could read everyone's mind?", "ru": "Что если ты сможешь читать чужие мысли?", "cam": "in"},
+   {"img": "{hero} telling a joke to friends who laugh politely while their thought bubbles show bored and confused faces", "en": "At first, it's fun. You'd know what your friends really think of your jokes.", "ru": "Сначала весело: ты узнаешь, что друзья на самом деле думают о твоих шутках.", "cam": "right"},
+   {"img": "{hero} pointing at a person whose nose is growing like Pinocchio, with a thought bubble showing the truth", "en": "You'd always know who's lying to you.", "ru": "Ты всегда будешь знать, кто тебе врёт.", "cam": "left"},
+   {"img": "{hero} holding his head in pain as a storm of hundreds of thought bubbles swirl around him", "en": "But your head would be filled with the noise of thousands of thoughts at once.", "ru": "Но в голове будет шуметь сразу тысяча чужих мыслей.", "cam": "in", "fx": ["shake"]},
+   {"img": "{hero} covering his ears in shock as a thought bubble reveals a secret written as a locked diary", "en": "You'd hear secrets you never wanted to know.", "ru": "Ты услышишь секреты, которые не хотел бы знать никогда.", "cam": "down"},
+   {"img": "a crowded subway car packed with people, the air filled with overlapping thought bubbles, {hero} squeezed in the middle", "en": "Crowded places like the subway would become unbearable.", "ru": "А метро и другие людные места станут невыносимы.", "cam": "up"},
+   {"img": "many people's thought bubbles all showing the same small worried cloud, {hero} smiling warmly in understanding", "en": "Most of all, you'd learn that everyone is just as worried and unsure as you are.", "ru": "А главное, ты поймёшь, что все вокруг тоже волнуются и сомневаются, как и ты.", "cam": "out"},
+   {"img": "{hero} with fingers on his temples and a glowing thought bubble pointing at the viewer, playful smile", "en": "Whose mind would you read first? Tell me in the comments.", "ru": "Чьи мысли ты прочитал бы первыми? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "giant-human",
+  "mood": "epic",
+  "en": {"cover": "YOU BECAME 100 METERS TALL?", "caption": "What if you suddenly became 100 meters tall? Being a giant is harder than it looks.", "tags": ["#giant", "#physics"]},
+  "ru": {"cover": "СТАТЬ РОСТОМ 100 МЕТРОВ?", "caption": "Что если ты вдруг вырастешь до ста метров? Быть великаном сложнее, чем кажется.", "tags": ["#великан", "#физика"]},
+  "scenes": [
+   {"img": "a giant {hero} towering over city buildings, tiny cars and people looking up at him in awe", "en": "What if you suddenly became one hundred meters tall?", "ru": "Что если ты вдруг вырастешь до ста метров?", "cam": "up", "fx": ["shake"]},
+   {"img": "a giant {hero} standing next to a famous tall statue on an island, slightly taller than it", "en": "You'd be taller than the Statue of Liberty.", "ru": "Ты будешь выше статуи Свободы.", "cam": "in"},
+   {"img": "an x-ray style drawing of a giant's leg bones with cracks and warning signs, a big weight icon pressing down", "en": "But your bones would be in trouble. As you grow, your weight grows much faster than your strength.", "ru": "Но костям придётся тяжело: при росте вес растёт гораздо быстрее, чем прочность.", "cam": "down"},
+   {"img": "a giant {hero} taking a first step with a dramatic crack sound effect drawn near his leg, pained face", "en": "Your legs could break under your own weight with the very first step.", "ru": "С первым же шагом ноги могут сломаться под твоим весом.", "cam": "left", "fx": ["boom"]},
+   {"img": "a cartoon heart pumping very hard and sweating, trying to push blood up a very tall body", "en": "Your heart would struggle to pump blood all the way up to your brain.", "ru": "Сердцу будет трудно качать кровь до самого мозга.", "cam": "up"},
+   {"img": "a gigantic blue whale floating peacefully in the ocean, water supporting its body", "en": "That's why the biggest animal ever, the blue whale, lives in water. It supports its weight.", "ru": "Поэтому самое большое животное в истории, синий кит, живёт в воде: она держит его вес.", "cam": "right", "part": "bubbles"},
+   {"img": "a giant {hero} eating from a whole truck full of food while a long line of trucks waits", "en": "And you'd need as much food as ten thousand people.", "ru": "А есть пришлось бы столько же, сколько десять тысяч человек.", "cam": "in"},
+   {"img": "a giant {hero} sitting carefully on a hill next to a city, gently waving at the viewer", "en": "What would you do as a giant? Tell me in the comments.", "ru": "А что бы ты сделал, будучи великаном? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "no-pain",
+  "mood": "tense",
+  "en": {"cover": "YOU COULDN'T FEEL PAIN?", "caption": "What if you couldn't feel any pain? Some people are born like this, and it's dangerous.", "tags": ["#body", "#science"]},
+  "ru": {"cover": "НЕ ЧУВСТВОВАТЬ БОЛИ?", "caption": "Что если ты перестанешь чувствовать боль? Некоторые так и рождаются, и это опасно.", "tags": ["#тело", "#наука"]},
+  "scenes": [
+   {"img": "{hero} stepping on a toy brick barefoot and smiling calmly, a crossed out pain symbol above", "en": "What if you couldn't feel any pain?", "ru": "Что если ты перестанешь чувствовать боль?", "cam": "in"},
+   {"img": "{hero} posing like a superhero with a cape, a crossed out tooth and a crossed out stubbed toe icon", "en": "Sounds like a superpower, right? No more toothaches, no more stubbed toes.", "ru": "Звучит как суперсила: ни зубной боли, ни ушибленных пальцев.", "cam": "right"},
+   {"img": "a doctor in a clinic showing a medical chart to a worried family, a rare condition badge", "en": "But some people are actually born this way, and it's very dangerous.", "ru": "Но некоторые люди правда рождаются такими, и это очень опасно.", "cam": "left"},
+   {"img": "{hero} happily walking with a cast he didn't notice, a hot kettle near his hand, worried people pointing", "en": "You wouldn't notice if you broke a bone, burned your hand or bit your tongue.", "ru": "Ты не заметишь, что сломал кость, обжёгся или прикусил язык.", "cam": "in"},
+   {"img": "cartoon germs sneaking into a small scratch on a leg, growing bigger, unnoticed", "en": "A small infection could go unnoticed until it becomes serious.", "ru": "Обычная инфекция может остаться незамеченной, пока не станет серьёзной.", "cam": "down"},
+   {"img": "a cartoon brain with a red flashing alarm siren and a stop sign, nerves drawn as wires", "en": "Pain is your body's alarm system. It tells you: stop, something is wrong.", "ru": "Боль это сигнализация организма. Она говорит: стоп, что-то не так.", "cam": "up", "fx": ["flash"]},
+   {"img": "scientists in a lab studying DNA strands and creating new medicine bottles", "en": "Scientists study these rare people to create better painkillers for everyone else.", "ru": "Учёные изучают таких людей, чтобы создать лучшие обезболивающие для всех остальных.", "cam": "out"},
+   {"img": "{hero} holding a big red off switch labeled with a lightning bolt symbol, looking at the viewer with doubt", "en": "Would you turn off pain if you could? Tell me in the comments.", "ru": "А ты бы отключил боль, если бы мог? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "invisible",
+  "mood": "fun",
+  "en": {"cover": "YOU BECAME INVISIBLE?", "caption": "What if you became invisible? There's a catch nobody talks about.", "tags": ["#invisible", "#superpower"]},
+  "ru": {"cover": "СТАТЬ НЕВИДИМЫМ?", "caption": "Что если ты станешь невидимым? Есть подвох, о котором никто не говорит.", "tags": ["#невидимка", "#суперсила"]},
+  "scenes": [
+   {"img": "an empty orange hoodie and sneakers floating in the air as if worn by an invisible person, people staring in shock", "en": "What if you became invisible?", "ru": "Что если ты станешь невидимым?", "cam": "in"},
+   {"img": "a diagram of a cartoon eye catching beams of light, with arrows showing light entering the eye", "en": "Here's the catch: to see, your eyes need to catch light.", "ru": "Вот в чём подвох: чтобы видеть, глаза должны улавливать свет.", "cam": "right"},
+   {"img": "beams of light passing right through a transparent outline of a person, everything around them black", "en": "If light passed right through you, you'd be completely blind.", "ru": "Если свет будет проходить сквозь тебя, ты ослепнешь.", "cam": "in"},
+   {"img": "a busy sidewalk where people keep bumping into an invisible outline, a bicycle about to crash into it", "en": "People would bump into you everywhere, and drivers wouldn't see you.", "ru": "В тебя постоянно будут врезаться люди, а водители тебя просто не заметят.", "cam": "left"},
+   {"img": "a funny transparent person outline with a visible half-eaten sandwich floating inside the stomach", "en": "Every meal you ate would float visibly inside you until it was digested.", "ru": "Еда, которую ты съешь, будет видна у тебя внутри, пока не переварится.", "cam": "up"},
+   {"img": "a phone camera screen showing an empty spot where a selfie should be, a hoodie sleeve holding the phone", "en": "No selfies, and no one would know you're there unless you spoke.", "ru": "Селфи не сделать, а заметят тебя, только если заговоришь.", "cam": "down"},
+   {"img": "scientists in a lab with a shimmering cloak hiding a small toy, only a tiny object disappearing", "en": "Scientists are working on real invisibility cloaks, but so far they only work for tiny objects.", "ru": "Учёные уже создают настоящие плащи-невидимки, но пока они работают только для крошечных предметов.", "cam": "out"},
+   {"img": "{hero} half visible half fading out, winking at the viewer", "en": "What would you do if you were invisible for a day? Tell me in the comments.", "ru": "А что бы ты сделал, став невидимым на день? Пиши в комментариях.", "cam": "in", "part": "dust"}
+  ]
+ },
+ {
+  "id": "teleport",
+  "mood": "wonder",
+  "en": {"cover": "YOU COULD TELEPORT ANYWHERE?", "caption": "What if you could teleport anywhere? Physics has a creepy question for you.", "tags": ["#teleport", "#physics"]},
+  "ru": {"cover": "УМЕТЬ ТЕЛЕПОРТИРОВАТЬСЯ?", "caption": "Что если ты научишься телепортироваться? У физики к тебе жутковатый вопрос.", "tags": ["#телепортация", "#физика"]},
+  "scenes": [
+   {"img": "{hero} vanishing in a swirl of glowing blue particles in his bedroom and appearing on a tropical beach", "en": "What if you could teleport anywhere?", "ru": "Что если ты научишься телепортироваться куда угодно?", "cam": "in", "fx": ["flash"], "part": "dust"},
+   {"img": "a three-part scene: {hero} eating a croissant near a famous iron tower, sushi near a red pagoda, and dinner on a sunny beach", "en": "Breakfast in Paris, lunch in Tokyo, dinner on a beach in Brazil.", "ru": "Завтрак в Париже, обед в Токио, ужин на пляже в Бразилии.", "cam": "right"},
+   {"img": "an empty airport and an empty highway with a crossed out traffic jam sign", "en": "No more traffic, no more airports, no more waiting.", "ru": "Ни пробок, ни аэропортов, ни ожидания.", "cam": "left"},
+   {"img": "a sci-fi teleport machine scanning a person into particles on one side and assembling an identical copy on the other side", "en": "But there's a problem: teleporting might mean destroying you and building an exact copy.", "ru": "Но есть проблема: возможно, телепортация означает уничтожить тебя и собрать точную копию.", "cam": "in"},
+   {"img": "two identical {hero} characters staring at each other confused, philosophers with beards arguing in the background", "en": "Would the copy still be you? Philosophers have argued about this for years.", "ru": "Будет ли копия тобой? Философы спорят об этом много лет.", "cam": "up"},
+   {"img": "a physics lab with lasers and two glowing linked particles far apart sharing a spark of information", "en": "Scientists can already teleport information between particles. It's called quantum teleportation.", "ru": "Учёные уже умеют телепортировать информацию между частицами. Это называется квантовой телепортацией.", "cam": "down", "part": "stars"},
+   {"img": "a giant mountain of servers and hard drives next to a single person, a loading bar stuck at one percent", "en": "But teleporting a whole human would take more data than all the computers on Earth could handle.", "ru": "Но для целого человека нужно больше данных, чем могут обработать все компьютеры Земли.", "cam": "out"},
+   {"img": "{hero} standing in a glowing teleport circle with a travel bag, finger hovering over a button, looking at the viewer", "en": "Where would you teleport right now? Tell me in the comments.", "ru": "Куда бы ты телепортировался прямо сейчас? Пиши в комментариях.", "cam": "in", "part": "dust"}
+  ]
+ }
+]

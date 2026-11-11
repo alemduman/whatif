@@ -1,0 +1,162 @@
+[
+ {
+  "id": "sun-off",
+  "mood": "dark",
+  "en": {"cover": "THE SUN SWITCHED OFF?", "caption": "What if the Sun suddenly switched off? Here's what would happen to Earth.", "tags": ["#space", "#sun"]},
+  "ru": {"cover": "СОЛНЦЕ ПОГАСНЕТ?", "caption": "Что если Солнце внезапно погаснет? Вот что будет с Землёй.", "tags": ["#космос", "#солнце"]},
+  "scenes": [
+   {"img": "{hero} standing on a grassy hill, looking up in shock as the giant Sun in the sky flickers and goes dark like a light bulb switching off", "en": "What if the Sun suddenly switched off?", "ru": "Что если Солнце внезапно погаснет?", "cam": "in"},
+   {"img": "a glowing beam of golden sunlight travelling through dark space from the Sun to a small blue Earth, with a big cartoon stopwatch floating beside it", "en": "For eight minutes, nothing would happen. That's how long sunlight takes to reach us.", "ru": "Первые восемь минут мы ничего не заметим. Именно столько летит свет от Солнца до Земли.", "cam": "right", "part": "stars"},
+   {"img": "a city plunged into total darkness, the Moon fading away in the black sky, only stars visible, {hero} on a rooftop holding a flashlight", "en": "Then, darkness. The Moon would vanish too, because it only shines with the Sun's light.", "ru": "А потом наступит тьма. Луна тоже исчезнет: она ведь светит отражённым солнечным светом.", "cam": "up", "part": "stars"},
+   {"img": "planet Earth drifting alone into deep starry space, a dotted trail behind it showing a straight path away from an empty dark spot where the Sun used to be", "en": "Without the Sun's gravity, Earth would fly off into space in a straight line.", "ru": "Без притяжения Солнца Земля полетит в космос по прямой.", "cam": "left", "part": "stars"},
+   {"img": "frozen countryside under a starry black sky, wilted plants and trees covered in frost, {hero} shivering in a thick winter jacket over his hoodie", "en": "Within a week, the whole planet would drop below minus eighteen degrees. Plants would stop growing and start to die.", "ru": "Через неделю на всей планете будет ниже минус восемнадцати. Растения перестанут расти и начнут погибать.", "cam": "out", "part": "snow"},
+   {"img": "cross-section of a frozen ocean: a thick white ice sheet on top, dark blue liquid water below with fish still swimming, starry sky above", "en": "After a year, it would be minus seventy-three. The oceans would freeze on top, but deep below the ice, the water would stay liquid for thousands of years.", "ru": "Через год будет минус семьдесят три. Океаны замёрзнут сверху, но под толстым льдом вода останется жидкой тысячи лет.", "cam": "down", "part": "snow"},
+   {"img": "deep ocean floor with a glowing hydrothermal vent, red tube worms, crabs and strange fish gathered around its warm light", "en": "Life would hide near volcanic vents on the ocean floor. And humans? Only those near geothermal heat or nuclear power would hold on.", "ru": "Жизнь спрячется у вулканических источников на дне океана. А люди? Выживут только те, у кого есть тепло недр или атомная энергия.", "cam": "in", "part": "bubbles"},
+   {"img": "{hero} wrapped in a blanket by a small campfire on frozen ground under a spectacular starry sky, looking at the viewer with a curious expression", "en": "So, would you survive the eternal night? Tell me in the comments.", "ru": "А ты бы пережил вечную ночь? Пиши в комментариях.", "cam": "out", "part": "embers"}
+  ]
+ },
+ {
+  "id": "moon-gone",
+  "mood": "wonder",
+  "en": {"cover": "THE MOON DISAPPEARED?", "caption": "What if the Moon disappeared tonight? It would change much more than the night sky.", "tags": ["#moon", "#space"]},
+  "ru": {"cover": "ЛУНА ИСЧЕЗНЕТ?", "caption": "Что если Луна исчезнет? Изменится гораздо больше, чем ночное небо.", "tags": ["#луна", "#космос"]},
+  "scenes": [
+   {"img": "{hero} on a rooftop at night pointing at an empty dark sky where the full Moon just vanished with a small puff of sparkles", "en": "What if the Moon disappeared tonight?", "ru": "Что если сегодня ночью Луна исчезнет?", "cam": "in", "part": "stars"},
+   {"img": "a dark forest at night, confused owls, a fox and sea turtles looking around lost under a moonless starry sky", "en": "First, nights would get much darker. Many animals that hunt or travel by moonlight would get lost.", "ru": "Первым делом ночи станут намного темнее. Многие животные, которые охотятся и ориентируются по Луне, собьются с пути.", "cam": "left", "part": "stars"},
+   {"img": "a calm beach where the ocean tide has barely moved, a tide marker pole showing a tiny water change, boats resting on still water", "en": "Then the tides would shrink. Without the Moon, they would be about three times weaker.", "ru": "Потом ослабнут приливы: без Луны они станут примерно втрое слабее.", "cam": "right"},
+   {"img": "a rocky tide pool with worried cartoon crabs, snails, starfish and seaweed looking at the receding water", "en": "Life that depends on the tides, like crabs, snails and seaweed, would be thrown into chaos.", "ru": "Прибрежная жизнь, которая живёт в ритме приливов, крабы, улитки, водоросли, окажется в беде.", "cam": "in"},
+   {"img": "planet Earth in space wobbling on its tilted axis, motion lines around it, a dotted circle showing the axis swinging", "en": "But the worst part would come later. The Moon keeps Earth's tilt steady. Without it, our planet could start to wobble.", "ru": "Но самое опасное начнётся позже. Луна удерживает наклон земной оси. Без неё планета может начать раскачиваться.", "cam": "out", "part": "stars"},
+   {"img": "split landscape: one half a sandy desert slowly covered with snow and ice, the other half a glacier melting into a lake", "en": "Over millions of years, that could flip the climate: deserts turning to ice, and ice turning to deserts.", "ru": "За миллионы лет это может перевернуть климат: где-то пустыни покроются льдом, а где-то лёд растает.", "cam": "up", "part": "snow"},
+   {"img": "a crowd of cartoon people with eclipse glasses looking up at a bright Sun with no Moon in sight, disappointed faces", "en": "And one more thing: no more solar eclipses, ever.", "ru": "И ещё: солнечных затмений больше не будет никогда.", "cam": "down"},
+   {"img": "{hero} sitting on a hill at night hugging his knees, looking up at a starry sky with a faint ghostly outline of the missing Moon", "en": "Would you miss the Moon? Tell me in the comments.", "ru": "А ты бы скучал по Луне? Пиши в комментариях.", "cam": "out", "part": "stars"}
+  ]
+ },
+ {
+  "id": "earth-stops",
+  "mood": "epic",
+  "en": {"cover": "EARTH STOPPED SPINNING?", "caption": "What if the Earth suddenly stopped spinning? Spoiler: you would not want to be there.", "tags": ["#earth", "#physics"]},
+  "ru": {"cover": "ЗЕМЛЯ ОСТАНОВИТСЯ?", "caption": "Что если Земля перестанет вращаться? Спойлер: лучше бы этого не видеть.", "tags": ["#земля", "#физика"]},
+  "scenes": [
+   {"img": "a cartoon planet Earth with a giant brake lever sticking out of it, sparks flying as it screeches to a halt, {hero} holding on in panic", "en": "What if the Earth suddenly stopped spinning?", "ru": "Что если Земля внезапно перестанет вращаться?", "cam": "in", "fx": ["shake"]},
+   {"img": "a speedometer gauge over the equator line of the globe showing a very high speed, motion streaks across the planet surface", "en": "At the equator, the ground moves at about a thousand miles per hour. And everything not bolted down would keep going.", "ru": "На экваторе поверхность движется со скоростью около тысячи шестисот километров в час. И всё, что не закреплено, продолжит движение.", "cam": "right"},
+   {"img": "people, cars, trees and houses flying sideways through the air at supersonic speed with sonic boom rings, comic style motion lines", "en": "People, cars and buildings would be flung east faster than the speed of sound.", "ru": "Люди, машины и дома полетят на восток быстрее скорости звука.", "cam": "left", "fx": ["shake"], "part": "dust"},
+   {"img": "a monstrous wall of wind and dust sweeping across a landscape, trees ripped out, bigger than any hurricane", "en": "The air would keep moving too, creating winds stronger than any hurricane.", "ru": "Воздух тоже продолжит двигаться, и поднимется ветер сильнее любого урагана.", "cam": "in", "part": "dust"},
+   {"img": "giant tsunami waves crashing over a coastline city, enormous blue walls of water", "en": "The oceans would surge onto the continents in giant tsunamis.", "ru": "Океаны обрушатся на континенты гигантскими цунами.", "cam": "up", "fx": ["boom"]},
+   {"img": "Earth seen from space, one half in bright endless daylight and the other half in deep night, a calendar showing six months on each side", "en": "Once things calmed down, a single day would last a whole year: six months of daylight, then six months of night.", "ru": "А когда всё утихнет, сутки будут длиться целый год: полгода день, полгода ночь.", "cam": "out", "part": "stars"},
+   {"img": "a strange map of Earth where oceans gathered at the north and south poles and one giant continent wraps around the middle like a belt", "en": "Water would flow towards the poles, and one giant continent would rise around the equator.", "ru": "Вода стечёт к полюсам, а по экватору поднимется один огромный материк.", "cam": "down"},
+   {"img": "{hero} standing on the line between day and night, one side sunny and one side starry, shrugging at the viewer", "en": "Good news: this is practically impossible. Would you live on the day side or the night side?", "ru": "Хорошая новость: это практически невозможно. А ты бы выбрал сторону дня или ночи?", "cam": "in"}
+  ]
+ },
+ {
+  "id": "black-hole",
+  "mood": "tense",
+  "en": {"cover": "YOU FELL INTO A BLACK HOLE?", "caption": "What if you fell into a black hole? Get ready to become spaghetti.", "tags": ["#blackhole", "#space"]},
+  "ru": {"cover": "УПАСТЬ В ЧЁРНУЮ ДЫРУ?", "caption": "Что если упасть в чёрную дыру? Приготовься стать спагетти.", "tags": ["#чернаядыра", "#космос"]},
+  "scenes": [
+   {"img": "{hero} in a small round spacesuit floating towards an enormous black hole with a glowing orange ring of swirling gas", "en": "What if you fell into a black hole?", "ru": "Что если упасть в чёрную дыру?", "cam": "in", "part": "stars"},
+   {"img": "a perfect black sphere surrounded by a bright glowing ring of hot orange gas, light bending around it, deep space background", "en": "From far away, it would look like a perfect black sphere, wrapped in a glowing ring of hot gas.", "ru": "Издалека она выглядит как идеально чёрный шар в светящемся кольце раскалённого газа.", "cam": "out", "part": "stars"},
+   {"img": "{hero} in a spacesuit being pulled feet first towards a black hole, arrows showing his feet pulled harder than his head", "en": "As you got closer, its gravity would pull on your feet harder than on your head.", "ru": "Чем ближе, тем сильнее гравитация тянет ноги, чем голову.", "cam": "down", "part": "stars"},
+   {"img": "a funny cartoon astronaut stretched long and thin like a noodle spiralling into a black hole, a fork and plate of spaghetti floating nearby", "en": "You'd be stretched like a noodle. Scientists actually call this spaghettification.", "ru": "Тебя вытянет, как макаронину. Учёные так это и называют: спагеттификация.", "cam": "left", "part": "stars"},
+   {"img": "a friend in a spaceship watching through a window as a tiny red frozen astronaut hangs motionless at the dark edge of a black hole", "en": "But to a friend watching from far away, you'd never fall in. You'd slow down, turn red and freeze at the edge.", "ru": "А друг, который смотрит издалека, увидит другое: ты замедлишься, покраснеешь и застынешь у самого края.", "cam": "right", "part": "stars"},
+   {"img": "a glowing circular boundary around a black hole, beams of light curving and falling inward unable to escape", "en": "That edge is called the event horizon. Once you cross it, not even light can escape.", "ru": "Этот край называют горизонтом событий. Перейдёшь его, и обратно не вырвется даже свет.", "cam": "in", "part": "stars"},
+   {"img": "a swirling tunnel inside a black hole with all paths and arrows pointing to a mysterious bright dot in the center", "en": "Inside, every path leads only to the center, and no one knows what's really there.", "ru": "Внутри все пути ведут только к центру, и что там на самом деле, не знает никто.", "cam": "in", "fx": ["flash"]},
+   {"img": "{hero} holding a one-way ticket in front of a black hole travel poster in a space station, looking at the viewer", "en": "Would you take a one-way trip to find out? Tell me in the comments.", "ru": "А ты бы полетел туда в один конец, чтобы узнать? Пиши в комментариях.", "cam": "out", "part": "stars"}
+  ]
+ },
+ {
+  "id": "asteroid",
+  "mood": "epic",
+  "en": {"cover": "A DINO-KILLER ASTEROID HIT TODAY?", "caption": "What if an asteroid like the one that wiped out the dinosaurs hit Earth today?", "tags": ["#asteroid", "#space"]},
+  "ru": {"cover": "АСТЕРОИД ВРЕЖЕТСЯ В ЗЕМЛЮ?", "caption": "Что если сегодня в Землю врежется астероид, как тот, что погубил динозавров?", "tags": ["#астероид", "#космос"]},
+  "scenes": [
+   {"img": "a huge flaming asteroid streaking through the sky above a modern city, {hero} on a street dropping his ice cream in shock", "en": "What if an asteroid like the one that killed the dinosaurs hit Earth today?", "ru": "Что если сегодня в Землю врежется астероид, как тот, что погубил динозавров?", "cam": "in", "part": "embers"},
+   {"img": "a giant rocky asteroid in space next to a tiny mountain for scale, speed lines behind it, Earth in the distance", "en": "It would be about ten kilometers wide, flying at twenty kilometers per second.", "ru": "Он размером около десяти километров и летит со скоростью двадцать километров в секунду.", "cam": "left", "part": "stars"},
+   {"img": "the moment of impact: a blinding explosion and an enormous crater forming in the ground, rock blasting outward", "en": "It would cross the sky in seconds and blast a crater over one hundred and fifty kilometers wide.", "ru": "Он пролетит атмосферу за пару секунд и пробьёт кратер шириной больше ста пятидесяти километров.", "cam": "out", "fx": ["flash", "shake"], "part": "embers"},
+   {"img": "a gigantic mushroom-shaped fireball rising over the horizon dwarfing mountains, shockwave ring spreading across the land", "en": "The impact would release more energy than billions of nuclear bombs.", "ru": "Энергия удара будет больше, чем у миллиардов атомных бомб.", "cam": "up", "part": "embers"},
+   {"img": "glowing red-hot rocks raining down from the sky onto a forest that catches fire, orange sky", "en": "Molten rock would rain down around the world, setting forests on fire.", "ru": "По всей планете польётся дождь из раскалённых камней, и загорятся леса.", "cam": "down", "part": "embers"},
+   {"img": "a gloomy grey world under thick dark dust clouds, dead crops in a field, a faint dim Sun, people in coats looking up", "en": "Then dust and soot would block the Sun for years. Crops would fail, and temperatures would plunge.", "ru": "Потом пыль и сажа закроют Солнце на годы. Урожаи погибнут, станет очень холодно.", "cam": "right", "part": "ash"},
+   {"img": "a small spacecraft crashing into a little asteroid in space and nudging it off course, scientists cheering in a control room", "en": "Luckily, NASA tracks nearly all asteroids this big, and none are heading our way. In 2022, it even proved we can push one off course.", "ru": "К счастью, NASA следит почти за всеми такими астероидами, и ни один к нам не летит. А в 2022 году доказали, что астероид можно сдвинуть.", "cam": "in", "part": "stars"},
+   {"img": "{hero} peeking out of a cozy underground bunker hatch with a flashlight, looking at the viewer with a nervous smile", "en": "Where would you hide? Tell me in the comments.", "ru": "А где бы спрятался ты? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "no-spacesuit",
+  "mood": "tense",
+  "en": {"cover": "SPACE WITHOUT A SPACESUIT?", "caption": "What if you went into space without a spacesuit? It's not what the movies show.", "tags": ["#space", "#astronaut"]},
+  "ru": {"cover": "В КОСМОС БЕЗ СКАФАНДРА?", "caption": "Что если выйти в космос без скафандра? Всё не так, как в кино.", "tags": ["#космос", "#космонавт"]},
+  "scenes": [
+   {"img": "{hero} in jeans and his hoodie floating out of a spaceship airlock into open space, Earth glowing below", "en": "What if you went into space without a spacesuit?", "ru": "Что если выйти в открытый космос без скафандра?", "cam": "in", "part": "stars"},
+   {"img": "{hero} floating in space with puffed cheeks and a big red warning sign icon floating next to him, lungs drawn as balloons", "en": "First rule: don't hold your breath. The air in your lungs would expand and could tear them.", "ru": "Первое правило: не задерживай дыхание. Воздух в лёгких расширится и может их порвать.", "cam": "right", "part": "stars"},
+   {"img": "close-up of a cartoon astronaut's tongue with tiny bubbles fizzing on it, funny surprised face, space background", "en": "Your blood wouldn't boil, but the moisture on your tongue and skin would start to bubble.", "ru": "Кровь не закипит, но влага на языке и коже начнёт пузыриться.", "cam": "in", "part": "stars"},
+   {"img": "{hero} slightly puffed up like a balloon in space, looking surprised, stars around", "en": "Your body would swell up, but your skin would hold you together.", "ru": "Тело раздуется, но кожа удержит тебя целым.", "cam": "out", "part": "stars"},
+   {"img": "a big cartoon stopwatch showing fifteen seconds next to a sleepy astronaut with spiral eyes floating in space", "en": "After about fifteen seconds without oxygen, you'd pass out.", "ru": "Примерно через пятнадцать секунд без кислорода ты потеряешь сознание.", "cam": "left", "part": "stars"},
+   {"img": "a thermometer floating in space showing body temperature staying warm, thin wisps of heat slowly leaving a floating person", "en": "You wouldn't freeze instantly. In a vacuum, heat leaves your body slowly.", "ru": "Мгновенно ты не замёрзнешь: в вакууме тепло уходит медленно.", "cam": "up", "part": "stars"},
+   {"img": "astronauts in a spaceship pulling {hero} back inside through an airlock with a rope, a timer showing ninety seconds", "en": "If you were rescued within about ninety seconds, you'd probably survive.", "ru": "Если тебя спасут примерно за полторы минуты, скорее всего, ты выживешь.", "cam": "down", "part": "stars"},
+   {"img": "{hero} inside a spaceship wrapped in a foil blanket giving a thumbs up at the viewer, Earth visible through the window", "en": "Would you risk a spacewalk? Tell me in the comments.", "ru": "А ты бы рискнул выйти в космос? Пиши в комментариях.", "cam": "out"}
+  ]
+ },
+ {
+  "id": "earth-rings",
+  "mood": "wonder",
+  "en": {"cover": "EARTH HAD RINGS?", "caption": "What if Earth had rings like Saturn? The sky would look incredible.", "tags": ["#earth", "#saturn"]},
+  "ru": {"cover": "У ЗЕМЛИ ПОЯВЯТСЯ КОЛЬЦА?", "caption": "Что если у Земли будут кольца, как у Сатурна? Небо было бы невероятным.", "tags": ["#земля", "#сатурн"]},
+  "scenes": [
+   {"img": "planet Earth seen from space surrounded by beautiful wide shining rings like Saturn, {hero} floating nearby in a spacesuit amazed", "en": "What if Earth had rings like Saturn?", "ru": "Что если у Земли будут кольца, как у Сатурна?", "cam": "in", "part": "stars"},
+   {"img": "a huge glowing ring arch stretching across the daytime sky over a green valley from horizon to horizon", "en": "They would stretch across the sky like a giant glowing bridge.", "ru": "Они протянутся по небу огромным светящимся мостом от горизонта до горизонта.", "cam": "left"},
+   {"img": "a tropical beach at the equator with the rings visible as a thin bright vertical line in the sky above palm trees", "en": "Near the equator, you'd see them edge-on, as a thin bright line.", "ru": "На экваторе они видны с ребра, как тонкая яркая линия.", "cam": "up"},
+   {"img": "a European-style town at night with a wide bright ring arch glowing across the starry sky, people on balconies looking up", "en": "Further north, they'd be a wide arch, bright even at night.", "ru": "А севернее это широкая арка, яркая даже ночью.", "cam": "right", "part": "stars"},
+   {"img": "a giant dark shadow stripe from the rings falling across a snowy landscape, cold blue tones, people in winter coats", "en": "But the rings would cast huge shadows, and some regions would get much colder winters.", "ru": "Но кольца отбрасывают огромную тень, и где-то зимы стали бы намного холоднее.", "cam": "down", "part": "snow"},
+   {"img": "a rocket launching and dodging chunks of rock and ice in orbit, satellites with dents", "en": "Launching rockets and satellites would be dangerous. They'd have to dodge chunks of rock and ice.", "ru": "Запускать ракеты и спутники стало бы опасно: пришлось бы уворачиваться от камней и льда.", "cam": "in", "part": "stars"},
+   {"img": "ancient Earth with primitive sea life in the oceans and a thin ring of debris around the planet, prehistoric look", "en": "Fun fact: scientists think Earth may really have had a ring about four hundred and sixty million years ago.", "ru": "Кстати, учёные думают, что у Земли правда могло быть кольцо около четырёхсот шестидесяти миллионов лет назад.", "cam": "out", "part": "stars"},
+   {"img": "{hero} lying on the grass at night looking at a glowing ring arch across the sky, smiling at the viewer", "en": "Would you want rings in our sky? Tell me in the comments.", "ru": "Хотел бы ты кольца над головой? Пиши в комментариях.", "cam": "in", "part": "stars"}
+  ]
+ },
+ {
+  "id": "mars-life",
+  "mood": "wonder",
+  "en": {"cover": "YOU MOVED TO MARS?", "caption": "What if you moved to Mars? Here's what life there would really be like.", "tags": ["#mars", "#space"]},
+  "ru": {"cover": "ПЕРЕЕХАТЬ НА МАРС?", "caption": "Что если переехать на Марс? Вот какой была бы жизнь там на самом деле.", "tags": ["#марс", "#космос"]},
+  "scenes": [
+   {"img": "{hero} in a white spacesuit with a suitcase standing on the red dusty surface of Mars, a dome colony behind him", "en": "What if you moved to Mars?", "ru": "Что если переехать жить на Марс?", "cam": "in", "part": "dust"},
+   {"img": "inside a cramped spaceship cabin with bored astronauts floating, a calendar with many crossed out days, Mars visible through the window", "en": "Getting there would take about seven months in a cramped spaceship.", "ru": "Дорога займёт около семи месяцев в тесном корабле.", "cam": "right", "part": "stars"},
+   {"img": "{hero} in a spacesuit doing a huge happy jump high above the Martian surface, a scale showing a lower weight", "en": "On Mars, you'd weigh only about a third as much, and you could jump almost three times higher.", "ru": "На Марсе ты весишь почти в три раза меньше и прыгаешь почти втрое выше.", "cam": "up", "part": "dust"},
+   {"img": "a warning sign on Mars outside an airlock, thin hazy red atmosphere, CO2 molecules drawn floating in the air", "en": "But you could never go out without a suit. The air is thin and almost all carbon dioxide.", "ru": "Но без скафандра на улицу не выйти: воздух очень разрежен и почти весь из углекислого газа.", "cam": "left", "part": "dust"},
+   {"img": "a huge red dust storm rolling over a small Mars base at night, a frosty thermometer showing very low temperature", "en": "Nights can drop below minus seventy, and dust storms can cover the entire planet.", "ru": "Ночью бывает ниже минус семидесяти, а пыльные бури порой накрывают всю планету.", "cam": "in", "part": "dust"},
+   {"img": "a beautiful blue sunset on Mars over red rocky hills, a small Sun with a blue glow around it, colonists watching", "en": "A Martian day is only about forty minutes longer than ours, and the sunsets are blue.", "ru": "Сутки на Марсе всего на сорок минут длиннее наших, а закаты там голубые.", "cam": "out"},
+   {"img": "{hero} inside a Mars habitat waiting impatiently at a video call screen showing a loading icon, Earth tiny in the window", "en": "And a call home could take up to twenty minutes each way.", "ru": "А сигнал звонка домой будет идти до двадцати минут в одну сторону.", "cam": "down"},
+   {"img": "{hero} in a spacesuit holding a ticket at a futuristic spaceport with a rocket to Mars, looking at the viewer", "en": "Would you buy a one-way ticket to Mars? Tell me in the comments.", "ru": "А ты бы купил билет на Марс в один конец? Пиши в комментариях.", "cam": "in"}
+  ]
+ },
+ {
+  "id": "flat-earth",
+  "mood": "fun",
+  "en": {"cover": "EARTH WAS FLAT?", "caption": "What if the Earth was actually flat? Physics has some bad news.", "tags": ["#flatearth", "#physics"]},
+  "ru": {"cover": "ЗЕМЛЯ ПЛОСКАЯ?", "caption": "Что если Земля на самом деле плоская? У физики плохие новости.", "tags": ["#плоскаяземля", "#физика"]},
+  "scenes": [
+   {"img": "a funny flat disk-shaped Earth floating in space with oceans and continents on top, {hero} peeking over the edge in disbelief", "en": "What if the Earth was actually flat?", "ru": "Что если Земля на самом деле плоская?", "cam": "in", "part": "stars"},
+   {"img": "a flat disk planet with arrows showing gravity pulling everything towards the center of the disk", "en": "Gravity pulls everything towards the center of mass. On a disk, it would pull you towards the middle.", "ru": "Гравитация тянет всё к центру массы. На диске тебя тянуло бы к его середине.", "cam": "out", "part": "stars"},
+   {"img": "{hero} struggling to walk up a never-ending slope near the edge of the flat world, sweating, the ground looking flat but feeling like a steep hill", "en": "Near the edge, walking would feel like climbing an endless hill.", "ru": "У края казалось бы, что идёшь в бесконечную гору.", "cam": "up"},
+   {"img": "oceans and clouds sliding towards the center of a flat disk planet, the outer rim dry, cracked and airless", "en": "Oceans and air would slide towards the center, leaving the edges dry and airless.", "ru": "Океаны и воздух стекли бы к центру, а края остались бы сухими и без воздуха.", "cam": "left"},
+   {"img": "a single Sun lighting up the entire flat disk at once, clocks in different cities all showing the same time", "en": "Time zones wouldn't make sense: the Sun would light up the whole disk at once.", "ru": "Часовые пояса потеряли бы смысл: Солнце освещало бы весь диск сразу.", "cam": "right"},
+   {"img": "a giant flat disk planet bending and crumpling into a ball shape under its own gravity, cracks and dramatic motion", "en": "And a disk this big would be unstable. Gravity would crush it back into a ball.", "ru": "А такой огромный диск неустойчив: гравитация снова сжала бы его в шар.", "cam": "in", "fx": ["shake"], "part": "stars"},
+   {"img": "a lineup of round planets and moons of the solar system, all perfectly spherical, colorful", "en": "That's why every planet and big moon we've ever seen is round.", "ru": "Поэтому все планеты и крупные луны, которые мы видели, круглые.", "cam": "down", "part": "stars"},
+   {"img": "{hero} sitting with his legs dangling over the edge of a flat world, waterfalls pouring into space, smiling at the viewer", "en": "Where on the disk would you live? Tell me in the comments.", "ru": "А где на диске жил бы ты? Пиши в комментариях.", "cam": "out", "part": "stars"}
+  ]
+ },
+ {
+  "id": "gravity-off",
+  "mood": "fun",
+  "en": {"cover": "GRAVITY DISAPPEARED FOR 5 SECONDS?", "caption": "What if gravity disappeared for just five seconds? The ending is the real problem.", "tags": ["#gravity", "#physics"]},
+  "ru": {"cover": "ГРАВИТАЦИЯ ИСЧЕЗНЕТ НА 5 СЕКУНД?", "caption": "Что если гравитация исчезнет на пять секунд? Самое страшное случится в конце.", "tags": ["#гравитация", "#физика"]},
+  "scenes": [
+   {"img": "{hero} and people in a city park suddenly floating up into the air with surprised faces, dogs, balls and coffee cups floating too", "en": "What if gravity disappeared for five seconds?", "ru": "Что если гравитация исчезнет на пять секунд?", "cam": "in"},
+   {"img": "people, cars and benches slowly drifting upward from a street, everyone waving their arms", "en": "Everyone standing would start to float, gently drifting up into the air.", "ru": "Все, кто стоит, оторвутся от земли и начнут плавно подниматься.", "cam": "up"},
+   {"img": "the ocean surface lifting into floating blobs of water, fish swimming in the air, a lighthouse nearby", "en": "The oceans would start to lift, and the air would begin to drift away.", "ru": "Вода в океанах начнёт приподниматься, а воздух потянется прочь.", "cam": "right", "part": "bubbles"},
+   {"img": "{hero} floating upside down with spinning dizzy eyes, a spiral above his head", "en": "Your inner ear would go crazy. You'd feel like you were falling.", "ru": "Вестибулярный аппарат сойдёт с ума: будет казаться, что ты падаешь.", "cam": "in"},
+   {"img": "airplanes and birds drifting off course in a confused sky, cars lifting off a highway", "en": "Planes, cars and birds would drift off their paths.", "ru": "Самолёты, машины и птицы собьются с курса.", "cam": "left"},
+   {"img": "a huge cartoon countdown clock reaching zero, everything in the sky starting to fall back down, speed lines downward", "en": "Then, after five seconds, gravity would switch back on, and everything would fall at once.", "ru": "А через пять секунд гравитация вернётся, и всё рухнет разом.", "cam": "down", "fx": ["shake"]},
+   {"img": "a city full of people who just fell on their backs and bottoms, bandages, cars bounced, water splashing everywhere", "en": "Millions of people would fall and get hurt, and the oceans would slosh for hours.", "ru": "Миллионы людей упадут и ушибутся, а океаны ещё долго будут плескаться.", "cam": "out", "fx": ["boom"]},
+   {"img": "{hero} holding tightly to a lamp post with both arms and legs, looking at the viewer with a funny determined face", "en": "Where would you want to be when it happens? Tell me in the comments.", "ru": "А где бы ты хотел оказаться в этот момент? Пиши в комментариях.", "cam": "in"}
+  ]
+ }
+]

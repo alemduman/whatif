@@ -1,0 +1,6 @@
+{
+  "name": "whatif-autopost",
+  "private": true,
+  "type": "module",
+  "description": "Ролики «Что если?»: сборка (Python) и автопостинг в Instagram через GitHub Actions"
+}

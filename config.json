@@ -1,0 +1,43 @@
+{
+  "autoPublish": false,
+  "startDate": "",
+  "timezone": "Asia/Baku",
+  "schedule": { "hours": [13, 19], "minute": 7, "maxDelayMinutes": 120 },
+  "publishLanguage": "en",
+  "languages": ["en", "ru"],
+  "autoProduce": true,
+  "minStock": 3,
+  "produceBatch": 3,
+  "maxSeconds": 59,
+  "maxHashtags": 5,
+  "hashtags": {
+    "en": ["#whatif", "#science", "#facts", "#animation", "#didyouknow"],
+    "ru": ["#чтоесли", "#наука", "#факты", "#мультфильм", "#интересно"]
+  },
+  "hero": "the recurring hero: a small round-faced cartoon guy with messy brown hair, big expressive eyes and an orange hoodie",
+  "images": {
+    "provider": "gemini",
+    "model": "",
+    "quality": "medium",
+    "styleReference": true,
+    "style": "Vertical 9:16 2D cartoon illustration, flat vector style with bold clean outlines, soft gradients and subtle grain, vibrant saturated colors, simple cute characters with round heads and big eyes, cinematic dramatic lighting, strong central subject, uncluttered background, keep the lower third of the picture calm and simple."
+  },
+  "voices": {
+    "en": { "voice": "en-US-AndrewMultilingualNeural", "rate": "+4%" },
+    "ru": { "voice": "ru-RU-DmitryNeural", "rate": "+6%" }
+  },
+  "video": {
+    "fps": 30,
+    "crf": 17,
+    "preset": "medium",
+    "musicVolume": 0.16,
+    "sfxVolume": 0.22,
+    "wordsPerCaption": 3,
+    "captionChars": 17,
+    "watermark": ""
+  },
+  "shareToFeed": true,
+  "login": "unified",
+  "apiVersion": "v26.0",
+  "order": []
+}
