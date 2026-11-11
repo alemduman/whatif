@@ -115,6 +115,15 @@ jobs:
             out/*/*.json
           retention-days: 7
 
+      # копия в отдельную ветку: так пробные ролики можно забрать через git (ветка каждый раз перезаписывается)
+      - name: Пробная сборка в ветку test-videos
+        if: inputs.test && hashFiles('out/produced.json') != ''
+        run: |
+          d="$RUNNER_TEMP/tv"; mkdir -p "$d"; cp out/*/*.mp4 out/*/*.jpg out/*/*.json "$d"/ 2>/dev/null || true
+          cd "$d" && git init -q -b test-videos && git add -A
+          git -c user.name="whatif-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Пробная сборка ${{ github.run_id }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:test-videos
+
       - name: Выложить в релиз library
         if: ${{ !inputs.test }}
         env:
