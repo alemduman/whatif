@@ -22,6 +22,10 @@ on:
         description: 'Языки через запятую (пусто = все из config.json)'
         type: string
         default: ''
+      probe_voices:
+        description: 'Только диагностика голосов (ролики не делаются)'
+        type: boolean
+        default: false
       test:
         description: 'Пробная сборка: результат только в артефакте запуска (не в релизе и не в очереди). Без ключа — картинки-заглушки'
         type: boolean
@@ -61,7 +65,12 @@ jobs:
       - name: Проверить банк тем
         run: python3 scripts/produce.py --check
 
+      - name: Диагностика голосов
+        if: inputs.probe_voices
+        run: python3 scripts/tts_probe.py zombies
+
       - name: Сделать ролики
+        if: ${{ !inputs.probe_voices }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
