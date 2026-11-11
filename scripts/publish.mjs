@@ -91,23 +91,59 @@ async function main() {
   if (!uid && UNIFIED) { console.error('❌ Нет секрета IG_USER_ID: числовой ID аккаунта Instagram (он начинается на 17841). Добавь его так же, как IG_TOKEN.'); process.exit(1); }
   if (!uid) { const me = await api('GET', `${API}/me`, { fields: 'user_id,username' }); uid = String(me.user_id || me.id); console.log(`Аккаунт: @${me.username || '?'} (${uid})`); }
 
+  // Защита от дублей при повторных запусках по расписанию: если в ленте уже есть пост моложе GUARD минут
+  // (например, прошлый запуск опубликовал, но не успел записать state.json), этот слот считаем выполненным
+  const GUARD = +(cfg.duplicateGuardMinutes ?? 40);
+  if ((process.env.RUN_KIND || process.env.GITHUB_EVENT_NAME) === 'schedule' && GUARD > 0) {
+    let last = null;
+    try { const r = await api('GET', `${API}/${uid}/media`, { fields: 'id,timestamp,permalink', limit: '1' }); last = r.data && r.data[0]; }
+    catch (e) { console.log('Проверить ленту не удалось (публикуем как обычно): ' + e.message); }
+    const ts = last && Date.parse(String(last.timestamp).replace(/\+0000$/, 'Z'));
+    if (ts && Date.now() - ts < GUARD * 60000 && Date.now() >= ts) {
+      console.log(`В ленте уже есть пост ${Math.round((Date.now() - ts) / 60000)} мин назад (${last.permalink || last.id}). Не публикую повторно, отмечаю слот выполненным.`);
+      const h0 = next.history || [];
+      if (h0.length) h0[h0.length - 1] = { ...h0[h0.length - 1], mediaId: last.id, permalink: last.permalink || undefined, posted: new Date(ts).toISOString(), guard: true };
+      writeJSON(path.join(ROOT, 'state.json'), next);
+      setOutput('posted', 'true');
+      summary(`### Повтор не нужен\nВ ленте уже есть свежий пост: ${last.permalink || last.id}\n`);
+      return;
+    }
+  }
+
   const params = { media_type: 'REELS', video_url: videoUrl, caption: post.caption, share_to_feed: String(cfg.shareToFeed !== false) };
   if (coverUrl) params.cover_url = coverUrl;
-  const container = await api('POST', `${API}/${uid}/media`, params);
-  console.log(`Контейнер создан: ${container.id}. Instagram обрабатывает видео…`);
-
-  let status = '';
   const POLL = +process.env.POLL_MS || 30000;
-  for (let i = 0; i < 20; i++) {           // до 10 минут, раз в 30 с
-    await sleep(POLL);
-    const s = await api('GET', `${API}/${container.id}`, { fields: 'status_code,status' });
-    status = s.status_code;
-    console.log(`Статус: ${status}${s.status ? ' — ' + s.status : ''}`);
-    if (status === 'FINISHED' || status === 'ERROR' || status === 'EXPIRED' || status === 'PUBLISHED') break;
+  let container, status = '';
+  // Если Instagram не смог обработать видео (статус ERROR/EXPIRED), пробуем ещё раз с новым контейнером
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    container = await api('POST', `${API}/${uid}/media`, params);
+    console.log(`Контейнер создан: ${container.id}. Instagram обрабатывает видео…`);
+    status = '';
+    for (let i = 0; i < 20; i++) {           // до 10 минут, раз в 30 с
+      await sleep(POLL);
+      let s;
+      try { s = await api('GET', `${API}/${container.id}`, { fields: 'status_code,status' }); }
+      catch (e) { console.log('Статус не получен, жду: ' + e.message); continue; }
+      status = s.status_code;
+      console.log(`Статус: ${status}${s.status ? ' — ' + s.status : ''}`);
+      if (status === 'FINISHED' || status === 'ERROR' || status === 'EXPIRED' || status === 'PUBLISHED') break;
+    }
+    if (status === 'FINISHED' || status === 'PUBLISHED') break;
+    if (attempt < 2) { console.log(`Instagram не обработал видео (статус ${status || 'нет ответа'}), пробую ещё раз`); await sleep(20000); }
   }
   if (status !== 'FINISHED' && status !== 'PUBLISHED') throw new Error(`Instagram не обработал видео (статус ${status || 'нет ответа'}). Попробуй запустить ещё раз.`);
 
-  const pub = status === 'PUBLISHED' ? { id: container.id } : await api('POST', `${API}/${uid}/media_publish`, { creation_id: container.id });
+  // media_publish иногда отвечает ошибкой, хотя пост вышел: перед повтором проверяем статус контейнера
+  let pub = status === 'PUBLISHED' ? { id: container.id } : null;
+  for (let k = 1; !pub; k++) {
+    try { pub = await api('POST', `${API}/${uid}/media_publish`, { creation_id: container.id }); }
+    catch (e) {
+      console.log(`Публикация ответила ошибкой (попытка ${k}): ${e.message}`);
+      await sleep(20000);
+      try { const s = await api('GET', `${API}/${container.id}`, { fields: 'status_code' }); if (s.status_code === 'PUBLISHED') { pub = { id: container.id }; break; } } catch {}
+      if (k >= 3) throw e;
+    }
+  }
   console.log(`Опубликовано! ID публикации: ${pub.id}`);
   let link = '';
   try { const m = await api('GET', `${API}/${pub.id}`, { fields: 'permalink' }); link = m.permalink || ''; } catch {}

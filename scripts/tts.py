@@ -113,7 +113,108 @@ def print_voices(lang):
         print(f"  список голосов получить не удалось: {e}", flush=True)
 
 
-def synth(text, voice, rate, out_wav):
+def _factor(rate):
+    try:
+        return 1 + float(str(rate).strip().rstrip("%")) / 100
+    except ValueError:
+        return 1.0
+
+
+def _to_wav(src, dst, tempo=1.0, extra=None):
+    af = ["-af", f"atempo={tempo:.3f}"] if abs(tempo - 1) > 0.005 else []
+    subprocess.run(["ffmpeg", "-y", "-v", "error", *(extra or []), "-i", src, *af, "-ac", "1", "-ar", str(SR), "-c:a", "pcm_s16le", dst], check=True)
+
+
+STYLE = {"en": "Read this aloud like an enthusiastic, curious science storyteller in a short video, natural pace: ",
+         "ru": "Прочитай вслух живо и увлечённо, как рассказчик научно-популярного ролика, в естественном темпе: "}
+
+
+def _gemini(text, voice, lang, raw, model):
+    import base64, json, urllib.request
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    body = {"contents": [{"parts": [{"text": STYLE.get(lang, "") + text}]}],
+            "generationConfig": {"responseModalities": ["AUDIO"],
+                                 "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
+    req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                 data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        d = json.loads(r.read())
+    for c in d.get("candidates", []):
+        for part in (c.get("content") or {}).get("parts", []):
+            inl = part.get("inlineData") or part.get("inline_data")
+            if inl and inl.get("data"):
+                rate = 24000
+                mt = inl.get("mimeType", "")
+                if "rate=" in mt:
+                    rate = int(mt.split("rate=")[1].split(";")[0])
+                pcm = raw + ".pcm"
+                open(pcm, "wb").write(base64.b64decode(inl["data"]))
+                return pcm, ["-f", "s16le", "-ar", str(rate), "-ac", "1"]
+    raise RuntimeError("Gemini не вернул звук")
+
+
+def _openai(text, voice, lang, raw, model):
+    import json, urllib.request
+    key = os.environ.get("OPENAI_API_KEY", "").strip()
+    body = {"model": model, "voice": voice, "input": text, "response_format": "wav",
+            "instructions": STYLE.get(lang, "").rstrip(": ")}
+    req = urllib.request.Request("https://api.openai.com/v1/audio/speech", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json", "Authorization": "Bearer " + key})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        open(raw, "wb").write(r.read())
+    return raw, None
+
+
+def _piper(text, voice, lang, raw, model):
+    import urllib.request
+    d = os.path.expanduser("~/.cache/piper")
+    os.makedirs(d, exist_ok=True)
+    onnx = os.path.join(d, voice + ".onnx")
+    if not os.path.exists(onnx):
+        loc, name, q = voice.split("-")
+        base = f"https://huggingface.co/rhasspy/piper-voices/resolve/main/{loc.split('_')[0]}/{loc}/{name}/{q}/{voice}"
+        for ext in (".onnx", ".onnx.json"):
+            urllib.request.urlretrieve(base + ext, os.path.join(d, voice + ext))
+    try:
+        from piper import PiperVoice
+    except ImportError:
+        from piper.voice import PiperVoice
+    pv = PiperVoice.load(onnx)
+    with wave.open(raw, "wb") as wf:
+        if hasattr(pv, "synthesize_wav"):
+            pv.synthesize_wav(text, wf)
+        else:
+            pv.synthesize(text, wf)
+    return raw, None
+
+
+_WHISPER = {}
+
+
+def _whisper_marks(wav, lang, text):
+    """Метки слов распознаванием речи (для голосов, которые не отдают тайминги сами)."""
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        return []
+    name = os.environ.get("WHISPER_MODEL", "base")
+    if name not in _WHISPER:
+        _WHISPER[name] = WhisperModel(name, device="cpu", compute_type="int8")
+    segs, _ = _WHISPER[name].transcribe(wav, language=lang, word_timestamps=True, beam_size=1, initial_prompt=text)
+    return [{"text": w.word.strip(), "s": round(w.start, 3), "e": round(w.end, 3)} for sg in segs for w in (sg.words or [])]
+
+
+def available(engine):
+    if engine == "gemini":
+        return bool(os.environ.get("GEMINI_API_KEY", "").strip())
+    if engine == "openai":
+        return bool(os.environ.get("OPENAI_API_KEY", "").strip())
+    return True
+
+
+def synth(text, voice, rate, out_wav, engine="edge", lang="en", model=None, tries=None):
+    """Озвучивает фразу движком engine (edge | gemini | openai | piper). Возвращает длительность и тайминги слов."""
+    import time
     tokens = _tokens(text)
     if os.environ.get("TTS") == "fake":
         dur = 0.36 * len(tokens) + 0.002 * len(text) * 10 + 0.3
@@ -125,26 +226,42 @@ def synth(text, voice, rate, out_wav):
             a[s:e] += 0.15 * np.sin(2 * np.pi * 220 * t) * np.hanning(e - s)
         _write(out_wav, a)
         return {"dur": round(dur, 3), "words": _even_timing(tokens, 0.05, dur - 0.1)}
-    mp3 = out_wav[:-4] + ".mp3"
-    last = None
-    for attempt in range(3):
+    tries = tries or int(os.environ.get("TTS_TRIES", "6" if engine == "edge" else "3"))
+    last, marks = None, []
+    for attempt in range(tries):
         try:
-            marks = asyncio.run(_edge(text, voice, rate, mp3))
+            if engine == "edge":
+                mp3 = out_wav[:-4] + ".mp3"
+                marks = asyncio.run(_edge(text, voice, rate, mp3))
+                _decode_to_wav(mp3, out_wav)
+            else:
+                fn = {"gemini": _gemini, "openai": _openai, "piper": _piper}[engine]
+                src, extra = fn(text, voice, lang, out_wav[:-4] + ".raw.wav", model)
+                _to_wav(src, out_wav, _factor(rate), extra)
             break
-        except Exception as e:  # сервис иногда рвёт соединение — повторяем
+        except Exception as e:  # noqa: BLE001  сервисы иногда не отвечают — повторяем с паузой
             last = e
-            import time
-            time.sleep(2 + attempt * 3)
+            if "HTTP Error 4" in str(e) and "429" not in str(e):
+                break
+            time.sleep(3 + attempt * 3)
     else:
-        raise RuntimeError(f"Озвучка не удалась ({voice}): {last}")
-    _decode_to_wav(mp3, out_wav)
+        raise RuntimeError(f"Озвучка не удалась ({engine} {voice}): {last}")
+    if last is not None and not os.path.exists(out_wav):
+        raise RuntimeError(f"Озвучка не удалась ({engine} {voice}): {last}")
     a = read_wav(out_wav)
     a, off = _trim(a)
     dur = len(a) / SR
-    for m in marks:
-        m["s"] = max(0.0, round(m["s"] - off, 3))
-        m["e"] = max(m["s"] + 0.05, round(m["e"] - off, 3))
     _write(out_wav, a)
+    if engine != "edge":
+        try:
+            marks = _whisper_marks(out_wav, lang, text)
+        except Exception as e:  # noqa: BLE001
+            print(f"  тайминги слов не распознаны ({e}), раскладываю равномерно", flush=True)
+            marks = []
+    else:
+        for m in marks:
+            m["s"] = max(0.0, round(m["s"] - off, 3))
+            m["e"] = max(m["s"] + 0.05, round(m["e"] - off, 3))
     words = _align(tokens, marks, dur) if marks else _even_timing(tokens, 0.05, dur - 0.05)
     return {"dur": round(dur, 3), "words": words}
 

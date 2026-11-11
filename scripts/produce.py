@@ -107,35 +107,36 @@ def produce(t, cfg, langs, out_root):
         v = cfg["voices"][lang]
         tmp = tempfile.mkdtemp(prefix=f"wi_{tid}_{lang}_")
         rates = [v.get("rate", "+0%")] + list(v.get("fasterRates", ["+8%", "+15%", "+22%"]))
-        voices = [v["voice"]] + [x for x in v.get("fallback", []) if x != v["voice"]]
-        voice = _VOICE_OK.get(lang)
-        if not voice:  # первый рабочий голос из списка (сервис иногда не отдаёт какой-то голос)
-            for cand in voices:
-                try:
-                    tts.synth(t["scenes"][0][lang], cand, rates[0], os.path.join(tmp, "probe.wav"))
-                    voice = cand
-                    break
-                except Exception as e:  # noqa: BLE001
-                    print(f"  {lang}: голос {cand} не отвечает ({e}), пробую следующий", flush=True)
-                    if cand == voices[0]:
-                        tts.print_voices(lang)
-            if not voice:
-                tts.print_voices(lang)
-                raise RuntimeError(f"Ни один голос для «{lang}» не ответил: {', '.join(voices)}")
-            _VOICE_OK[lang] = voice
-            if voice != v["voice"]:
-                print(f"  {lang}: использую голос {voice}", flush=True)
-        for rate in rates:
-            scenes = []
-            for i, s in enumerate(t["scenes"]):
-                wav = os.path.join(tmp, f"s{i + 1:02d}.wav")
-                r = tts.synth(s[lang], voice, rate, wav)
-                scenes.append({"img": paths[i], "wav": wav, "dur": r["dur"], "words": r["words"],
-                               "fx": s.get("fx"), "cam": s.get("cam"), "part": s.get("part")})
-            est = sum(x["dur"] for x in scenes) + 0.35 + 0.28 * (len(scenes) - 1) + 1.6 + 0.1 * len(scenes)
-            if est <= maxs:
+        # цепочка голосов: первый сработавший озвучивает весь ролик; варианты без ключа пропускаются
+        chain = [tuple(x[:2]) for x in v.get("chain", [])] or [("edge", v.get("voice", ""))]
+        only = [x for x in os.environ.get("TTS_ONLY", "").split(",") if x]
+        chain = [c for c in chain if tts.available(c[0]) and (not only or c[0] in only)]
+        if not chain:
+            raise RuntimeError(f"Нет доступных голосов для «{lang}» (проверь voices.{lang}.chain в config.json)")
+        scenes, eng, voice, rate = None, "", "", rates[0]
+        for ci in range(_VOICE_OK.get(lang, 0), len(chain)):
+            eng, voice = chain[ci]
+            model = (cfg.get("ttsModels") or {}).get(eng)
+            try:
+                for rate in rates:
+                    scenes = []
+                    for i, s in enumerate(t["scenes"]):
+                        wav = os.path.join(tmp, f"s{i + 1:02d}.wav")
+                        r = tts.synth(s[lang], voice, rate, wav, engine=eng, lang=lang, model=model)
+                        scenes.append({"img": paths[i], "wav": wav, "dur": r["dur"], "words": r["words"],
+                                       "fx": s.get("fx"), "cam": s.get("cam"), "part": s.get("part")})
+                    est = sum(x["dur"] for x in scenes) + 0.35 + 0.28 * (len(scenes) - 1) + 1.6 + 0.1 * len(scenes)
+                    if est <= maxs:
+                        break
+                    print(f"  {lang}: выходит {est:.1f} с при скорости {rate}, ускоряю голос", flush=True)
+                _VOICE_OK[lang] = ci
+                print(f"  {lang}: голос {eng} / {voice}", flush=True)
                 break
-            print(f"  {lang}: выходит {est:.1f} с при скорости {rate}, ускоряю голос", flush=True)
+            except Exception as e:  # noqa: BLE001
+                scenes = None
+                print(f"  {lang}: {eng} / {voice} не сработал ({str(e)[:200]}), пробую следующий вариант", flush=True)
+        if scenes is None:
+            raise RuntimeError(f"Ни один голос для «{lang}» не сработал: {chain}")
         mp4 = os.path.join(od, f"{tid}.{lang}.mp4")
         jpg = os.path.join(od, f"{tid}.{lang}.jpg")
         print(f"  {lang}: собираю видео…", flush=True)
@@ -143,7 +144,7 @@ def produce(t, cfg, langs, out_root):
         topic["_seed"] = zlib.crc32(tid.encode()) % 1000
         dur = render.render(topic, lang, scenes, mp4, jpg, cfg.get("video", {}), tmp)
         meta = {"id": tid, "lang": lang, "video": os.path.basename(mp4), "cover": os.path.basename(jpg),
-                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "rate": rate, "voice": voice}
+                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "rate": rate, "voice": f"{eng}/{voice}"}
         with open(os.path.join(od, f"{tid}.{lang}.json"), "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=1)
         res["langs"][lang] = meta

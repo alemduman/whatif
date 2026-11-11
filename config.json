@@ -46,21 +46,49 @@
   },
   "voices": {
     "en": {
-      "voice": "en-US-AndrewMultilingualNeural",
       "rate": "+4%",
-      "fallback": [
-        "en-US-BrianMultilingualNeural",
-        "en-US-ChristopherNeural",
-        "en-US-GuyNeural"
+      "chain": [
+        [
+          "edge",
+          "en-US-AndrewMultilingualNeural"
+        ],
+        [
+          "gemini",
+          "Charon"
+        ],
+        [
+          "openai",
+          "onyx"
+        ],
+        [
+          "edge",
+          "en-US-BrianMultilingualNeural"
+        ],
+        [
+          "piper",
+          "en_US-ryan-high"
+        ]
       ]
     },
     "ru": {
-      "voice": "ru-RU-DmitryNeural",
       "rate": "+6%",
-      "fallback": [
-        "ru-RU-SvetlanaNeural",
-        "en-US-AndrewMultilingualNeural",
-        "en-US-BrianMultilingualNeural"
+      "chain": [
+        [
+          "gemini",
+          "Charon"
+        ],
+        [
+          "openai",
+          "onyx"
+        ],
+        [
+          "edge",
+          "en-US-AndrewMultilingualNeural"
+        ],
+        [
+          "piper",
+          "ru_RU-dmitri-medium"
+        ]
       ]
     }
   },
@@ -77,5 +105,9 @@
   "shareToFeed": true,
   "login": "unified",
   "apiVersion": "v26.0",
-  "order": []
+  "order": [],
+  "ttsModels": {
+    "gemini": "gemini-2.5-flash-preview-tts",
+    "openai": "gpt-4o-mini-tts"
+  }
 }
