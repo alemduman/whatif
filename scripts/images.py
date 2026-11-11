@@ -1,6 +1,7 @@
 """Кадры мультфильма через нейросеть.
 
-provider: "openai" (gpt-image-1 / gpt-image-1-mini), "gemini" (gemini-2.5-flash-image и др.), "placeholder" (локальные заглушки для проверки).
+provider: "openai" (gpt-image-1 / gpt-image-1-mini), "gemini" (gemini-2.5-flash-image ~$0.04 за кадр; gemini-3.1-flash-image ~$0.07 за кадр 1K,
+лучше качество), "placeholder" (локальные заглушки для проверки).
 Ключи только из окружения: OPENAI_API_KEY, GEMINI_API_KEY. Нигде не печатаются.
 """
 import base64
@@ -46,6 +47,8 @@ def _gemini(prompt, cfg, ref=None):
     parts.append({"text": prompt})
     body = {"contents": [{"role": "user", "parts": parts}],
             "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "9:16"}}}
+    if cfg.get("size"):  # только для моделей 3.x: "1K", "2K", "4K"
+        body["generationConfig"]["imageConfig"]["imageSize"] = cfg["size"]
     d = _post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent", body, {"x-goog-api-key": key})
     for c in d.get("candidates", []):
         for p in (c.get("content") or {}).get("parts", []):

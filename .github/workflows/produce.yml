@@ -51,7 +51,11 @@ jobs:
         timeout-minutes: 15
         run: |
           pip install --quiet edge-tts pillow numpy scipy opencv-python-headless
-          command -v ffmpeg >/dev/null || (timeout 180 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg)
+          # ffmpeg: сначала готовая сборка из pip (apt у GitHub иногда зависает), apt — запасной путь
+          if ! command -v ffmpeg >/dev/null; then
+            pip install --quiet imageio-ffmpeg && sudo ln -sf "$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg || true
+          fi
+          command -v ffmpeg >/dev/null || (timeout 240 sudo apt-get update -qq; timeout 300 sudo apt-get install -y -qq ffmpeg)
           ffmpeg -version | head -n 1
 
       - name: Проверить банк тем
