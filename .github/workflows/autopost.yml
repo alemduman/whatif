@@ -20,6 +20,10 @@ on:
         description: 'cron = запуск от внешнего планировщика (правила расписания: слоты, дубли, автопубликация)'
         type: string
         default: ''
+      attempt:
+        description: 'Служебное: номер попытки при автоповторе'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -109,6 +113,7 @@ jobs:
 
       - name: Опубликовать в Instagram
         id: publish
+        timeout-minutes: 15
         if: steps.render.outputs.skip != 'true'
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
@@ -168,3 +173,18 @@ jobs:
             git push -q origin HEAD:main && exit 0
             sleep $((i * 4))
           done
+
+      # Если запуск по расписанию сорвался ДО публикации, он сам запускается ещё раз (до 3 попыток на слот).
+      # Дублей не будет: слот записывается в state.json после публикации, а publish.mjs проверяет ленту Instagram.
+      - name: Повторить запуск, если он сорвался до публикации
+        if: failure() && env.RUN_KIND == 'schedule' && steps.publish.outputs.posted != 'true' && steps.render.outputs.skip != 'true'
+        env:
+          ATTEMPT: ${{ inputs.attempt }}
+        run: |
+          n="${ATTEMPT:-1}"
+          if [ "$n" -lt 3 ]; then
+            sleep 60
+            gh workflow run autopost.yml -f source=cron -f dry_run=false -f attempt=$((n + 1)) && echo "Запуск сорвался, запущена попытка $((n + 1)) из 3"
+          else
+            echo "Это была 3-я попытка, больше не повторяю"
+          fi

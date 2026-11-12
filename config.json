@@ -1,6 +1,6 @@
 {
-  "autoPublish": false,
-  "startDate": "",
+  "autoPublish": true,
+  "startDate": "2026-11-12",
   "timezone": "Asia/Baku",
   "schedule": {
     "hours": [
