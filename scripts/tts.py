@@ -129,16 +129,39 @@ STYLE = {"en": "Read this aloud like an enthusiastic, curious science storytelle
          "ru": "Прочитай вслух живо и увлечённо, как рассказчик научно-популярного ролика, в естественном темпе: "}
 
 
+class RateLimited(Exception):
+    def __init__(self, msg, wait):
+        super().__init__(msg)
+        self.wait = wait
+
+
+_LAST = {"gemini": 0.0}
+
+
 def _gemini(text, voice, lang, raw, model):
-    import base64, json, urllib.request
+    import base64, json, re, time, urllib.error, urllib.request
     key = os.environ.get("GEMINI_API_KEY", "").strip()
+    # у голосовой модели низкий лимит запросов в минуту: держим паузу между фразами
+    gap = float(os.environ.get("GEMINI_TTS_GAP", "7"))
+    dt = time.time() - _LAST["gemini"]
+    if dt < gap:
+        time.sleep(gap - dt)
+    _LAST["gemini"] = time.time()
     body = {"contents": [{"parts": [{"text": STYLE.get(lang, "") + text}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
     req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                                  data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        d = json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            d = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        if e.code == 429:
+            m = re.search(r'"retryDelay":\s*"(\d+)', body)
+            daily = "PerDay" in body or "per_day" in body.lower()
+            raise RateLimited(f"Gemini: лимит запросов ({'дневной' if daily else 'в минуту'})", -1 if daily else min(90, int(m.group(1)) + 2 if m else 45))
+        raise RuntimeError(f"Gemini TTS HTTP {e.code}: {body[:200]}")
     for c in d.get("candidates", []):
         for part in (c.get("content") or {}).get("parts", []):
             inl = part.get("inlineData") or part.get("inline_data")
@@ -229,7 +252,7 @@ def synth(text, voice, rate, out_wav, engine="edge", lang="en", model=None, trie
             a[s:e] += 0.15 * np.sin(2 * np.pi * 220 * t) * np.hanning(e - s)
         _write(out_wav, a)
         return {"dur": round(dur, 3), "words": _even_timing(tokens, 0.05, dur - 0.1)}
-    tries = tries or int(os.environ.get("TTS_TRIES", "6" if engine == "edge" else "3"))
+    tries = tries or int(os.environ.get("TTS_TRIES", "6" if engine == "edge" else "4"))
     last, marks = None, []
     for attempt in range(tries):
         try:
@@ -242,9 +265,15 @@ def synth(text, voice, rate, out_wav, engine="edge", lang="en", model=None, trie
                 src, extra = fn(text, voice, lang, out_wav[:-4] + ".raw.wav", model)
                 _to_wav(src, out_wav, _factor(rate), extra)
             break
+        except RateLimited as e:  # лимит запросов: ждём столько, сколько просит сервис; дневной лимит ждать бессмысленно
+            last = e
+            if e.wait < 0:
+                break
+            print(f"  {e}, жду {e.wait} с", flush=True)
+            time.sleep(e.wait)
         except Exception as e:  # noqa: BLE001  сервисы иногда не отвечают — повторяем с паузой
             last = e
-            if "HTTP Error 4" in str(e) and "429" not in str(e):
+            if ("HTTP Error 4" in str(e) or "HTTP 4" in str(e)) and "429" not in str(e):
                 break
             time.sleep(3 + attempt * 3)
     else:
