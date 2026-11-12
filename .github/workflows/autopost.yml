@@ -20,6 +20,10 @@ on:
         description: 'cron = запуск от внешнего планировщика (правила расписания: слоты, дубли, автопубликация)'
         type: string
         default: ''
+      only_youtube:
+        description: 'Только YouTube (Instagram пропустить), обычно вместе с topic'
+        type: boolean
+        default: false
       attempt:
         description: 'Служебное: номер попытки при автоповторе'
         type: string
@@ -114,7 +118,7 @@ jobs:
       - name: Опубликовать в Instagram
         id: publish
         timeout-minutes: 15
-        if: steps.render.outputs.skip != 'true'
+        if: steps.render.outputs.skip != 'true' && inputs.only_youtube != true
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
