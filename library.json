@@ -44,6 +44,48 @@
     }
    },
    "updated": "2026-11-12"
+  },
+  {
+   "id": "moon-gone",
+   "date": "2026-11-12",
+   "langs": {
+    "en": {
+     "seconds": 40.5,
+     "caption": "What if the Moon disappeared tonight? It would change much more than the night sky.\n\n#moon #space #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 47.6,
+     "caption": "Что если Луна исчезнет? Изменится гораздо больше, чем ночное небо.\n\n#луна #космос #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "earth-stops",
+   "date": "2026-11-12",
+   "langs": {
+    "en": {
+     "seconds": 42.0,
+     "caption": "What if the Earth suddenly stopped spinning? Spoiler: you would not want to be there.\n\n#earth #physics #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 45.2,
+     "caption": "Что если Земля перестанет вращаться? Спойлер: лучше бы этого не видеть.\n\n#земля #физика #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "asteroid",
+   "date": "2026-11-12",
+   "langs": {
+    "en": {
+     "seconds": 43.8,
+     "caption": "What if an asteroid like the one that wiped out the dinosaurs hit Earth today?\n\n#asteroid #space #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 49.4,
+     "caption": "Что если сегодня в Землю врежется астероид, как тот, что погубил динозавров?\n\n#астероид #космос #чтоесли #наука #факты"
+    }
+   }
   }
  ]
 }
