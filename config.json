@@ -49,12 +49,12 @@
       "rate": "+4%",
       "chain": [
         [
-          "edge",
-          "en-US-AndrewMultilingualNeural"
-        ],
-        [
           "gemini",
           "Charon"
+        ],
+        [
+          "edge",
+          "en-US-AndrewMultilingualNeural"
         ],
         [
           "openai",
