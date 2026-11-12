@@ -112,11 +112,18 @@ async function main() {
 
   const params = { media_type: 'REELS', video_url: videoUrl, caption: post.caption, share_to_feed: String(cfg.shareToFeed !== false) };
   if (coverUrl) params.cover_url = coverUrl;
+  // Маркировка «создано ИИ» (Instagram покажет пометку AI info): включается в config.json → aiLabel
+  if (cfg.aiLabel) params.is_ai_generated = 'true';
   const POLL = +process.env.POLL_MS || 30000;
   let container, status = '';
   // Если Instagram не смог обработать видео (статус ERROR/EXPIRED), пробуем ещё раз с новым контейнером
   for (let attempt = 1; attempt <= 2; attempt++) {
-    container = await api('POST', `${API}/${uid}/media`, params);
+    try { container = await api('POST', `${API}/${uid}/media`, params); }
+    catch (e) {
+      // если API не принял поле маркировки, публикуем без него, чтобы пост не сорвался
+      if (params.is_ai_generated && /is_ai_generated/i.test(e.message)) { console.log('Instagram не принял маркировку ИИ, публикую без неё: ' + e.message); delete params.is_ai_generated; container = await api('POST', `${API}/${uid}/media`, params); }
+      else throw e;
+    }
     console.log(`Контейнер создан: ${container.id}. Instagram обрабатывает видео…`);
     status = '';
     for (let i = 0; i < 20; i++) {           // до 10 минут, раз в 30 с

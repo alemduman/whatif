@@ -40,7 +40,7 @@ async function main() {
   const base = (post.title || first).replace(/\s+/g, ' ').trim();
   const title = (base.length > 88 ? base.slice(0, 87) + '…' : base) + ' #Shorts';
   const description = post.caption.replace(/[<>]/g, '') + '\n\n' + (yt.tags || '#Shorts #whatif #science #animation');
-  const meta = { snippet: { title, description, categoryId: String(yt.category) }, status: { privacyStatus: yt.privacy, selfDeclaredMadeForKids: false } };
+  const meta = { snippet: { title, description, categoryId: String(yt.category) }, status: { privacyStatus: yt.privacy, selfDeclaredMadeForKids: false, ...(cfg.aiLabel ? { containsSyntheticMedia: true } : {}) } };
 
   // 4. resumable upload
   const size = fs.statSync(file).size;
