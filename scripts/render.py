@@ -373,7 +373,7 @@ def render(topic, lang, scenes, out_mp4, out_cover, cfg, tmpdir):
                 last_w = s0["words"][shown - 1]
                 pop = 1 + 0.08 * max(0.0, 1 - (tt - s0["vstart"] - last_w["s"]) / 0.15)
                 fade = 1 - max(0.0, (tt - (s0["end"] - 0.1)) / XFADE)
-                _blit(frame, cache[key], W / 2, H * 0.36, pop, max(0.0, min(1.0, fade)))
+                _blit(frame, cache[key], W / 2, H * 0.28, pop, max(0.0, min(1.0, fade)))
         # обычные субтитры
         for ci, c in enumerate(chunks):
             if c["s"] - 0.02 <= tt < c["until"]:
