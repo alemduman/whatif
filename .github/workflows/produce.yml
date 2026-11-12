@@ -119,7 +119,7 @@ jobs:
       - name: Копия сборки в ветку test-videos
         if: hashFiles('out/produced.json') != ''
         run: |
-          d="$RUNNER_TEMP/tv"; mkdir -p "$d"; cp out/*/*.mp4 out/*/*.jpg out/*/*.json out/*/*.images.zip "$d"/ 2>/dev/null || true
+          d="$RUNNER_TEMP/tv"; mkdir -p "$d"; cp out/*/*.mp4 out/*/*.jpg out/*/*.json out/*/*.images.zip assets/hero.png "$d"/ 2>/dev/null || true
           cd "$d" && git init -q -b test-videos && git add -A
           git -c user.name="whatif-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Пробная сборка ${{ github.run_id }}"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:test-videos
@@ -146,10 +146,12 @@ jobs:
           git config user.name "whatif-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp out/produced.json "$RUNNER_TEMP/produced.json"
+          [ -f assets/hero.png ] && cp assets/hero.png "$RUNNER_TEMP/hero.png"
           for i in 1 2 3 4 5; do
             git fetch -q origin main
             git reset -q --hard origin/main
             python3 scripts/add_library.py "$RUNNER_TEMP/produced.json"
+            if [ -f "$RUNNER_TEMP/hero.png" ] && [ ! -f assets/hero.png ]; then mkdir -p assets && cp "$RUNNER_TEMP/hero.png" assets/hero.png && git add assets/hero.png; fi
             git add library.json
             git commit -q -m "Готовые ролики: $(python3 -c "import json;print(', '.join(p['id'] for p in json.load(open('$RUNNER_TEMP/produced.json'))))")" || exit 0
             git push -q origin HEAD:main && exit 0

@@ -42,7 +42,8 @@ def _gemini(prompt, cfg, ref=None):
     parts = []
     if ref:
         parts.append({"text": "The attached picture is ONLY a reference for the art style, color palette, line work and the look of the "
-                              "recurring character. Do not copy its composition. Draw a completely new scene:"})
+                              "recurring hero. Do not copy its background or pose. Draw the hero only if the scene below mentions him. "
+                              "Draw this completely new scene:"})
         parts.append({"inline_data": {"mime_type": "image/png", "data": base64.b64encode(ref).decode()}})
     parts.append({"text": prompt})
     body = {"contents": [{"role": "user", "parts": parts}],

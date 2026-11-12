@@ -134,19 +134,30 @@ def _font(path, size, cache={}):
 def _text_block(words, active, font_path, size, max_w, hl=None, stroke=9, shown=None):
     """Рисует строку(и) слов: активное слово жёлтое. shown — сколько слов показать (для титра)."""
     f = _font(font_path, size)
-    # самое длинное слово должно влезать в строку: иначе уменьшаем шрифт
-    while size > 40 and max(f.getlength(w) for w in words) + 2 * stroke > max_w:
+    # слишком длинное слово с дефисом («ЗОМБИ-АПОКАЛИПСИС?») переносим по дефису, а не уменьшаем весь текст
+    parts = []  # (индекс слова, кусок, перенос строки после куска)
+    for i, w in enumerate(words):
+        if "-" in w.strip("-") and f.getlength(w) + 2 * stroke > max_w:
+            bits = w.split("-")
+            for k, b in enumerate(bits):
+                last = k == len(bits) - 1
+                parts.append((i, b if last else b + "-", not last))
+        else:
+            parts.append((i, w, False))
+    # самый длинный кусок должен влезать в строку: иначе уменьшаем шрифт
+    while size > 40 and max(f.getlength(p[1]) for p in parts) + 2 * stroke > max_w:
         size -= 4
         f = _font(font_path, size)
     space = f.getlength(" ")
-    lines, cur, cw = [], [], 0
-    for i, w in enumerate(words):
+    lines, cur, cw, brk = [], [], 0, False
+    for i, w, nb in parts:
         lw = f.getlength(w)
-        if cur and cw + space + lw > max_w:
+        if cur and (brk or cw + space + lw > max_w):
             lines.append(cur)
             cur, cw = [], 0
         cur.append((i, w, lw))
         cw += (space if cw else 0) + lw
+        brk = nb
     if cur:
         lines.append(cur)
     lh = int(size * 1.18)

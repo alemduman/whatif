@@ -65,6 +65,21 @@ def caption(t, lang, cfg):
 
 
 _VOICE_OK = {}
+HERO_PNG = os.path.join(ROOT, "assets", "hero.png")
+
+
+def hero_ref(cfg, icfg):
+    """Портрет постоянного героя: рисуется один раз и дальше служит образцом стиля для всех кадров."""
+    if (icfg.get("provider") or "placeholder") != "gemini":
+        return None
+    if not os.path.exists(HERO_PNG):
+        os.makedirs(os.path.dirname(HERO_PNG), exist_ok=True)
+        print("  рисую портрет героя (образец стиля, один раз)…", flush=True)
+        prompt = (f"Character design sheet: {cfg.get('hero', '')}. Full body, front view, friendly curious expression, "
+                  "standing on a plain soft light-blue background with a subtle round spotlight, nothing else in the picture.")
+        images.generate(prompt, HERO_PNG, icfg, 0, None)
+    with open(HERO_PNG, "rb") as f:
+        return f.read()
 
 
 def produce(t, cfg, langs, out_root):
@@ -86,16 +101,15 @@ def produce(t, cfg, langs, out_root):
             print("  кадры взяты из прошлой сборки (повторно не рисуются)", flush=True)
         except Exception:  # noqa: BLE001
             pass
-    ref = None
+    # образец стиля и героя: один «портрет героя» на все ролики (assets/hero.png), а не первый кадр,
+    # иначе нейросеть копирует композицию первого кадра во все сцены
+    ref = hero_ref(cfg, icfg) if icfg.get("styleReference", True) else None
     paths = []
     for i, s in enumerate(t["scenes"]):
         p = os.path.join(imgd, f"{i + 1:02d}.png")
         if not os.path.exists(p):
             print(f"  кадр {i + 1}/{len(t['scenes'])}…", flush=True)
             images.generate(s["img"].replace("{hero}", hero), p, icfg, i, ref)
-        if ref is None:
-            with open(p, "rb") as f:
-                ref = f.read()
         paths.append(p)
     zp = os.path.join(od, f"{tid}.images.zip")
     with zipfile.ZipFile(zp, "w") as z:
