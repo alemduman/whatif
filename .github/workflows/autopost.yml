@@ -123,6 +123,17 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: node scripts/publish.mjs
 
+      - name: Загрузить на YouTube Shorts
+        if: steps.render.outputs.skip != 'true'
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: node scripts/youtube.mjs
+
       - name: Запомнить, что уже опубликовано
         if: steps.publish.outputs.posted == 'true'
         run: |

@@ -109,5 +109,11 @@
   "ttsModels": {
     "gemini": "gemini-2.5-flash-preview-tts",
     "openai": "gpt-4o-mini-tts"
+  },
+  "youtube": {
+    "enabled": true,
+    "privacy": "public",
+    "category": "27",
+    "tags": "#Shorts #whatif #science #animation"
   }
 }

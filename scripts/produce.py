@@ -158,7 +158,7 @@ def produce(t, cfg, langs, out_root):
         topic["_seed"] = zlib.crc32(tid.encode()) % 1000
         dur = render.render(topic, lang, scenes, mp4, jpg, cfg.get("video", {}), tmp)
         meta = {"id": tid, "lang": lang, "video": os.path.basename(mp4), "cover": os.path.basename(jpg),
-                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "rate": rate, "voice": f"{eng}/{voice}"}
+                "seconds": round(dur, 1), "caption": caption(t, lang, cfg), "title": t["scenes"][0][lang], "rate": rate, "voice": f"{eng}/{voice}"}
         with open(os.path.join(od, f"{tid}.{lang}.json"), "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=1)
         res["langs"][lang] = meta

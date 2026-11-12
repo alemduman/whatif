@@ -63,7 +63,7 @@ function main() {
   let cover = null;
   if (fs.existsSync(path.join(V, `${base}.jpg`))) { fs.renameSync(path.join(V, `${base}.jpg`), path.join(V, `${stamp}.jpg`)); cover = `v/${stamp}.jpg`; }
   fs.rmSync(path.join(V, `${base}.json`));
-  writeJSON(path.join(OUT, 'post.json'), { video: `v/${stamp}.mp4`, cover, caption: meta.caption, id: item.id, lang: LANG });
+  writeJSON(path.join(OUT, 'post.json'), { video: `v/${stamp}.mp4`, cover, caption: meta.caption, title: meta.title || '', id: item.id, lang: LANG });
   writeJSON(path.join(OUT, 'state.next.json'), { ...state, history: [...state.history, { id: item.id, lang: LANG, date: today, video: `${stamp}.mp4`, ...(SLOT ? { slot: SLOT } : {}) }].slice(-300) });
   console.log(`Ролик: ${item.id} (${LANG}), ${meta.seconds} с. В очереди после него: ${Math.max(0, queue.length - 1)}`);
   summary(`### Ролик к публикации\n- Тема: \`${item.id}\` (${LANG}), ${meta.seconds} с\n- Осталось в очереди: ${Math.max(0, queue.length - 1)}\n`);

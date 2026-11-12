@@ -40,3 +40,15 @@ GitHub Pages: Settings → Pages → Source: **GitHub Actions** (через Page
 - **What If autopost**: `dry_run` (по умолчанию включён) — подготовить видео без публикации; `topic` — опубликовать конкретную тему.
 
 Проверка локально без ключей и сети: `TTS=fake IMAGE_PROVIDER=placeholder python3 scripts/produce.py --ids sun-off`.
+
+## YouTube Shorts
+
+Тот же английский ролик после Instagram загружается на YouTube (название = вопрос ролика). Включается тремя секретами: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`. Без них шаг пропускается.
+
+1. console.cloud.google.com → **новый проект** (отдельный от флагов: у каждого проекта своя квота ≈6 загрузок в сутки) → «APIs & Services» → включить **YouTube Data API v3**.
+2. «OAuth consent screen» → External → название и почта → scope `youtube.upload` → **Publish app (In production)**, иначе токен живёт 7 дней.
+3. «Credentials» → Create credentials → OAuth client ID → **Web application**, Authorized redirect URI: `https://developers.google.com/oauthplayground`. Скопировать Client ID и Client secret.
+4. developers.google.com/oauthplayground → шестерёнка → «Use your own OAuth credentials» → вставить их → scope `https://www.googleapis.com/auth/youtube.upload` → Authorize APIs → войти в аккаунт и выбрать **канал «Что если?»** → Exchange authorization code for tokens → скопировать **Refresh token**.
+5. Добавить три секрета в GitHub и запустить autopost вручную с `dry_run`: в логе будет «Токен YouTube действителен».
+
+Настройки: `config.json` → `youtube` (`enabled`, `privacy`, `category`: 27 = Education, `tags`).
