@@ -105,11 +105,13 @@ def produce(t, cfg, langs, out_root):
             pass
     # образец стиля и героя: один «портрет героя» на все ролики (assets/hero.png), а не первый кадр,
     # иначе нейросеть копирует композицию первого кадра во все сцены
-    ref = hero_ref(cfg, icfg) if icfg.get("styleReference", True) else None
+    ref = None
     paths = []
     for i, s in enumerate(t["scenes"]):
         p = os.path.join(imgd, f"{i + 1:02d}.png")
         if not os.path.exists(p):
+            if ref is None and icfg.get("styleReference", True):
+                ref = hero_ref(cfg, icfg)  # только если правда надо рисовать
             print(f"  кадр {i + 1}/{len(t['scenes'])}…", flush=True)
             images.generate(s["img"].replace("{hero}", hero), p, icfg, i, ref)
             if (icfg.get("provider") or "placeholder") != "placeholder":

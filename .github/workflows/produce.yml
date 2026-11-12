@@ -153,7 +153,7 @@ jobs:
             git fetch -q origin main
             git reset -q --hard origin/main
             python3 scripts/add_library.py "$RUNNER_TEMP/produced.json"
-            if [ -f "$RUNNER_TEMP/hero.png" ] && [ ! -f assets/hero.png ]; then mkdir -p assets && cp "$RUNNER_TEMP/hero.png" assets/hero.png && git add assets/hero.png; fi
+            if [ -f "$RUNNER_TEMP/hero.png" ] && ! git ls-files --error-unmatch assets/hero.png >/dev/null 2>&1; then mkdir -p assets && cp "$RUNNER_TEMP/hero.png" assets/hero.png && git add assets/hero.png; fi
             git add library.json
             git commit -q -m "Готовые ролики: $(python3 -c "import json;print(', '.join(p['id'] for p in json.load(open('$RUNNER_TEMP/produced.json'))))")" || exit 0
             git push -q origin HEAD:main && exit 0
