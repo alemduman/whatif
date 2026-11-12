@@ -115,5 +115,12 @@
     "privacy": "public",
     "category": "27",
     "tags": "#Shorts #whatif #science #animation"
+  },
+  "credits": {
+    "balance": 2.47,
+    "asOf": "2026-11-12 15:13",
+    "imageUsd": 0.039,
+    "ttsUsd": 0.0015,
+    "_note": "Баланс предоплаты Gemini в долларах. После пополнения впиши новый баланс сюда (или скажи Claude)."
   }
 }

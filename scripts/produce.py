@@ -65,6 +65,7 @@ def caption(t, lang, cfg):
 
 
 _VOICE_OK = {}
+COST = {"images": 0, "tts_gemini": 0, "tts_openai": 0}  # платные запросы этой сборки (для учёта баланса)
 HERO_PNG = os.path.join(ROOT, "assets", "hero.png")
 
 
@@ -78,6 +79,7 @@ def hero_ref(cfg, icfg):
         prompt = (f"Character design sheet: {cfg.get('hero', '')}. Full body, front view, friendly curious expression, "
                   "standing on a plain soft light-blue background with a subtle round spotlight, nothing else in the picture.")
         images.generate(prompt, HERO_PNG, icfg, 0, None)
+        COST["images"] += 1
     with open(HERO_PNG, "rb") as f:
         return f.read()
 
@@ -110,6 +112,8 @@ def produce(t, cfg, langs, out_root):
         if not os.path.exists(p):
             print(f"  кадр {i + 1}/{len(t['scenes'])}…", flush=True)
             images.generate(s["img"].replace("{hero}", hero), p, icfg, i, ref)
+            if (icfg.get("provider") or "placeholder") != "placeholder":
+                COST["images"] += 1
         paths.append(p)
     zp = os.path.join(od, f"{tid}.images.zip")
     with zipfile.ZipFile(zp, "w") as z:
@@ -137,6 +141,8 @@ def produce(t, cfg, langs, out_root):
                     for i, s in enumerate(t["scenes"]):
                         wav = os.path.join(tmp, f"s{i + 1:02d}.wav")
                         r = tts.synth(s[lang], voice, rate, wav, engine=eng, lang=lang, model=model)
+                        if eng in ("gemini", "openai") and os.environ.get("TTS") != "fake":
+                            COST["tts_" + eng] += 1
                         scenes.append({"img": paths[i], "wav": wav, "dur": r["dur"], "words": r["words"],
                                        "fx": s.get("fx"), "cam": s.get("cam"), "part": s.get("part")})
                     est = sum(x["dur"] for x in scenes) + 0.35 + 0.28 * (len(scenes) - 1) + 1.6 + 0.1 * len(scenes)
@@ -205,9 +211,17 @@ def main():
         return
     os.makedirs(a.out, exist_ok=True)
     produced = []
-    for tid in ids:
-        print(f"▶ {tid}", flush=True)
-        produced.append(produce(by[tid], cfg, langs, a.out))
+    try:
+        for tid in ids:
+            print(f"▶ {tid}", flush=True)
+            produced.append(produce(by[tid], cfg, langs, a.out))
+    except Exception as e:
+        with open(os.path.join(a.out, "error.txt"), "w", encoding="utf-8") as f:
+            f.write(str(e))
+        raise
+    finally:  # расходы пишем и при сбое: картинки до сбоя уже оплачены
+        with open(os.path.join(a.out, "cost.json"), "w", encoding="utf-8") as f:
+            json.dump(COST, f)
     with open(os.path.join(a.out, "produced.json"), "w", encoding="utf-8") as f:
         json.dump(produced, f, ensure_ascii=False, indent=1)
     print(f"Сделано тем: {len(produced)}")

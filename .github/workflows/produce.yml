@@ -37,6 +37,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: produce
@@ -83,6 +84,7 @@ jobs:
         run: python3 scripts/tts_probe.py zombies
 
       - name: Сделать ролики
+        id: make
         if: ${{ !inputs.probe_voices }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -158,3 +160,47 @@ jobs:
             sleep $((i * 5))
           done
           exit 1
+
+      # Учёт баланса предоплаты Gemini (config.json → credits.balance) и уведомление, когда денег осталось на одну сборку.
+      # Уведомление = issue в репозитории: GitHub присылает его на почту и в приложение. Закрывается само после пополнения.
+      - name: Учёт баланса Gemini
+        id: credits
+        if: always() && hashFiles('out/cost.json') != ''
+        run: |
+          git config user.name "whatif-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp out/cost.json "$RUNNER_TEMP/cost.json"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/credits.py "$RUNNER_TEMP/cost.json"
+            git add config.json
+            git commit -q -m "Баланс Gemini после сборки" || break
+            git push -q origin HEAD:main && break
+            sleep $((i * 5))
+          done
+
+      - name: Уведомление о балансе
+        if: always() && steps.credits.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BAL: ${{ steps.credits.outputs.balance }}
+          BATCH: ${{ steps.credits.outputs.batch }}
+          LOW: ${{ steps.credits.outputs.low }}
+          FAILED: ${{ steps.make.outcome == 'failure' }}
+        run: |
+          paid=false
+          if [ "$FAILED" = "true" ] && [ -f out/error.txt ] && grep -qiE "billing|credit|prepa|quota|RESOURCE_EXHAUSTED|429|payment" out/error.txt; then paid=true; fi
+          num=$(gh issue list --label credits --state open --json number -q '.[0].number' 2>/dev/null || true)
+          if [ "$LOW" = "true" ] || [ "$paid" = "true" ]; then
+            [ -n "$num" ] && { echo "Уведомление уже открыто (#$num)"; exit 0; }
+            gh label create credits --color D93F0B --description "Баланс Gemini" 2>/dev/null || true
+            if [ "$paid" = "true" ]; then t="⛔ Gemini: кредиты закончились, ролики не собираются"; else t="⚠️ Gemini: баланса осталось на одну сборку"; fi
+            printf '%s\n' "Расчётный баланс предоплаты Gemini: **\$$BAL**. Одна сборка (3 темы) стоит около **\$$BATCH**." "" \
+              "Пополнить: aistudio.google.com → Billing → **Buy credits** (или включи Auto-reload)." "" \
+              "После пополнения впиши новый баланс в \`config.json\` → \`credits.balance\` (или напиши Claude, сколько положил). Это уведомление закроется само." \
+              > "$RUNNER_TEMP/body.md"
+            gh issue create --title "$t" --body-file "$RUNNER_TEMP/body.md" --label credits
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "Баланс в порядке: \$$BAL"
+          fi
