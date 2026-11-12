@@ -1,0 +1,36 @@
+name: Выгрузить ролики
+
+# Копирует готовые ролики из релиза library в ветку test-videos (оттуда их забирает Claude для TikTok).
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'Темы через запятую'
+        type: string
+        required: true
+      lang:
+        description: 'Язык (ru для TikTok)'
+        type: string
+        default: 'ru'
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Скачать и выложить в ветку test-videos
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IDS: ${{ inputs.ids }}
+          LNG: ${{ inputs.lang }}
+        run: |
+          d="$RUNNER_TEMP/tv"; mkdir -p "$d"
+          for id in ${IDS//,/ }; do
+            gh release download library -R "${{ github.repository }}" -p "$id.$LNG.mp4" -p "$id.$LNG.jpg" -p "$id.$LNG.json" -D "$d" --clobber
+          done
+          cd "$d" && git init -q -b test-videos && git add -A
+          git -c user.name="whatif-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Выгрузка $IDS ($LNG)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:test-videos
