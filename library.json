@@ -89,6 +89,48 @@
     }
    },
    "updated": "2026-11-13"
+  },
+  {
+   "id": "no-spacesuit",
+   "date": "2026-11-13",
+   "langs": {
+    "en": {
+     "seconds": 37.6,
+     "caption": "What if you went into space without a spacesuit? It's not what the movies show.\n\n#space #astronaut #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 35.8,
+     "caption": "Что если выйти в космос без скафандра? Всё не так, как в кино.\n\n#космос #космонавт #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "earth-rings",
+   "date": "2026-11-13",
+   "langs": {
+    "en": {
+     "seconds": 39.3,
+     "caption": "What if Earth had rings like Saturn? The sky would look incredible.\n\n#earth #saturn #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 42.3,
+     "caption": "Что если у Земли будут кольца, как у Сатурна? Небо было бы невероятным.\n\n#земля #сатурн #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "mars-life",
+   "date": "2026-11-13",
+   "langs": {
+    "en": {
+     "seconds": 40.7,
+     "caption": "What if you moved to Mars? Here's what life there would really be like.\n\n#mars #space #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 37.6,
+     "caption": "Что если переехать на Марс? Вот какой была бы жизнь там на самом деле.\n\n#марс #космос #чтоесли #наука #факты"
+    }
+   }
   }
  ]
 }
