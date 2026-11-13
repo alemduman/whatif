@@ -35,11 +35,36 @@ def all_topics():
     out = []
     for p in sorted(glob.glob(os.path.join(ROOT, "topics", "*.json"))):
         d = load(p)
-        out += d if isinstance(d, list) else [d]
+        cat = os.path.splitext(os.path.basename(p))[0]
+        for t in (d if isinstance(d, list) else [d]):
+            t.setdefault("_cat", cat)
+            out.append(t)
     ids = [t["id"] for t in out]
     dup = {i for i in ids if ids.count(i) > 1}
     if dup:
         raise SystemExit(f"В темах повторяются id: {', '.join(sorted(dup))}")
+    return out
+
+
+def mixed(topics, done, cfg, lib):
+    """Чередует разделы по кругу (человек → апокалипсис → животные → Земля → мир → космос …),
+    начиная с раздела после того, из которого была последняя сделанная тема."""
+    cats = []
+    for t in topics:
+        if t["_cat"] not in cats:
+            cats.append(t["_cat"])
+    pref = [c for c in cfg.get("categoryOrder", []) if c in cats]
+    cats = pref + [c for c in cats if c not in pref]
+    queues = {c: [t["id"] for t in topics if t["_cat"] == c and t["id"] not in done] for c in cats}
+    cat_of = {t["id"]: t["_cat"] for t in topics}
+    last = next((cat_of.get(x["id"]) for x in reversed(lib.get("items", [])) if x["id"] in cat_of), None)
+    i = (cats.index(last) + 1) % len(cats) if last in cats else 0
+    out = []
+    while any(queues.values()):
+        c = cats[i % len(cats)]
+        if queues[c]:
+            out.append(queues[c].pop(0))
+        i += 1
     return out
 
 
@@ -210,7 +235,7 @@ def main():
             raise SystemExit(f"Нет таких тем: {', '.join(miss)}")
     else:
         order = cfg.get("order") or []
-        rest = [t["id"] for t in topics]
+        rest = mixed(topics, done, cfg, lib) if cfg.get("mixCategories", True) else [t["id"] for t in topics]
         ids = [i for i in order if i in by] + [i for i in rest if i not in order]
         ids = [i for i in ids if i not in done][: a.count]
     if not ids:

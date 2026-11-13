@@ -123,5 +123,14 @@
     "ttsUsd": 0.0015,
     "_note": "Баланс предоплаты Gemini в долларах. После пополнения впиши новый баланс сюда (или скажи Claude)."
   },
-  "aiLabel": true
+  "aiLabel": true,
+  "mixCategories": true,
+  "categoryOrder": [
+    "04-human",
+    "03-apocalypse",
+    "05-animals",
+    "02-earth",
+    "06-world",
+    "01-space"
+  ]
 }
