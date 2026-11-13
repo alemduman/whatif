@@ -1,0 +1,35 @@
+name: Отчёт по кратности
+# Раз в неделю: статистика роликов → кратность к медиане аккаунта → issue с отчётом. Ничего не публикует.
+on:
+  schedule:
+    - cron: '23 6 * * 1'   # понедельник 10:23 по Баку
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: report
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Статистика роликов
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: node scripts/insights.mjs > out-insights.log && tail -1 out-insights.log
+      - name: Отчёт
+        run: node scripts/report.mjs
+      - name: Issue с отчётом
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create report --color 1D76DB --description "Еженедельный отчёт по кратности" --force >/dev/null
+          for n in $(gh issue list --label report --state open --json number -q '.[].number'); do gh issue close "$n" -c "Есть новый отчёт." >/dev/null; done
+          gh issue create --title "Отчёт по кратности — $(TZ=Asia/Baku date +%d.%m.%Y)" --label report --body-file out/report.md
