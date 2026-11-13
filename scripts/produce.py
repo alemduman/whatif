@@ -61,7 +61,12 @@ def caption(t, lang, cfg):
     c = t[lang]
     tags = (cfg.get("hashtags", {}).get(lang) or [])
     tags = list(dict.fromkeys((c.get("tags") or []) + tags))[: int(cfg.get("maxHashtags", 5))]
-    return (c.get("caption") or "").strip() + ("\n\n" + " ".join(tags) if tags else "")
+    text = (c.get("caption") or "").strip()
+    # Лента Instagram показывает ~125 символов до «… ещё»: крючок должен целиком влезать туда
+    first = text.split("\n")[0]
+    if len(first) > 125:
+        print(f"  ⚠ {t['id']} {lang}: первая строка подписи {len(first)} символов (> 125), в ленте обрежется")
+    return text + ("\n\n" + " ".join(tags) if tags else "")
 
 
 _VOICE_OK = {}

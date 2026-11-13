@@ -131,8 +131,15 @@ def _font(path, size, cache={}):
     return cache[key]
 
 
-def _text_block(words, active, font_path, size, max_w, hl=None, stroke=9, shown=None):
-    """Рисует строку(и) слов: активное слово жёлтое. shown — сколько слов показать (для титра)."""
+# Безопасная зона Reels/TikTok на 1080×1920: сверху ~14% (270 px) занимает шапка, снизу ~25% (от 1440 px) —
+# подпись и ник, справа у нижней половины — кнопки лайк/комменты. Титр и субтитры держим внутри.
+SAFE_TITLE_W, SAFE_TITLE_H = 880, 500   # титр по центру на 0.28·H: не выше 270 px, не шире 100 px от краёв
+SAFE_CAP_W, SAFE_CAP_H = 800, 210       # субтитры на 0.67·H: правый край ≤ ~950 px, низ ≤ 1440 px
+
+
+def _text_block(words, active, font_path, size, max_w, hl=None, stroke=9, shown=None, max_h=None):
+    """Рисует строку(и) слов: активное слово жёлтое. shown — сколько слов показать (для титра).
+    max_h — предельная высота строк: если текст не влезает, шрифт уменьшается (безопасная зона кадра)."""
     f = _font(font_path, size)
     # слишком длинное слово с дефисом («ЗОМБИ-АПОКАЛИПСИС?») переносим по дефису, а не уменьшаем весь текст
     parts = []  # (индекс слова, кусок, перенос строки после куска)
@@ -148,19 +155,24 @@ def _text_block(words, active, font_path, size, max_w, hl=None, stroke=9, shown=
     while size > 40 and max(f.getlength(p[1]) for p in parts) + 2 * stroke > max_w:
         size -= 4
         f = _font(font_path, size)
-    space = f.getlength(" ")
-    lines, cur, cw, brk = [], [], 0, False
-    for i, w, nb in parts:
-        lw = f.getlength(w)
-        if cur and (brk or cw + space + lw > max_w):
+    while True:
+        space = f.getlength(" ")
+        lines, cur, cw, brk = [], [], 0, False
+        for i, w, nb in parts:
+            lw = f.getlength(w)
+            if cur and (brk or cw + space + lw > max_w):
+                lines.append(cur)
+                cur, cw = [], 0
+            cur.append((i, w, lw))
+            cw += (space if cw else 0) + lw
+            brk = nb
+        if cur:
             lines.append(cur)
-            cur, cw = [], 0
-        cur.append((i, w, lw))
-        cw += (space if cw else 0) + lw
-        brk = nb
-    if cur:
-        lines.append(cur)
-    lh = int(size * 1.18)
+        lh = int(size * 1.18)
+        if not max_h or lh * len(lines) <= max_h or size <= 40:
+            break
+        size -= 4
+        f = _font(font_path, size)
     pad = stroke + 14
     tw = int(max(sum(x[2] for x in ln) + space * (len(ln) - 1) for ln in lines)) + pad * 2
     th = lh * len(lines) + pad * 2
@@ -369,7 +381,7 @@ def render(topic, lang, scenes, out_mp4, out_cover, cfg, tmpdir):
             if shown:
                 key = ("T", shown)
                 if key not in cache:
-                    cache[key] = _text_block(title_words, -1, FONT_TITLE, 96, 960, hl=set(range(hook_n)), stroke=11, shown=shown)
+                    cache[key] = _text_block(title_words, -1, FONT_TITLE, 96, SAFE_TITLE_W, hl=set(range(hook_n)), stroke=11, shown=shown, max_h=SAFE_TITLE_H)
                 last_w = s0["words"][shown - 1]
                 pop = 1 + 0.08 * max(0.0, 1 - (tt - s0["vstart"] - last_w["s"]) / 0.15)
                 fade = 1 - max(0.0, (tt - (s0["end"] - 0.1)) / XFADE)
@@ -383,7 +395,7 @@ def render(topic, lang, scenes, out_mp4, out_cover, cfg, tmpdir):
                         act = j
                 key = ("C", ci, act)
                 if key not in cache:
-                    cache[key] = _text_block([_upper(w["w"], lang) for w in c["words"]], act, FONT_SUB, 84, 940, stroke=10)
+                    cache[key] = _text_block([_upper(w["w"], lang) for w in c["words"]], act, FONT_SUB, 84, SAFE_CAP_W, stroke=10, max_h=SAFE_CAP_H)
                 age = tt - c["s"]
                 sc = 0.82 + 0.18 * min(1.0, age / 0.09) + 0.05 * math.sin(min(1.0, age / 0.18) * math.pi)
                 _blit(frame, cache[key], W / 2, H * 0.67, sc)
