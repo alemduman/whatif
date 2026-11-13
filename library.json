@@ -35,7 +35,7 @@
    "date": "2026-11-12",
    "langs": {
     "en": {
-     "seconds": 41.2,
+     "seconds": 45.1,
      "caption": "What if you fell into a black hole? Get ready to become spaghetti.\n\n#blackhole #space #whatif #science #facts"
     },
     "ru": {
@@ -43,14 +43,14 @@
      "caption": "Что если упасть в чёрную дыру? Приготовься стать спагетти.\n\n#чернаядыра #космос #чтоесли #наука #факты"
     }
    },
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "id": "moon-gone",
    "date": "2026-11-12",
    "langs": {
     "en": {
-     "seconds": 40.5,
+     "seconds": 44.7,
      "caption": "What if the Moon disappeared tonight? It would change much more than the night sky.\n\n#moon #space #whatif #science #facts"
     },
     "ru": {
@@ -58,14 +58,14 @@
      "caption": "Что если Луна исчезнет? Изменится гораздо больше, чем ночное небо.\n\n#луна #космос #чтоесли #наука #факты"
     }
    },
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "id": "earth-stops",
    "date": "2026-11-12",
    "langs": {
     "en": {
-     "seconds": 42.0,
+     "seconds": 46.5,
      "caption": "What if the Earth suddenly stopped spinning? Spoiler: you would not want to be there.\n\n#earth #physics #whatif #science #facts"
     },
     "ru": {
@@ -73,14 +73,14 @@
      "caption": "Что если Земля перестанет вращаться? Спойлер: лучше бы этого не видеть.\n\n#земля #физика #чтоесли #наука #факты"
     }
    },
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "id": "asteroid",
    "date": "2026-11-12",
    "langs": {
     "en": {
-     "seconds": 44.1,
+     "seconds": 46.2,
      "caption": "What if an asteroid like the one that wiped out the dinosaurs hit Earth today?\n\n#asteroid #space #whatif #science #facts"
     },
     "ru": {
@@ -88,7 +88,7 @@
      "caption": "Что если сегодня в Землю врежется астероид, как тот, что погубил динозавров?\n\n#астероид #космос #чтоесли #наука #факты"
     }
    },
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   }
  ]
 }
