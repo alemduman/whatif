@@ -131,6 +131,48 @@
      "caption": "Что если переехать на Марс? Вот какой была бы жизнь там на самом деле.\n\n#марс #космос #чтоесли #наука #факты"
     }
    }
+  },
+  {
+   "id": "no-sleep",
+   "date": "2026-11-15",
+   "langs": {
+    "en": {
+     "seconds": 39.0,
+     "caption": "What if you stopped sleeping? Here's what happens to your brain, day by day.\n\n#sleep #brain #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 39.0,
+     "caption": "Что если перестать спать? Вот что происходит с мозгом день за днём.\n\n#сон #мозг #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "humans-vanish",
+   "date": "2026-11-15",
+   "langs": {
+    "en": {
+     "seconds": 41.6,
+     "caption": "What if all humans disappeared tomorrow? Here's how fast nature would take over.\n\n#nature #future #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 42.2,
+     "caption": "Что если завтра исчезнут все люди? Вот как быстро природа заберёт своё.\n\n#природа #будущее #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "no-mosquitoes",
+   "date": "2026-11-15",
+   "langs": {
+    "en": {
+     "seconds": 43.9,
+     "caption": "What if all mosquitoes disappeared? Would nature even miss them?\n\n#mosquito #nature #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 41.6,
+     "caption": "Что если исчезнут все комары? А природа вообще заметит?\n\n#комары #природа #чтоесли #наука #факты"
+    }
+   }
   }
  ]
 }
