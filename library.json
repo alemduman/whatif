@@ -173,6 +173,48 @@
      "caption": "Что если исчезнут все комары? А природа вообще заметит?\n\n#комары #природа #чтоесли #наука #факты"
     }
    }
+  },
+  {
+   "id": "no-water",
+   "date": "2026-11-16",
+   "langs": {
+    "en": {
+     "seconds": 43.9,
+     "caption": "What if there was no water left on Earth? It would take days, not years.\n\n#water #earth #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 47.0,
+     "caption": "Что если на Земле не останется воды? Счёт пойдёт на дни, а не на годы.\n\n#вода #земля #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "everyone-millionaire",
+   "date": "2026-11-16",
+   "langs": {
+    "en": {
+     "seconds": 37.7,
+     "caption": "What if everyone on Earth became a millionaire overnight? Your money would be worth nothing.\n\n#money #economy #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 37.5,
+     "caption": "Что если все люди станут миллионерами за одну ночь? Деньги перестанут что-то стоить.\n\n#деньги #экономика #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "flat-earth",
+   "date": "2026-11-16",
+   "langs": {
+    "en": {
+     "seconds": 40.8,
+     "caption": "What if the Earth was actually flat? Physics has some bad news.\n\n#flatearth #physics #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 37.0,
+     "caption": "Что если Земля на самом деле плоская? У физики плохие новости.\n\n#плоскаяземля #физика #чтоесли #наука #факты"
+    }
+   }
   }
  ]
 }
