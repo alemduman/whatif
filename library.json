@@ -215,6 +215,146 @@
      "caption": "Что если Земля на самом деле плоская? У физики плохие новости.\n\n#плоскаяземля #физика #чтоесли #наука #факты"
     }
    }
+  },
+  {
+   "id": "humans-fly",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 41.8,
+     "caption": "What if humans could fly? You'd need some seriously big wings.\n\n#fly #superpower #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 39.0,
+     "caption": "Что если люди научатся летать? Понадобятся очень большие крылья.\n\n#полёт #суперсила #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "internet-off",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 35.6,
+     "caption": "What if the internet shut down forever? Would you survive?\n\n#internet #technology #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 36.5,
+     "caption": "Что если интернет отключится навсегда? Ты бы выжил?\n\n#интернет #технологии #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "animals-talk",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 37.6,
+     "caption": "What if animals could talk? Your cat would have a lot to explain.\n\n#animals #pets #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 39.9,
+     "caption": "Что если животные заговорят? Кошке придётся многое объяснить.\n\n#животные #питомцы #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "ice-melts",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 42.3,
+     "caption": "What if all the ice on Earth melted? Check if your city would survive.\n\n#climate #ocean #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 40.3,
+     "caption": "Что если растает весь лёд на Земле? Проверь, останется ли твой город на суше.\n\n#климат #океан #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "no-money",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 39.4,
+     "caption": "What if money disappeared? We'd basically reinvent it.\n\n#money #history #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 38.7,
+     "caption": "Что если деньги исчезнут? Мы бы просто изобрели их заново.\n\n#деньги #история #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "gravity-off",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 35.0,
+     "caption": "What if gravity disappeared for just five seconds? The ending is the real problem.\n\n#gravity #physics #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 38.0,
+     "caption": "Что если гравитация исчезнет на пять секунд? Самое страшное случится в конце.\n\n#гравитация #физика #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "immortal",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 35.8,
+     "caption": "What if you could live forever? It sounds amazing, until you think it through.\n\n#immortality #life #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 42.1,
+     "caption": "Что если ты сможешь жить вечно? Звучит прекрасно, пока не задумаешься.\n\n#бессмертие #жизнь #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "aliens-arrive",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 37.6,
+     "caption": "What if aliens landed on Earth tomorrow? What would happen first?\n\n#aliens #ufo #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 46.3,
+     "caption": "Что если завтра на Землю прилетят инопланетяне? Что случится первым делом?\n\n#инопланетяне #нло #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "giant-cats",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 30.4,
+     "caption": "What if house cats were as big as tigers? Morning wake-ups would be brutal.\n\n#cats #animals #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 36.9,
+     "caption": "Что если домашние кошки будут размером с тигра? Утренние побудки станут жёсткими.\n\n#кошки #животные #чтоесли #наука #факты"
+    }
+   }
+  },
+  {
+   "id": "supervolcano",
+   "date": "2026-11-18",
+   "langs": {
+    "en": {
+     "seconds": 38.9,
+     "caption": "What if the Yellowstone supervolcano erupted? The whole planet would feel it.\n\n#volcano #yellowstone #whatif #science #facts"
+    },
+    "ru": {
+     "seconds": 40.6,
+     "caption": "Что если проснётся супервулкан Йеллоустоун? Это почувствует вся планета.\n\n#вулкан #йеллоустоун #чтоесли #наука #факты"
+    }
+   }
   }
  ]
 }
