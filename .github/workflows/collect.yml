@@ -1,0 +1,28 @@
+name: tmp-battle-collect
+on:
+  push:
+    branches: [tmp-battle-collect]
+permissions:
+  contents: write
+  actions: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: seg-*
+          path: segs
+          run-id: 44902563449
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Склейка (не больше ~85 МБ)
+        run: |
+          pip install --quiet imageio-ffmpeg
+          FF=$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')
+          for i in $(seq 0 19); do echo "file 'segs/seg-$i/seg.mp4'" >> list.txt; done
+          mkdir -p render
+          $FF -y -v error -f concat -safe 0 -i list.txt -c:v libx264 -preset slow -crf 18 -maxrate 12M -bufsize 24M -pix_fmt yuv420p -movflags +faststart render/video.mp4
+          ls -la render
+          git config user.name github-actions; git config user.email github-actions@users.noreply.github.com
+          git add -f render/video.mp4 && git commit -qm "render [skip ci]" && git push -q origin HEAD:tmp-battle-collect
