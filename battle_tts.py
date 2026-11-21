@@ -17,7 +17,10 @@ def gemini(text, voice, out):
 async def edge():
     import edge_tts
     for l in L:
-        await edge_tts.Communicate(l['text'], 'ru-RU-DmitryNeural', rate='+8%').save(f"out/edge_{l['id']}.mp3")
+        try:
+            await edge_tts.Communicate(l['text'].replace('—', ','), 'ru-RU-DmitryNeural', rate='+8%').save(f"out/edge_{l['id']}.mp3")
+        except Exception as e:
+            print('edge err', l['id'], e)
 asyncio.run(edge())
 for voice in ['Charon', 'Fenrir']:
     for l in L:
