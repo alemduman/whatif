@@ -1,0 +1,32 @@
+<!doctype html><meta charset=utf-8>
+<link rel=preconnect href=data:>
+<style>
+html,body{margin:0;background:#000;overflow:hidden}
+canvas{display:block}
+#hud{position:absolute;inset:0;pointer-events:none;font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;color:#fff}
+#title{position:absolute;top:36%;left:0;right:0;text-align:center;font-size:calc(var(--u)*7.2);font-weight:900;letter-spacing:.02em;line-height:1.05;text-shadow:0 .4vh 2vh rgba(0,0,0,.8),0 0 .6vh rgba(0,0,0,.9);opacity:0}
+#title small{display:block;font-size:.45em;letter-spacing:.3em;color:#ffcf7a;margin-top:.6vh}
+#title b{color:#ff5a36}
+#bars{position:absolute;top:calc(var(--u)*7);left:6%;right:6%;display:flex;align-items:center;gap:4%;opacity:0}
+.hpw{flex:1;height:calc(var(--u)*1.6);border-radius:99px;background:rgba(0,0,0,.45);box-shadow:0 0 0 2px rgba(255,255,255,.75) inset;overflow:hidden}
+#hp{height:100%;width:100%;background:linear-gradient(90deg,#ff3b2a,#ff8a3a);border-radius:99px}
+.ic{font-size:calc(var(--u)*3.4);filter:drop-shadow(0 2px 4px #000)}
+.pips{display:flex;gap:calc(var(--u)*.8)}
+.pip{width:calc(var(--u)*2.6);height:calc(var(--u)*2.6);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe3a0,#c08a48 60%,#6a4418);box-shadow:0 0 0 2px rgba(0,0,0,.5),0 2px 6px #000;transition:none}
+.pip.off{filter:grayscale(1) brightness(.35)}
+#win{position:absolute;top:13%;left:50%;transform:translate(-50%,0);white-space:nowrap;text-align:center;font-size:calc(var(--u)*6.4);font-weight:900;text-shadow:0 .4vh 2vh rgba(0,0,0,.85);opacity:0}
+#win small{display:block;font-size:.42em;letter-spacing:.35em;color:#ffcf7a}
+</style>
+<canvas id=c></canvas>
+<div id=hud>
+ <div id=title><small>БИТВА НА АРЕНЕ</small>ПАУК <b>vs</b> 5 ГОПЛИТОВ</div>
+ <div id=bars><span class=ic>🕷️</span><div class=hpw><div id=hp></div></div><div class=pips><i class=pip></i><i class=pip></i><i class=pip></i><i class=pip></i><i class=pip></i></div></div>
+ <div id=win><small>ПОБЕДИТЕЛЬ</small>🕷️ ПАУК</div>
+</div>
+<script>
+const q=new URLSearchParams(location.search),W=+(q.get('w')||720),H=+(q.get('h')||1280);
+document.documentElement.style.setProperty('--u',(W/100)+'px');
+document.body.style.width=W+'px';document.body.style.height=H+'px';
+</script>
+<script type=importmap>{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type=module src="/src/main.js"></script>

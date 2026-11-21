@@ -1,0 +1,52 @@
+name: tmp-battle-render
+on:
+  push:
+    branches: [tmp-battle-render]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-audit --no-fund --no-save three@0.160.0 playwright@1.49.1
+      - name: ffmpeg
+        run: |
+          pip install --quiet imageio-ffmpeg
+          echo "FFMPEG=$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" >> $GITHUB_ENV
+      - name: Рендер части
+        run: |
+          if ! CHANNEL=chrome AT=0.1 W=270 H=480 MSAA=0 node render.mjs; then npx playwright install chromium; echo "CH=" >> $GITHUB_ENV; else echo "CH=chrome" >> $GITHUB_ENV; fi
+          CHANNEL=$CH PARTS=20 PART=${{ matrix.part }} W=1080 H=1920 FPS=30 MSAA=4 DOF=1 CRF=14 OUT=seg.mp4 node render.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seg-${{ matrix.part }}
+          path: seg.mp4
+          retention-days: 2
+  collect:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: seg-*
+          path: segs
+      - name: Склейка
+        run: |
+          pip install --quiet imageio-ffmpeg
+          FF=$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')
+          for i in $(seq 0 19); do echo "file 'segs/seg-$i/seg.mp4'" >> list.txt; done
+          mkdir -p render
+          $FF -y -v error -f concat -safe 0 -i list.txt -c:v libx264 -preset slow -crf 19 -pix_fmt yuv420p render/video.mp4
+          ls -la render
+          git config user.name github-actions; git config user.email github-actions@users.noreply.github.com
+          git add -f render/video.mp4 && git commit -qm "render [skip ci]" && git push -q origin HEAD:tmp-battle-render
