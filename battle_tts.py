@@ -11,8 +11,10 @@ def gemini(text, voice, out):
             inl = p.get('inlineData') or p.get('inline_data')
             if inl and inl.get('data'):
                 rate = int(inl.get('mimeType', 'rate=24000').split('rate=')[-1].split(';')[0])
-                open(out + '.pcm', 'wb').write(base64.b64decode(inl['data']))
-                subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 's16le', '-ar', str(rate), '-ac', '1', '-i', out + '.pcm', out], check=True); os.remove(out + '.pcm'); return
+                import wave
+                with wave.open(out, 'wb') as w:
+                    w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(base64.b64decode(inl['data']))
+                return
     raise RuntimeError('no audio')
 async def edge():
     import edge_tts
@@ -21,8 +23,8 @@ async def edge():
             await edge_tts.Communicate(l['text'].replace('—', ','), 'ru-RU-DmitryNeural', rate='+8%').save(f"out/edge_{l['id']}.mp3")
         except Exception as e:
             print('edge err', l['id'], e)
-asyncio.run(edge())
-for voice in ['Charon', 'Fenrir']:
+asyncio.run(edge()) if os.environ.get('EDGE', '1') == '1' else None
+for voice in ['Charon']:
     for l in L:
         for attempt in range(4):
             try:
