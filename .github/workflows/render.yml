@@ -24,7 +24,8 @@ jobs:
           echo "FFMPEG=$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" >> $GITHUB_ENV
       - name: Рендер части
         run: |
-          if ! CHANNEL=chrome AT=0.1 W=270 H=480 MSAA=0 node render.mjs; then npx playwright install chromium; echo "CH=" >> $GITHUB_ENV; else echo "CH=chrome" >> $GITHUB_ENV; fi
+          CH=chrome
+          if ! CHANNEL=chrome AT=0.1 W=270 H=480 MSAA=0 node render.mjs; then npx playwright install chromium; CH=; fi
           CHANNEL=$CH PARTS=20 PART=${{ matrix.part }} W=1080 H=1920 FPS=30 MSAA=4 DOF=1 CRF=14 OUT=seg.mp4 node render.mjs
       - uses: actions/upload-artifact@v4
         with:
